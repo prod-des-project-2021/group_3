@@ -1,0 +1,9 @@
+.container {
+  padding: 40px;
+  padding-left: 8vw;
+  padding-right: 8vw;
+}
+
+.container img {
+  width: 100%;
+}
