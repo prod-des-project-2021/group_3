@@ -1,12 +1,12 @@
 import React from 'react';
 
 import styles from './sectionscontainer.module.css'
-import image1 from './image1.jpg';
-import Title from './Title.js';
-import Imgcontainer from './Imgcontainer.js';
-import Content from './Content.js';
-import Caption from './Caption.js';
-import hankeimg from './hanke.jpg';
+import image1 from './pictures/image1.jpg';
+import Title from './sectioncomponents/Title.js';
+import Imgcontainer from './sectioncomponents/Imgcontainer.js';
+import Content from './sectioncomponents/Content.js';
+import Caption from './sectioncomponents/Caption.js';
+import hankeimg from './pictures/hanke.jpg';
 
 export default function section1() {
   return (

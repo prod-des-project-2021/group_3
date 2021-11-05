@@ -7,9 +7,9 @@ import Sec2 from './components/section2';
 function App() {
   return (
     <div className="App">
-      {/* <Menu/> */}
-      {/*<Sec1/>*/}
-      <Sec2/>
+      <Menu/>
+      {/* <Sec1/> */}
+      {/* <Sec2/> */}
     </div>
   );
 }

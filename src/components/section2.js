@@ -1,13 +1,13 @@
 import React from 'react';
 
 import styles from './sectionscontainer.module.css'
-import Title from './Title.js';
-import Imgcontainer from './Imgcontainer.js';
-import Content from './Content.js';
-import Caption from './Caption.js';
-import tyokykytalo from './tyokykytalo.png';
-import Linkbutton from './linkbutton';
-import Subtitle from './Subtitle';
+import Title from './sectioncomponents/Title.js';
+import Imgcontainer from './sectioncomponents/Imgcontainer.js';
+import Content from './sectioncomponents/Content.js';
+import Caption from './sectioncomponents/Caption.js';
+import tyokykytalo from './pictures/tyokykytalo.png';
+import Linkbutton from './sectioncomponents/linkbutton';
+import Subtitle from './sectioncomponents/Subtitle';
 
 export default function section2() {
   return (
