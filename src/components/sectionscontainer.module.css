@@ -1,0 +1,11 @@
+.container {
+  border: 1px solid lightgrey;
+  margin-top: 45px;
+  margin-bottom: 45px;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  padding: 50px;
+  border-radius: 25px;
+  text-align: left;
+  background-color: floralwhite;
+}
