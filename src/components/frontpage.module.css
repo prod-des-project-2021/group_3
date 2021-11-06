@@ -1,0 +1,84 @@
+.container {
+    border: 1px solid lightgrey;
+    margin-top: 45px;
+    margin-bottom: 45px;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    padding: 50px;
+    border-radius: 25px;
+    text-align: left;
+    background-color: floralwhite;
+  }
+
+.sections {
+    margin: 5vh;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap:wrap;
+  
+  }
+  
+  .sections > div{
+    width: 30vw;
+    margin-top: 5vh;
+    border-radius:6px;
+    display:inline-block;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:bold;
+    padding:6px 24px;
+    text-decoration:none;
+    color:#ffffff;
+  }  
+  
+  .sec1 {
+      box-shadow:inset 0px 1px 0px 0px #acacac;
+      background-color: rgba(0, 0, 0, 0.5);
+      border:1px solid black;
+  }
+  .sec1:hover {
+      background:linear-gradient(to bottom, #000000 5%, #4e4e4e 70%);
+  }
+  .sec1:active {
+      position:relative;
+      top:1px;
+  }
+  
+  .sec2 {
+    box-shadow:inset 0px 1px 0px 0px #acacac;
+    background-color: rgba(0, 0, 0, 0.5);
+    border:1px solid black;
+  }
+  .sec2:hover {
+    background:linear-gradient(to bottom, #000000 5%, #4e4e4e 70%);
+  }
+  .sec2:active {
+      position:relative;
+      top:1px;
+  }
+  
+  .sec3 {
+    box-shadow:inset 0px 1px 0px 0px #acacac;
+    background-color: rgba(0, 0, 0, 0.5);
+    border:1px solid black;
+  }
+  .sec3:hover {
+    background:linear-gradient(to bottom, #000000 5%, #4e4e4e 70%);
+  }
+  .sec3:active {
+      position:relative;
+      top:1px;
+  }
+  
+  .sec4 {
+    box-shadow:inset 0px 1px 0px 0px #acacac;
+    background-color: rgba(0, 0, 0, 0.5);
+    border:1px solid black;
+  }
+  .sec4:hover {
+    background:linear-gradient(to bottom, #000000 5%, #4e4e4e 70%);
+  }
+  .sec4:active {
+      position:relative;
+      top:1px;
+  }  
