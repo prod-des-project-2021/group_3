@@ -2,9 +2,7 @@ import React from 'react';
 
 import styles from './sectionscontainer.module.css'
 import Title from './sectioncomponents/Title.js';
-import Imgcontainer from './sectioncomponents/Imgcontainer.js';
 import Content from './sectioncomponents/Content.js';
-import Caption from './sectioncomponents/Caption.js';
 import Linkbutton from './sectioncomponents/linkbutton';
 import Intendedcontent from './sectioncomponents/Intendedcontent';
 import Subtitle from './sectioncomponents/Subtitle';
