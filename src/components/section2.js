@@ -33,11 +33,9 @@ export default function section2() {
         <Content text='Omien arvojen, motivaation, asenteiden ja työtyytyväisyyden arvioiminen on ajoittain paikallaan. Maatalousyrittäjien työhön kohdistuu ajoittaista arvostelemista liittyen esim. ilmastonmuutoskeskusteluun. Tällöin oman työn arvostaminen ja sille merkityksen antaminen vaatii paneutumista ja omien arvojen puntarointia. Myös oman ammattitaidon avoin ja rehellinen pohdinta siitä, miten se vaikuttaa omaan terveyteen ja hyvinvointiin on työhyvinvoinnin kannalta tärkeätä (Yliselä 2009). '/>
         <Linkbutton buttonText='Arvot puntarissa' link='https://arvoja.wordpress.com/'/>
         <Linkbutton buttonText='Henkilökohtaiset arvot' link='https://harimaa.com/mentaali/henkilokohtaiset-arvot/'/>
-        <Subtitle text='Miten voit? -testi'/>
-        <Content text='auttaa sinua hahmottamaan työhyvinvointiasi juuri nyt. Testi sisältää väittämiä, jotka liittyvät työssä koettuihin tuntemuksiin ja toimintamalleihin. Vastattuasi väittämiin saat tutkittuun tietoon perustuvan palautteen. Testin tekemiseen menee noin viisi minuuttia.'/>
+        <Content start='Miten voit? -testi' text='auttaa sinua hahmottamaan työhyvinvointiasi juuri nyt. Testi sisältää väittämiä, jotka liittyvät työssä koettuihin tuntemuksiin ja toimintamalleihin. Vastattuasi väittämiin saat tutkittuun tietoon perustuvan palautteen. Testin tekemiseen menee noin viisi minuuttia.'/>
         <Linkbutton buttonText='Miten voit? -testi' link='https://hyvatyo.ttl.fi/mielityo/tyokalut/miten-voit-tyohyvinvointitesti'/>
-        <Subtitle text='Yksilötutka'/>
-        <Content text={<>on maksuton työhyvinvointikysely, jolla kartoitetaan työntekijän omaa arviota työhyvinvointinsa tilasta vastaushetkellä. Kyselyssä on 23 asteikkokysymystä seuraavista työhyvinvoinnin näkökulmista:
+        <Content start='Yksilötutka' text={<>on maksuton työhyvinvointikysely, jolla kartoitetaan työntekijän omaa arviota työhyvinvointinsa tilasta vastaushetkellä. Kyselyssä on 23 asteikkokysymystä seuraavista työhyvinvoinnin näkökulmista:
           <ul>
             <li>terveys ja toimintakyky</li>
             <li>osaaminen</li>

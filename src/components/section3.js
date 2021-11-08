@@ -8,6 +8,7 @@ import Caption from './sectioncomponents/Caption.js';
 import aivot from './pictures/aivot.png';
 import Linkbutton from './sectioncomponents/linkbutton';
 import Subtitle from './sectioncomponents/Subtitle';
+import Intendedcontent from './sectioncomponents/Intendedcontent';
 
 export default function section3() {
   return (
@@ -17,10 +18,18 @@ export default function section3() {
         <Caption text ='Hyvinvointimme koostuu monesta eri tekijästä, joihin voimme itse vaikuttaa. Pienilläkin muutoksilla voi olla vaikutuksia hyvinvointiimme. Työn, toiminnan ja levon tasapaino, sopiva liikunnan määrä sekä terveellinen ja hyvä ruoka vaikuttavat niin aivoterveyteemme kuin myös mielenterveytemme sitä kautta kokonaisvaltaiseen hyvinvointiimme. '/>
         <Imgcontainer alt="kuva aivoista" imgsrc={aivot}/>
         <Content start='Aivoterveydestä' text ='puhutaan nykyään paljon ja kehotetaan pitämään huolta omista aivoista. Aivoterveydellä tarkoitetaan laaja-alaisesti aivojen hyvinvointia. Se on ihmisen toimintakykyisyyden perusta, joka vaatii kaikkein monimutkaisinta eri aivojen osien yhteistoimintaa.'/>
-        <Linkbutton buttonText='Lue lisää' link='https://www.aivoliitto.fi/aivoterveys/'/>
-        <Content text='Aivoterveydestä ja aivojen muovautuvuudesta (Aivosäätiö ja Merck Oy, Suomi)'/>
-        <Linkbutton buttonText='Lue lisää' link='https://www.rakkaataivot.fi/aivojen-rakenne-ja-toiminta/'/>
-        <Content text="Unen riittämättömyys puolestaan aiheuttaa heikentymistä valppauteen, keskittymiskykyyn, muistiin ja oppimiseen sekä paineensietokykyyn. Stressi, hermostuneisuus tai ärtyneisyys voivat myös johtua unen puutteesta. Sillä on negatiivisia vaikutuksia myös sydän- ja verisuonitaudeille. (Leskinen & Hult 2010.)" />
+        <Intendedcontent buttonText='Lue lisää' link='https://www.aivoliitto.fi/aivoterveys/'/>
+        <Intendedcontent buttonText='Lue lisää' link='https://www.rakkaataivot.fi/aivojen-rakenne-ja-toiminta/' text='Aivoterveydestä ja aivojen muovautuvuudesta (Aivosäätiö ja Merck Oy, Suomi)'/>
+        <Intendedcontent buttonText='Oppaaseen' link='https://www.muistiliitto.fi/application/files/3015/0922/4743/Kohti_parempaa_aivoterveytta.pdf' text='Kohti parempaa aivoterveyttä. Opas aivojen huoltoon'/>
+        <Intendedcontent buttonText='Huoltokirjaan' link='https://www.olipakerranmies.fi/terveet-elamantavat-vaalivat-aivoterveytta/' text='Aikuisen miehen huoltokirja. Terveet elämäntavat vaalivat aivoterveyttä.'/>
+        <Content text='Aivojen kuormitusta voi vähentää erilaisilla sovelluksilla. Esimerkiksi ostoslistojen tai to do -listojen tekemisessä voi hyödyntää erilaisia sovelluksia. Näin ne pysyvät tallessa eikä tarvitse enää käyttää paperilistoja ja jättää asioita muistin varaan. '/>
+        <Content text='Esimerkkinä muutama ilmainen sovellus:'/>
+        <Intendedcontent link='https://apps.apple.com/sg/app/ticked-2/id1411719870' buttonText='Sovelluskauppaan tästä' text='Ticked 2 -sovellus, johon voi luoda kymmeniä listoja, jotka helppo hallita ja päivittää. Listat voi jakaa sovelluksessa helposti toisten käyttäjien kanssa. Sovellus ei vaadi kirjautumista. Tämä on ilmainen ladata ja käyttää iOSille (iPhone).' />
+        <Intendedcontent link='https://play.google.com/store/apps/details?id=com.headcode.ourgroceries' buttonText='Sovelluskauppaan tästä' text='OurGroceries on myös Kauppalappu-ohjelma. Se on nopea ja looginen käyttää ja se on ladattavissa Google Playsta. ' />
+        <Content start='Taukoliikunta' text ='edistää mm. keskittymiskykyä, lisää mielen ja kehon hyvinvointia ja ehkäisee nivelten ja lihasten kireyksiä yms. Puhelimeen on mahdollista ladata erilaisia sovelluksia, johon voi asentaa muistutuksia silloin kun itse haluaa'/>
+        <Intendedcontent link='https://selkakanava.fi/selkaliitto/liikkeen-liikkumisen-ja-liikunnan-lisaaminen/tilaa-maksuton-taukojumppamuistutus' buttonText='Taukojumpan ohjeet' text='Selkäliitto tarjoaa ilmaisen muistutuksen taukojumpasta jumppaohjeineen. Voit tutustua siihen täältä' />
+        <Intendedcontent link='https://breakpro.fi/' buttonText='Lisätietoja' text='Maksullinen BREAK PRO® Taukoliikuntasovellus työn tauottamiseen, ergonomian parantamiseen ja työhyvinvoinnin lisäämiseen. Ohjelma muistuttaa pitämään taukoja valitsemallasi aikataululla. Se on saatavilla kaikille laitteilla ja se sisältää 108 lyhyttä taukoliikuntaohjelmaa. Sitä voi kokeilla 14 päivää ilmaiseksi.' />
+        <Content start='Unella' text="on suuri merkitys ihmisen hyvinvointiin ja jaksamiseen. Uni täydentää aivojen energiavarastoja, vaikuttaa sokeriaineenvaihduntaan, autonomisen hermoston toimintaan ja hormoneihin. Unen merkitystä usein vähätellään arjessa ja siitä ollaan usein valmiita tinkimään. Unen tärkeimmät tehtävät liittyvät mm. fyysisen levon (aivot, lihakset) ja voimien palauttamiseen, muistitoimintojen säilymiseen, muistiin painamiseen ja oppimisen edistämiseen. Myös psyykkinen lepo ja palautuminen sekä psyykkisen vireyden ylläpitäminen ovat unen tärkeitä tehtäviä. Unen riittämättömyys puolestaan aiheuttaa heikentymistä valppauteen, keskittymiskykyyn, muistiin ja oppimiseen sekä paineensietokykyyn. Stressi, hermostuneisuus tai ärtyneisyys voivat myös johtua unen puutteesta. Sillä on negatiivisia vaikutuksia myös sydän- ja verisuonitaudeille. (Leskinen & Hult 2010.)" />
         <Linkbutton buttonText='Opas levon ja toiminnan tasapainottamiseen' link='https://www.terveyskyla.fi/kuntoutumistalo/kuntoutujalle/oma-hyvinvointi/opas-levon-ja-toiminnan-tasapainottamiseen'/>
         <Content start='Mielenterveyden' text='tuen työkalupakki tarjoaa työpaikoille ja työterveyshuolloille keinoja pitää huolta mielenterveydestä ennaltaehkäisevästi. Sivuilta löytyy tietoa erilaisista työhön liittyvistä niin yksilöön kuin työyhteisöönkin liittyviä työkaluja mm. palautumislaskuri, Miten voit? -työhyvinvointitesti. ' />
         <Linkbutton buttonText='Työkalupakkiin tästä' link='https://hyvatyo.ttl.fi/mielityo/etusivu?_ga=2.252169472.808035541.1632380079-1256305749.1607087018'/>
