@@ -6,6 +6,7 @@ import Sec2 from './components/section2';
 import Sec3 from './components/section3';
 import Sec4 from './components/section4';
 import Sec4_1 from './components/section4_1';
+import Sec4_2 from './components/section4_2';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       {/* <Sec3/> */}
       {/* <Sec4/> */}
       {/* <Sec4_1/> */}
+      {/* <Sec4_2/> */}
     </div>
   );
 }
