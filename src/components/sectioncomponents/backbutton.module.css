@@ -1,0 +1,21 @@
+.button{
+    width: auto;
+    position: sticky;
+    margin-top: 5vh;
+    margin-left: 1vw;
+    top: 3vh;
+    left: 1vw;
+    border-radius:6px;
+    display:inline-block;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:bold;
+    padding-left:3px;
+    padding-right:3px;
+    padding-top: 3px;
+    text-decoration:none;
+    box-shadow:inset 0px 1px 0px 0px #acacac;
+    background-color: rgba(0, 0, 0, 0.5);
+    border:1px solid black;
+    text-align: center;
+}

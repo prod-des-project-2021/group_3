@@ -6,10 +6,12 @@ import Imgcontainer from './sectioncomponents/Imgcontainer.js';
 import Caption from './sectioncomponents/Caption.js';
 import OsaAlueet from './pictures/osa-alueet.png';
 import Content from './sectioncomponents/Content';
+import Backbutton from './sectioncomponents/Backbutton';
 
 export default function section4() {
   return (
     <div>
+      <Backbutton/>
       <div className={styles.container}>
         <Title title='Hyvinvoinnin osa-alueet'/>
         <Caption text ='Ihminen on kokonaisuus, jonka hyvinvointi koostuu monesta eri asiasta. Kokonaisvaltaista hyvinvointia voidaan tarkastella neljän eri ulottuvuuden näkökulmasta: fyysinen, psyykkinen, sosiaalinen ja taloudellinen hyvinvointi. '/>
