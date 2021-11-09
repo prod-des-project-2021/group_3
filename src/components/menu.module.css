@@ -4,7 +4,8 @@
   align-items: center;
   height:10vh;
   min-height: 23px;
-  background-color: aqua;
+  max-height: 51px;
+  background-color: #5b8a3c88;
 }
 
 .hamIcon {
@@ -21,3 +22,14 @@ color: red;
 margin-right: 2vw;
 }
 
+@media only screen and (min-width: 992px) {
+  .menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height:15vh;
+    min-height: 23px;
+    max-height: 15vh;
+    background-color: #5b8a3c88;
+  }
+} 
