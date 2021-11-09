@@ -37,7 +37,7 @@
       border:1px solid black;
   }
   .sec1:hover {
-      background:linear-gradient(to bottom, #000000 5%, #4e4e4e 70%);
+      background:linear-gradient(to bottom, #00000071 5%, #4e4e4e3b 70%);
   }
   .sec1:active {
       position:relative;
@@ -50,7 +50,7 @@
     border:1px solid black;
   }
   .sec2:hover {
-    background:linear-gradient(to bottom, #000000 5%, #4e4e4e 70%);
+    background:linear-gradient(to bottom, #00000071 5%, #4e4e4e3b 70%);
   }
   .sec2:active {
       position:relative;
@@ -63,7 +63,7 @@
     border:1px solid black;
   }
   .sec3:hover {
-    background:linear-gradient(to bottom, #000000 5%, #4e4e4e 70%);
+    background:linear-gradient(to bottom, #00000071 5%, #4e4e4e3b 70%);
   }
   .sec3:active {
       position:relative;
@@ -76,7 +76,7 @@
     border:1px solid black;
   }
   .sec4:hover {
-    background:linear-gradient(to bottom, #000000 5%, #4e4e4e 70%);
+    background:linear-gradient(to bottom, #00000071 5%, #4e4e4e3b 70%);
   }
   .sec4:active {
       position:relative;
