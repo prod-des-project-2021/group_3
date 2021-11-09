@@ -5,8 +5,6 @@
   height:10vh;
   min-height: 23px;
   background-color: aqua;
-  -webkit-box-shadow: 5px 5px 50px 5px #000000; 
-  box-shadow: 5px 5px 50px 5px #000000;
 }
 
 .hamIcon {
@@ -21,93 +19,5 @@
 .icon{
 color: red;
 margin-right: 2vw;
-}
-
-
-.sections {
-  margin: 5vh;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap:wrap;
-
-}
-
-.sections > div{
-  width: 30vw;
-  margin-top: 5vh;
-  border-radius:6px;
-  display:inline-block;
-	cursor:pointer;
-  font-family:Arial;
-	font-size:15px;
-	font-weight:bold;
-	padding:6px 24px;
-	text-decoration:none;
-	color:#ffffff;
-}
-
-
-.sec1 {
-	box-shadow:inset 0px 1px 0px 0px #fff6af;
-	background:linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
-	background-color:#ffec64;
-	border:1px solid #ffaa22;
-	text-shadow:0px 1px 0px #ffee66;
-}
-.sec1:hover {
-	background:linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
-	background-color:#ffab23;
-}
-.sec1:active {
-	position:relative;
-	top:1px;
-}
-
-.sec2 {
-	box-shadow:inset 0px 1px 0px 0px #54a3f7;
-	background:linear-gradient(to bottom, #007dc1 5%, #0061a7 100%);
-	background-color:#007dc1;
-	border:1px solid #124d77;
-	text-shadow:0px 1px 0px #154682;
-}
-.sec2:hover {
-	background:linear-gradient(to bottom, #0061a7 5%, #007dc1 100%);
-	background-color:#0061a7;
-}
-.sec2:active {
-	position:relative;
-	top:1px;
-}
-
-.sec3 {
-	box-shadow:inset 0px 1px 0px 0px #9acc85;
-	background:linear-gradient(to bottom, #74ad5a 5%, #68a54b 100%);
-	background-color:#74ad5a;
-	border:1px solid #3b6e22;
-	text-shadow:0px 1px 0px #92b879;
-}
-.sec3:hover {
-	background:linear-gradient(to bottom, #68a54b 5%, #74ad5a 100%);
-	background-color:#68a54b;
-}
-.sec3:active {
-	position:relative;
-	top:1px;
-}
-
-.sec4 {
-	box-shadow:inset 0px 1px 0px 0px #8a2a21;
-	background:linear-gradient(to bottom, #c62d1f 5%, #f24437 100%);
-	background-color:#c62d1f;
-	border:1px solid #d02718;
-	text-shadow:0px 1px 0px #810e05;
-}
-.sec4:hover {
-	background:linear-gradient(to bottom, #f24437 5%, #c62d1f 100%);
-	background-color:#f24437;
-}
-.sec4:active {
-	position:relative;
-	top:1px;
 }
 
