@@ -2,8 +2,9 @@
     border: 1px solid lightgrey;
     margin-top: 45px;
     margin-bottom: 45px;
-    margin-left: 10vw;
-    margin-right: 10vw;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 880px;
     padding: 50px;
     border-radius: 25px;
     text-align: left;
@@ -15,11 +16,10 @@
     display: flex;
     justify-content: space-evenly;
     flex-wrap:wrap;
-  
   }
   
   .sections > div{
-    width: 30vw;
+    width: auto;
     margin-top: 5vh;
     border-radius:6px;
     display:inline-block;
@@ -31,54 +31,22 @@
     color:#ffffff;
   }  
   
-  .sec1 {
+  .sec {
       box-shadow:inset 0px 1px 0px 0px #acacac;
       background-color: rgba(0, 0, 0, 0.5);
       border:1px solid black;
+      text-align: center;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      -o-user-select: none;
+      user-select: none;
   }
-  .sec1:hover {
+  .sec:hover {
       background:linear-gradient(to bottom, #00000071 5%, #4e4e4e3b 70%);
   }
-  .sec1:active {
+  .sec:active {
       position:relative;
       top:1px;
   }
-  
-  .sec2 {
-    box-shadow:inset 0px 1px 0px 0px #acacac;
-    background-color: rgba(0, 0, 0, 0.5);
-    border:1px solid black;
-  }
-  .sec2:hover {
-    background:linear-gradient(to bottom, #00000071 5%, #4e4e4e3b 70%);
-  }
-  .sec2:active {
-      position:relative;
-      top:1px;
-  }
-  
-  .sec3 {
-    box-shadow:inset 0px 1px 0px 0px #acacac;
-    background-color: rgba(0, 0, 0, 0.5);
-    border:1px solid black;
-  }
-  .sec3:hover {
-    background:linear-gradient(to bottom, #00000071 5%, #4e4e4e3b 70%);
-  }
-  .sec3:active {
-      position:relative;
-      top:1px;
-  }
-  
-  .sec4 {
-    box-shadow:inset 0px 1px 0px 0px #acacac;
-    background-color: rgba(0, 0, 0, 0.5);
-    border:1px solid black;
-  }
-  .sec4:hover {
-    background:linear-gradient(to bottom, #00000071 5%, #4e4e4e3b 70%);
-  }
-  .sec4:active {
-      position:relative;
-      top:1px;
-  }  

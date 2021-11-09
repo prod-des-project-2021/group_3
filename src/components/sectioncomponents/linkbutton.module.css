@@ -17,8 +17,8 @@
   margin-left: 20px;
 }
 .button:hover {
-	background:linear-gradient(to bottom, #72b352 5%, #77b55a 100%);
-	background-color:#72b352;
+	background:linear-gradient(to bottom, #72b352 5%, #3e7327 100%);
+	background-color:#3e7327;
 }
 .button:active {
 	position:relative;

@@ -1,11 +1,14 @@
 .container {
   border: 1px solid lightgrey;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 45px;
   margin-bottom: 45px;
-  margin-left: 10vw;
-  margin-right: 10vw;
-  padding: 50px;
+  padding: 30px;
+  padding-left: 38px;
+  max-width: 880px;
   border-radius: 25px;
   text-align: left;
+  display: block;
   background-color: floralwhite;
 }

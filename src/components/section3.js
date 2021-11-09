@@ -9,10 +9,12 @@ import aivot from './pictures/aivot.png';
 import Linkbutton from './sectioncomponents/linkbutton';
 import Subtitle from './sectioncomponents/Subtitle';
 import Intendedcontent from './sectioncomponents/Intendedcontent';
+import Backbutton from './sectioncomponents/Backbutton';
 
 export default function section3() {
   return (
     <div>
+      <Backbutton/>
       <div className={styles.container}>
         <Title title='Hyvinvoinnin ennaltaehkäiseminen ja sen vahvistaminen'/>
         <Caption text ='Hyvinvointimme koostuu monesta eri tekijästä, joihin voimme itse vaikuttaa. Pienilläkin muutoksilla voi olla vaikutuksia hyvinvointiimme. Työn, toiminnan ja levon tasapaino, sopiva liikunnan määrä sekä terveellinen ja hyvä ruoka vaikuttavat niin aivoterveyteemme kuin myös mielenterveytemme sitä kautta kokonaisvaltaiseen hyvinvointiimme. '/>

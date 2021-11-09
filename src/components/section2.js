@@ -8,10 +8,12 @@ import Caption from './sectioncomponents/Caption.js';
 import tyokykytalo from './pictures/tyokykytalo.png';
 import Linkbutton from './sectioncomponents/linkbutton';
 import Subtitle from './sectioncomponents/Subtitle';
+import Backbutton from './sectioncomponents/Backbutton';
 
 export default function section2() {
   return (
     <div>
+      <Backbutton/>
       <div className={styles.container}>
         <Title title='Työkyky hyvinvoinnin perustana'/>
         <Caption text ='TEKSTI TÄHÄN'/>
