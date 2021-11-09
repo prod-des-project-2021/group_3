@@ -28,6 +28,9 @@ export default function Frontpage(props) {
                 <div className={styles.sec}>
                     <Link to="/Sec4">Hyvinvoinnin osa-alueet</Link>
                 </div>      
+                <div className={styles.sec}>
+                    <Link to="/Tutorials">Ohjeet</Link>
+                </div>      
             </div>
             <div className={styles.container}>
                 <Title title='Hyvinvoivat maaseudun yritykset'/>

@@ -6,6 +6,8 @@ import Frontpage from './components/Frontpage';
 import Sec2 from './components/section2';
 import Sec3 from './components/section3';
 import Sec4 from './components/section4';
+import Tutorials from './components/tutorials';
+import PWAinstall from './components/PWAinstall';
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
             <Route path="Sec3" element={<Sec3 />} />
             <Route path="Sec2" element={<Sec2 />} />
             <Route path="Sec4" element={<Sec4 />} />
+            <Route path="Tutorials" element={<Tutorials />} />
+            <Route path="PWAinstall" element={<PWAinstall />} />
           </Routes>
         </BrowserRouter>
       </div>
