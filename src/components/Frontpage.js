@@ -1,8 +1,8 @@
 import React from 'react'
 import styles from './frontpage.module.css';
-import Title from './Title.js';
-import Caption from './Caption.js';
-import Content from './Content.js';
+import Title from './sectioncomponents/Title.js';
+import Caption from './sectioncomponents/Caption.js';
+import Content from './sectioncomponents/Content.js';
 
 export default function Frontpage(props) {
     return (
