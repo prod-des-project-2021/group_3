@@ -1,0 +1,28 @@
+.months {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.year {
+  text-align: center;
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.infoContainer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.actContainer{
+  margin-top: 20px;
+}
+
+.starContainer {
+  margin-top: 20px;
+}
+
+.starIcon {
+  font-size: 35px;
+}
