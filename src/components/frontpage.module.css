@@ -14,11 +14,12 @@
 .sections {
     margin: 5vh;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     flex-wrap:wrap;
+    gap: 1vw;
   }
   
-  .sections > a{
+  .sections > a, .section > div{
     width: auto;
     margin-top: 5vh;
     border-radius:6px;
@@ -42,6 +43,7 @@
       -ms-user-select: none;
       -o-user-select: none;
       user-select: none;
+      flex-basis: 400px;
   }
   .sec:hover {
       background:linear-gradient(to bottom, #00000071 5%, #4e4e4e3b 70%);
