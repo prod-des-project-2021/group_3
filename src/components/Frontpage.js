@@ -19,18 +19,10 @@ export default function Frontpage(props) {
     return (
         <>
             <div className={styles.sections}>
-                <div className={styles.sec}>
-                    <Link to="/Sec2">Työkyky hyvinvoinnin perustana</Link>
-                </div>      
-                <div className={styles.sec}>
-                    <Link to="/Sec3">Hyvinvoinnin ennaltaehkäiseminen ja sen vahvistaminen</Link>
-                </div>
-                <div className={styles.sec}>
-                    <Link to="/Sec4">Hyvinvoinnin osa-alueet</Link>
-                </div>      
-                <div className={styles.sec}>
-                    <Link to="/Tutorials">Ohjeet</Link>
-                </div>      
+                <Link className={styles.sec} to="/Sec2">Työkyky hyvinvoinnin perustana</Link>
+                <Link className={styles.sec} to="/Sec3">Hyvinvoinnin ennaltaehkäiseminen ja sen vahvistaminen</Link>
+                <Link className={styles.sec} to="/Sec4">Hyvinvoinnin osa-alueet</Link>
+                <Link className={styles.sec} to="/Tutorials">Ohjeet</Link>
             </div>
             <div className={styles.container}>
                 <Title title='Hyvinvoivat maaseudun yritykset'/>
