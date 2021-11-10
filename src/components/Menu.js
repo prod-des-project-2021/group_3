@@ -7,9 +7,9 @@ export default function menu(props) {
   return (
     <>
       <div className={styles.menu}> 
-        <MenuIcon style={{'marginLeft': '2vw'}}/>
+        <MenuIcon className={styles.icons}/>
         <div className = {styles.menuTitle}>Hyvinvoiva maaseutu</div>
-        <AccountCircleIcon style={{'marginRight': '2vw'}}/>
+        <AccountCircleIcon className={styles.icons}/>
       </div>
     </>
   )
