@@ -8,7 +8,7 @@ import Caption from './sectioncomponents/Caption.js';
 import Backbutton from './sectioncomponents/Backbutton';
 import { Link } from "react-router-dom";
 
-export default function tutorials() {
+export default function Tutorials(props) {
     return (
         <>
         <div>
@@ -16,8 +16,9 @@ export default function tutorials() {
              <div className={anotherStyles.container}>
                 <Title title='Ohjeet'/>
                 <Caption text='Tältä sivulta löydät ohjeita'/>
-                <div className={styles.sec}>
-                    <Link to="/PWAinstall">Kuinka asennan sivun tietokoneelleni</Link>
+                <div className={styles.sections}>
+                    <Link className={styles.sec} to="/PWAinstall">Kuinka asennan sivun tietokoneelleni</Link>
+                    <Link className={styles.sec} to="/PWAinstallmobile">Kuinka asennan sivun puhelimelleni</Link>
                 </div>
             </div>
         </div>

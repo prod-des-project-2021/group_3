@@ -19,23 +19,24 @@ export default function PWAinstall() {
             <div className={styles.container}>
             <Title title='Kuinka asennan sivun tietokoneelleni'/>
             <Caption text='Tässä ohjeessa opetetaan, kuinka tämän sivuston voi asentaa omalle tietokoneelle.'/>
-            <Content text='Vaihe 1. Avaa Microsoft Edge nettiselain, jonka logo näyttää tältä'/>
+            <Content start='Vaihe 1.'text='Avaa Microsoft Edge nettiselain, jonka logo näyttää tältä'/>
             <div className={styles.image}>
                 <Imgcontainer alt='edge'imgsrc={Edgepicture}/>
             </div>
-            <Content text='Vaihe 2. Kun selain on auki, mene nettisivulle *sivun osoite*'/>
-            <Content text='Vaihe 3. Paina selaimen kulmassa olevaa kolme pistettä nappia'/>
+            <Content start='Vaihe 2.'text='Kun selain on auki, mene nettisivulle *sivun osoite*'/>
+            <Content start='Vaihe 3.'text='Paina selaimen kulmassa olevaa kolme pistettä nappia'/>
             <Imgcontainer alt='Settings' imgsrc={threedots}/>
-            <Content text='Vaihe 4. Tämä avaa valikon. Valikosta etsitän vaihtoehto "Sovellukset"'/>
+            <Content start='Vaihe 4.'text='Tämä avaa valikon. Valikosta etsitän vaihtoehto "Sovellukset"'/>
             <div className={styles.image}>
                 <Imgcontainer alt='settings' imgsrc={settingspic}/> 
             </div>
-            <Content text='Vaihe 5. Tämä avaa uuden valikon jossa painetaan vaihtoehdosta "Asenna tämä sivu sovelluksena"'/>
+            <Content start='Vaihe 5.'text='Tämä avaa uuden valikon jossa painetaan vaihtoehdosta "Asenna tämä sivu sovelluksena"'/>
             <Imgcontainer alt='installpage' imgsrc={installpage}/>
-            <Content text='Vaihe 6. Nyt sivun yläosaan aukeaa uusi kohta. Kohdassa on sinisenä näkyvä teksti johon voi kirjoittaa haluamansa nimen sovellukselle. Kun olet valmis paina asenna näppäintä'/>
+            <Content start='Vaihe 6.'text='Nyt sivun yläosaan aukeaa uusi kohta. Kohdassa on sinisenä näkyvä teksti johon voi kirjoittaa haluamansa nimen sovellukselle. Kun olet valmis paina asenna näppäintä'/>
             <Imgcontainer alt='savepage' imgsrc={savepage} />
-            <Content text='Vaihe 7. Nyt pitäisi avautua uusi näkymä, jossa näkyy muutama vaihtoehto joista voit valita. Nyt sivusto on asennettu sovelluksena tietokoneeseesi ja voit painaa sovelluksen kuvaketta avataksesi sivuston'/>
+            <Content start='Vaihe 7.'text='Nyt pitäisi avautua uusi näkymä, jossa näkyy muutama vaihtoehto joista voit valita. Valitse näistä vaihtoehdoista "Kiinnitä tehtäväpalkkiin", "Kiinnitä aloitukseen" sekä "Luo työpöydän pikakuvake"'/>
             <Imgcontainer alt='savepage' imgsrc={newinstallpage} />
+            <Content start='Vaihe 8'text=' Nyt sivusto on asennettu sovelluksena tietokoneeseesi ja voit painaa sovelluksen kuvaketta avataksesi sivuston' />
             </div>
         </>
     )
