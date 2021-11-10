@@ -26,7 +26,7 @@ export default function section4_2() {
           </ul>
           Näissä ryhmissä keskustellaan elämästä maaseudulla ja siihen liittyvistä aiheista, kuten sukupolvenvaihdoksista, luopumisesta, jaksamisesta, tai yksinäisyydestä
         </>} buttonText='Keskustelemaan' link='https://tukinet.net/'/>
-        <img alt="" src={speechBubble}></img>
+        <img style={{'maxWidth':'100%'}} alt="" src={speechBubble}></img>
       </div>
     </div>
   )
