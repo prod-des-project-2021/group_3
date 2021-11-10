@@ -22,4 +22,10 @@
     max-height: 115px;
     background-color: #5b8a3c88;
   }
-} 
+}
+
+.icons{
+  font-size: 36px;
+  margin-left: 2vw;
+  margin-right: 2vw;
+}
