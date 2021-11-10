@@ -8,18 +8,8 @@
   background-color: #5b8a3c88;
 }
 
-.hamIcon {
-  height: 6vh;
-  margin-left: 2vw;
-}
-
 .menuTitle {
   color: black;
-}
-
-.icon{
-color: red;
-margin-right: 2vw;
 }
 
 @media only screen and (min-width: 992px) {
@@ -29,7 +19,7 @@ margin-right: 2vw;
     align-items: center;
     height:15vh;
     min-height: 23px;
-    max-height: 15vh;
+    max-height: 115px;
     background-color: #5b8a3c88;
   }
 } 
