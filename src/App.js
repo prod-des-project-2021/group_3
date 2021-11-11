@@ -9,7 +9,7 @@ import Sec4 from './components/section4';
 import Tutorials from './components/tutorials';
 import PWAinstall from './components/PWAinstall';
 import Vuosikello from './components/Vuosikello';
-
+import PWAinstallmobile from './components/PWAinstallmobile';
 
 function App() {
   return (
@@ -25,6 +25,7 @@ function App() {
             <Route path="Tutorials" element={<Tutorials />} />
             <Route path="PWAinstall" element={<PWAinstall />} />
             <Route path="Vuosikello" element={<Vuosikello />} />
+            <Route path="PWAinstallmobile" element={<PWAinstallmobile />} />
           </Routes>
         </BrowserRouter>
       </div>
