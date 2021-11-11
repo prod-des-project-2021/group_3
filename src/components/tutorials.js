@@ -1,6 +1,6 @@
 import React from 'react'
 import Title from './sectioncomponents/Title.js';
-import styles from './frontpage.module.css'
+import styles from './sectioncomponents/linkbutton.module.css'
 import anotherStyles from './sectionscontainer.module.css'
 //import Imgcontainer from './sectioncomponents/Imgcontainer.js';
 //import Content from './sectioncomponents/Content.js';
@@ -16,10 +16,9 @@ export default function Tutorials(props) {
              <div className={anotherStyles.container}>
                 <Title title='Ohjeet'/>
                 <Caption text='Tältä sivulta löydät ohjeita'/>
-                <div className={styles.sections}>
-                    <Link className={styles.sec} to="/PWAinstall">Kuinka asennan sivun tietokoneelleni</Link>
-                    <Link className={styles.sec} to="/PWAinstallmobile">Kuinka asennan sivun puhelimelleni</Link>
-                </div>
+                <Link className={styles.button} to="/PWAinstall">Kuinka asennan sivun tietokoneelleni</Link>
+                <Link className={styles.button} to="/PWAinstall">Kuinka asennan sivun tietokoneelleni</Link>
+                <Link className={styles.button} to="/PWAinstallmobile">Kuinka asennan sivun puhelimelleni</Link>
             </div>
         </div>
         </>
