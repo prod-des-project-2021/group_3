@@ -7,6 +7,7 @@ import Content from './sectioncomponents/Content.js';
 import Caption from './sectioncomponents/Caption.js';
 import Linkbutton from './sectioncomponents/linkbutton';
 import Intendedcontent from './sectioncomponents/Intendedcontent';
+import { Link } from "react-router-dom";
 
 export default function section4_1() {
   return (
@@ -28,6 +29,7 @@ export default function section4_1() {
         <Content text='Maatalousyrittäjän työ kulkee mukana vapaa-ajalla eikä yrittäjällä ole määrättyä työaikaa, vaan hän voi hyvin pitkälle suunnitella sen itse. Tästä johtuen työ- ja vapaa-ajan erottaminen toisistaan voi olla vaikeaa. Esimerkiksi karjataloutta harjoittava yrittäjä tekee usein jopa yli 12 tunnin mittaisia työpäiviä. Sesonkiaikoina työpäivän pituus nousee vielä tätä suuremmaksi. (Lätti & Karttunen 2010.) Omasta hyvinvoinnista huolehtiminen voi olla hankalaa, jos työ- ja vapaa-aika eivät ole tasapainossa eikä palautumiselle jää riittävästi aikaa.'/>
         {/* The document has instructions about 'year-clock' It should be inserted here */}
         <div style={{color:'red', fontSize: '35px', textAlign: 'center'}}>VUOSIKELLO TÄHÄN</div>
+        <Link style={{color:'red', fontSize: '35px', textAlign: 'center'}} to="/Vuosikello">VUOSIKELLOON</Link>
         <Content start='Omaa terveydentilaa voi seurata' text ='erilaisilla sovelluksilla esim. aktiivisuutta ja askelmäärää. Sykkeen vaihtelu ja leposykkeen taso antavat tietoa palautumisesta ja stressistä. '/>
         <Intendedcontent text='Markkinoilla on erilaisia sovelluksia, joita voi ladata omaa älypuhelimeen, tablettiin tai omalle tietokoneelle. Sovellusten kautta voi seurata omia terveyteen ja hyvinvointiin liittyviä asioita ja kertynyttä dataan voi hyödyntää esim. seurannassa. Näitä on erilaisia älykelloja ja älysormuksia, joihin on lisätty useita eri ominaisuuksia. esim. Polar flow, Fitbit, Yazio, askelmäärät. Nämä keräävät päivittäistä tilastoa kehontoiminnoista.'/>
         <Intendedcontent text='Naisille on kehitetty erityinen kuukautissovellus Flo, mikä tarjoaa käyttäjälle monipuolisen mahdollisuuden pitää kirjaa omaan hyvinvointiin liittyvistä oireista. Sovellus ennustaa kuukautiset ja ovulaatiopäivän käyttäjän antamien tietojen mukaan. Lisäksi sovelluksen avulla voi tarkkailla muun muassa yöunien pituutta, otettujen askelten määrää, päivässä juodun veden määrää, painon kehitystä, mielialaa, fyysisiä oireita, seksuaalista aktiivisuutta ja valkovuodon laatua. Kuukautisten aikana sovellukseen kirjataan myös vuodon määrä. Lisäksi sovelluksen voi asettaa muistuttamaan e-pillerin ottamisesta ja siihen voi kirjata tiedon tehdyistä raskaustesteistä ja niiden tuloksista. ilmaiseksi Androidille ja iPhonelle.'/>

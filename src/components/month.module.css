@@ -1,0 +1,74 @@
+.box {
+  width: 33%;
+  min-width: 250px;
+  height: 200px;
+  border: 1px solid black;
+}
+
+.title {
+  text-align: center;
+  text-decoration: underline;
+}
+
+.aktiviteetit{
+  background:linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+	background-color:#ffec64;
+	border:1px solid #ffaa22;
+
+}
+
+.rahoitus{
+  background:linear-gradient(to bottom, #c62d1f 5%, #f24437 100%);
+	background-color:#c62d1f;
+	border:1px solid #d02718;
+}
+
+.kilpailutukset {
+  background:linear-gradient(to bottom, #dfbdfa 5%, #bc80ea 100%);
+	background-color:#dfbdfa;
+	border:1px solid #c584f3;
+}
+
+.messut {
+  background:linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+	background-color:#79bbff;
+	border:1px solid #337bc4;
+}
+
+.markkinointi {
+	background:linear-gradient(to bottom, #74ad5a 5%, #68a54b 100%);
+	background-color:#74ad5a;
+	border:1px solid #3b6e22;
+}
+
+.task {
+  position: relative;
+	color:#ffffff;
+	font-size:13px;
+	font-weight:bold;
+	padding:6px 12px;
+  margin: 6px;
+  width: fit-content;
+}
+
+.task .info {
+  visibility: hidden;
+  width: 120px;
+  background-color: rgb(34, 30, 30);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 10px 5px;
+  position: absolute;
+  z-index: 1;
+  top: -2px;
+  left: 105%;  
+}
+
+.task:hover .info {
+  visibility: visible;
+}
+
+.starIcon{
+  margin-left: 5px;
+}
