@@ -3,6 +3,7 @@
   min-width: 250px;
   height: 200px;
   border: 1px solid black;
+  border-radius: 3px;
 }
 
 .title {
@@ -11,32 +12,31 @@
 }
 
 .aktiviteetit{
-  background:linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
-	background-color:#ffec64;
-	border:1px solid #ffaa22;
-
+  background:#ffde22;
+	background-color:hsl(36, 82%, 51%);
+	border:1px solid #a56600;
 }
 
 .rahoitus{
-  background:linear-gradient(to bottom, #c62d1f 5%, #f24437 100%);
-	background-color:#c62d1f;
-	border:1px solid #d02718;
+  background:#f84235;
+	background-color:#df4638;
+	border:1px solid #a31c10;
 }
 
 .kilpailutukset {
-  background:linear-gradient(to bottom, #dfbdfa 5%, #bc80ea 100%);
-	background-color:#dfbdfa;
+  background:#dfbdfa;
+	background-color:#d9aaff;
 	border:1px solid #c584f3;
 }
 
 .messut {
-  background:linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
-	background-color:#79bbff;
+  background:#79bbff;
+	background-color:#60b0ff;
 	border:1px solid #337bc4;
 }
 
 .markkinointi {
-	background:linear-gradient(to bottom, #74ad5a 5%, #68a54b 100%);
+	background: #74ad5a;
 	background-color:#74ad5a;
 	border:1px solid #3b6e22;
 }
@@ -49,6 +49,7 @@
 	padding:6px 12px;
   margin: 6px;
   width: fit-content;
+  border-radius: 3px;
 }
 
 .task .info {
