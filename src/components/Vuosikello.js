@@ -13,10 +13,6 @@ const arr3 = [{task: 'tilikauden päätös', m:'joulukuu', category:'rahoitus', 
 const arr4 = [{task: 'tarjouspyyntöön osallistuminen', m:'toukokuu', category:'kilpailutukset', info: 'kouluruokailujen perunoiden kilpailutukset', stage:'hsl(36, 82%, 51%)'}]
 const arr5 = [{task: 'koulutus', m:'syyskuu', category:'aktiviteetit', info: 'Koulutus Pihtiputaalla', stage:'black'}]
 
-function changeStar(){
-
-}
-
 export default function vuosikello() {
   return (
     <>

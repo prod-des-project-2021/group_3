@@ -52,3 +52,17 @@
     position:relative;
     top:1px;
 }
+
+.cowContainer {
+  float: right;
+  position: sticky;
+  top: 200px;
+  right: 1px;
+}
+
+.cow {
+  position: absolute;
+  top: 1px;
+  right: -14px;
+  width: 150px;
+}
