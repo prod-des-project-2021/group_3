@@ -1,16 +1,8 @@
 html {
-  background-image: url("pelto11.jpg");
+  background-image: url("field2.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
-}
-
-@media only screen and (min-width: 960px){
-  html {
-    background-image: url("pelto11.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 100%;
-  }
+  background-size: cover;
 }
 
 body {
