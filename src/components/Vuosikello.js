@@ -7,11 +7,15 @@ import Content from './sectioncomponents/Content'
 import Star from '@material-ui/icons/Star';
 import Backbutton from './sectioncomponents/Backbutton';
 
-const arr = [{task: 'markkinointikampanja', m:'tammikuu', category:'markkinointi', info: 'tähän lisäinfoa?'},{task: 'nettisivut', m:'tammikuu', category:'aktiviteetit', info: 'tee nettisivut'}]
-const arr2 = [{task: 'paikallisten yrittäjien messut', m:'maaliskuu', category:'messut', info: 'messut 23.3. ota mukaan lehmäpuku, ota hyvä kuva blogia varten'},{task: 'blogikirjoitus', m:'maaliskuu', category:'markkinointi', info: 'tee blogipostaus messuista'}]
-const arr3 = [{task: 'tilikauden päätös', m:'joulukuu', category:'rahoitus', info: 'muista lisätä maaliskuun messukulut'}]
-const arr4 = [{task: 'tarjouspyyntöön osallistuminen', m:'toukokuu', category:'kilpailutukset', info: 'kouluruokailujen perunoiden kilpailutukset'}]
-const arr5 = [{task: 'koulutus', m:'syyskuu', category:'aktiviteetit', info: 'Koulutus Pihtiputaalla'}]
+const arr = [{task: 'markkinointikampanja', m:'tammikuu', category:'markkinointi', info: 'tähän lisäinfoa?', stage:'green'},{task: 'nettisivut', m:'tammikuu', category:'aktiviteetit', info: 'tee nettisivut', stage:'green'}]
+const arr2 = [{task: 'paikallisten yrittäjien messut', m:'maaliskuu', category:'messut', info: 'messut 23.3. ota mukaan lehmäpuku, ota hyvä kuva blogia varten', stage:'red'},{task: 'blogikirjoitus', m:'maaliskuu', category:'markkinointi', info: 'tee blogipostaus messuista', stage:'green'}]
+const arr3 = [{task: 'tilikauden päätös', m:'joulukuu', category:'rahoitus', info: 'muista lisätä maaliskuun messukulut', stage:'green'}]
+const arr4 = [{task: 'tarjouspyyntöön osallistuminen', m:'toukokuu', category:'kilpailutukset', info: 'kouluruokailujen perunoiden kilpailutukset', stage:'hsl(36, 82%, 51%)'}]
+const arr5 = [{task: 'koulutus', m:'syyskuu', category:'aktiviteetit', info: 'Koulutus Pihtiputaalla', stage:'black'}]
+
+function changeStar(){
+
+}
 
 export default function vuosikello() {
   return (
@@ -43,7 +47,7 @@ export default function vuosikello() {
             <div className={`${actStyles.task} ${actStyles.markkinointi}`}>Markkinointipampanjat ja -aktiviteetit</div>
           </div>
           <div className={styles.starContainer}>
-            <Star className={styles.starIcon} style={{color:'green'}}/> Tehty
+            <Star className={styles.starIcon} style={{color:'green', backgroundColor:'black', padding:'2px', borderRadius:'20px' }}/> Tehty
             <Star className={styles.starIcon} style={{color:'hsl(36, 82%, 51%)'}}/> Menossa
             <Star className={styles.starIcon} style={{color:'red'}}/> Ei aloitettu
             <Star className={styles.starIcon} style={{color:'black'}}/> Siirtyy ensi vuoteen
