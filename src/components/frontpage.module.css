@@ -17,13 +17,13 @@
     color:#ffffff;
 }  
 
-@media only screen and (min-width: 847px) {
+@media only screen and (min-width: 849px) {
     .sec{
         flex-basis: 340px;
     }
 }
 
-@media only screen and (max-width: 847px) {
+@media only screen and (max-width: 848px) {
     .sections{
         flex-direction: column;
     }
