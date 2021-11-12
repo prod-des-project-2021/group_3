@@ -8,7 +8,7 @@ export default function Intendedcontent(props) {
   if (props.link) {
     content = 
     <>
-      {props.text}
+      {props.text}<br/>
       <Linkbutton buttonText={props.buttonText} link={props.link}/>
     </> 
   }

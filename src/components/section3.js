@@ -20,7 +20,7 @@ export default function section3() {
         <Caption text ='Hyvinvointimme koostuu monesta eri tekijästä, joihin voimme itse vaikuttaa. Pienilläkin muutoksilla voi olla vaikutuksia hyvinvointiimme. Työn, toiminnan ja levon tasapaino, sopiva liikunnan määrä sekä terveellinen ja hyvä ruoka vaikuttavat niin aivoterveyteemme kuin myös mielenterveytemme sitä kautta kokonaisvaltaiseen hyvinvointiimme. '/>
         <Imgcontainer alt="kuva aivoista" imgsrc={aivot}/>
         <Content start='Aivoterveydestä' text ='puhutaan nykyään paljon ja kehotetaan pitämään huolta omista aivoista. Aivoterveydellä tarkoitetaan laaja-alaisesti aivojen hyvinvointia. Se on ihmisen toimintakykyisyyden perusta, joka vaatii kaikkein monimutkaisinta eri aivojen osien yhteistoimintaa.'/>
-        <Intendedcontent buttonText='Lue lisää' link='https://www.aivoliitto.fi/aivoterveys/'/>
+        <Linkbutton buttonText='Lue lisää' link='https://www.aivoliitto.fi/aivoterveys/'/>
         <Intendedcontent buttonText='Lue lisää' link='https://www.rakkaataivot.fi/aivojen-rakenne-ja-toiminta/' text='Aivoterveydestä ja aivojen muovautuvuudesta (Aivosäätiö ja Merck Oy, Suomi)'/>
         <Intendedcontent buttonText='Oppaaseen' link='https://www.muistiliitto.fi/application/files/3015/0922/4743/Kohti_parempaa_aivoterveytta.pdf' text='Kohti parempaa aivoterveyttä. Opas aivojen huoltoon'/>
         <Intendedcontent buttonText='Huoltokirjaan' link='https://www.olipakerranmies.fi/terveet-elamantavat-vaalivat-aivoterveytta/' text='Aikuisen miehen huoltokirja. Terveet elämäntavat vaalivat aivoterveyttä.'/>
