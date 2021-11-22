@@ -41,6 +41,10 @@ export default class App extends Component {
     });
   }
 
+  addActivity = () => {
+
+  }
+
   updateUser = (event) =>{
     this.setState({ user: event.target.value });
     console.log(this.state.user);
