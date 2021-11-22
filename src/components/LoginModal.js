@@ -3,7 +3,7 @@ import styles from './loginModal.module.css';
 
 
 
-export default function LoginModal(props) {
+const LoginModal = (props) => {
     let login;
     let register;
 
@@ -11,25 +11,25 @@ export default function LoginModal(props) {
     const [pass, setPass] = useState('');
     const [confirmation, setConfirmation] = useState('');
 
-    // function compare(){    
-    //     console.log("pass is" + pass)
-    //     if({pass})
-    //     {
-    //         if({pass} === {confirmation}){
-    //             if({user}){
-    //                 /* send to api */
-    //                 console.log("success")
-    //            }
-    //         }
-    //         else{
-    //             console.log("password does not match")
-    //         }
-    //     }
-    //     else{
-    //         // password not given
-    //         console.log("no password given")
-    //     }
-    // }
+    function compare(){    
+        console.log("pass is" + pass)
+        if({pass})
+        {
+            if(pass === confirmation){
+                if({user}){
+                    /* send to api */
+                    console.log("success")
+               }
+            }
+            else{
+                console.log("password does not match")
+            }
+        }
+        else{
+            // password not given
+            console.log("no password given")
+        }
+    }
 
     login = (
         <div className={styles.modalBackground}>
@@ -56,7 +56,7 @@ export default function LoginModal(props) {
                     <input onChange={e => setPass(e.target.value)} id={"password"} /><br/>
                     <label>Confirm Password</label><br/>
                     <input onChange={e => setConfirmation(e.target.value)} id={"confirmation"} /><br/><br/>
-                    <div /* onClick={()=> compare()} */> Confirm </div> <br/>
+                    <div onClick={()=> compare()} > Confirm </div> <br/>
                     <div onClick={()=> display(login)} className={styles.register}> Login </div>
                 </form>
             </div>
@@ -68,9 +68,19 @@ export default function LoginModal(props) {
     console.log(pass)
     console.log(confirmation)
 
+    // let cont = {content};
+    var output;
+    if (content == login){
+        output = login
+    }
+    else{
+        output = register
+    }
+
+    console.log(content)
+
     return (
-        <>
-        {content}
-        </>
+        output
     )
 }
+export default LoginModal
