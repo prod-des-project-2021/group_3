@@ -7,35 +7,26 @@ import Content from './sectioncomponents/Content'
 import Star from '@material-ui/icons/Star';
 import Backbutton from './sectioncomponents/Backbutton';
 
-const arr = [{task: 'markkinointikampanja', m:'tammikuu', category:'markkinointi', info: 'tähän lisäinfoa?', stage:'green'},{task: 'nettisivut', m:'tammikuu', category:'aktiviteetit', info: 'tee nettisivut', stage:'green'}]
-const arr2 = [{task: 'paikallisten yrittäjien messut', m:'maaliskuu', category:'messut', info: 'messut 23.3. ota mukaan lehmäpuku, ota hyvä kuva blogia varten', stage:'red'},{task: 'blogikirjoitus', m:'maaliskuu', category:'markkinointi', info: 'tee blogipostaus messuista', stage:'green'}]
-const arr3 = [{task: 'tilikauden päätös', m:'joulukuu', category:'rahoitus', info: 'muista lisätä maaliskuun messukulut', stage:'green'}]
-const arr4 = [{task: 'tarjouspyyntöön osallistuminen', m:'toukokuu', category:'kilpailutukset', info: 'kouluruokailujen perunoiden kilpailutukset', stage:'hsl(36, 82%, 51%)'}]
-const arr5 = [{task: 'koulutus', m:'syyskuu', category:'aktiviteetit', info: 'Koulutus Pihtiputaalla', stage:'black'}]
+export default function Vuosikello(props) {
 
-function changeStar(){
-
-}
-
-export default function vuosikello() {
   return (
     <>
       <Backbutton/>
       <div className={anotherStyle.container}>
         <div className={styles.year}>2021</div>
         <div className={styles.months}>
-          <Month month='Tammikuu' tasks={arr}/>
-          <Month month='Helmikuu'/>
-          <Month month='Maaliskuu' tasks={arr2}/>
-          <Month month='Huhtikuu'/>
-          <Month month='Toukokuu' tasks={arr4}/>
-          <Month month='Kesäkuu'/>
-          <Month month='Heinäkuu'/>
-          <Month month='Elokuu'/>
-          <Month month='Syyskuu' tasks={arr5}/>
-          <Month month='Lokakuu'/>
-          <Month month='Marraskuu'/>
-          <Month month='Joulukuu' tasks={arr3}/>
+          <Month name='Tammikuu' month={1} tasks={props.tasks}/>
+          <Month name='Helmikuu' month={2} tasks={props.tasks}/>
+          <Month name='Maaliskuu' month={3} tasks={props.tasks}/>
+          <Month name='Huhtikuu' month={4} tasks={props.tasks}/>
+          <Month name='Toukokuu' month={5} tasks={props.tasks}/>
+          <Month name='Kesäkuu' month={6} tasks={props.tasks}/>
+          <Month name='Heinäkuu'month={7} tasks={props.tasks}/>
+          <Month name='Elokuu' month={8} tasks={props.tasks}/>
+          <Month name='Syyskuu' month={9} tasks={props.tasks}/>
+          <Month name='Lokakuu'month={10} tasks={props.tasks}/>
+          <Month name='Marraskuu'month={11} tasks={props.tasks}/>
+          <Month name='Joulukuu' month={12} tasks={props.tasks}/>
         </div>
         <div className={styles.infoContainer}>
           <div className={styles.actContainer}>

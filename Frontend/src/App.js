@@ -22,14 +22,22 @@ export default class App extends Component {
     this.state = {
       user:'',
       pass:'',
-      conf:''
+      conf:'',
+      tasks:[]
     };
+  }
+
+  componentDidMount() {
+    axios.get(urlAddress + '/mytasks/1' )
+    .then((response) => {
+      this.setState({ tasks: response.data });
+    });
   }
 
   getUsersTasks = (UID) => {
     axios.get(urlAddress + '/mytasks/1' )
     .then((response) => {
-      console.log(response.data)
+      this.setState({ tasks: response.data });
     });
   }
 
@@ -67,7 +75,7 @@ export default class App extends Component {
               <Route path="Sec4" element={<Sec4 />} />
               <Route path="Tutorials" element={<Tutorials />} />
               <Route path="PWAinstall" element={<PWAinstall />} />
-              <Route path="Vuosikello" element={<Vuosikello />} />
+              <Route path="Vuosikello" element={<Vuosikello getUsersTasks={this.getUsersTasks} tasks={this.state.tasks} />} />
               <Route path="PWAinstallmobile" element={<PWAinstallmobile />} />
             </Routes>
           </BrowserRouter>
