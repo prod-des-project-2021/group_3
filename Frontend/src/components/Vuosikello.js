@@ -6,6 +6,8 @@ import actStyles from './month.module.css'
 import Content from './sectioncomponents/Content'
 import Star from '@material-ui/icons/Star';
 import Backbutton from './sectioncomponents/Backbutton';
+import NewActivity from './NewActivity.js';
+import AddIcon from '@material-ui/icons/AddCircleOutline';
 
 export default function Vuosikello(props) {
 
@@ -14,6 +16,7 @@ export default function Vuosikello(props) {
       <Backbutton/>
       <div className={anotherStyle.container}>
         <div className={styles.year}>2021</div>
+        <AddIcon onClick={()=> props.toggleModalActivity()} className={styles.addIcon}/>
         <div className={styles.months}>
           <Month name='Tammikuu' month={1} tasks={props.tasks}/>
           <Month name='Helmikuu' month={2} tasks={props.tasks}/>
@@ -43,6 +46,7 @@ export default function Vuosikello(props) {
             <Star className={styles.starIcon} style={{color:'red'}}/> Ei aloitettu
             <Star className={styles.starIcon} style={{color:'black'}}/> Siirtyy ensi vuoteen
           </div>
+          <NewActivity addNewActivity={props.addNewActivity} toggleModalActivity={props.toggleModalActivity} showModalActivity ={props.showModalActivity}/>
         </div>
       </div>
     </>

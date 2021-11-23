@@ -6,13 +6,12 @@ export default function month(props) {
 
   var output = <></>
   if (props.tasks) {
-    props.tasks.map(task => {
-      if(task.month === props.month) {
-        output= <>
-        <div className={`${styles.task} ${styles[task.category]}`}>{task.task_name} <span className={styles.info}>{task.info}</span> 
-        <Star className={styles.starIcon} style={{color: task.stage}}/></div> </>
-      }
-    })
+    output= <> {props.tasks.filter(task => task.month == props.month).map(task => (
+      <div className={`${styles.task} ${styles[task.category]}`}>{task.task_name} <span className={styles.info}>{task.info}</span> 
+        <Star className={styles.starIcon} style={{color: task.stage}}/>
+      </div>
+      ))}
+    </>
   }
 
   return (

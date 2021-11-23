@@ -23,7 +23,8 @@ export default class App extends Component {
       user:'',
       pass:'',
       conf:'',
-      tasks:[]
+      tasks:[],
+      showModalActivity: false
     };
   }
 
@@ -41,8 +42,29 @@ export default class App extends Component {
     });
   }
 
-  addActivity = () => {
+  addNewActivity = (task, info, month, category) => {
+    //Here the userId should be received from state
+    let userID = 1
+    axios.post(urlAddress + '/yearclockActivities', 
+    {
+      user_id: userID,
+      task_name: task,
+      month: month,
+      category: category,
+      info: info, 
+      stage: 'red'
+    })
+    .then((response => {
+      this.componentDidMount();
+      this.toggleModalActivity();
+    }))
+    .catch(error => {
+      alert(error);
+    })
+  }
 
+  toggleModalActivity = () => {
+    this.setState({showModalActivity: !this.state.showModalActivity});
   }
 
   updateUser = (event) =>{
@@ -79,7 +101,7 @@ export default class App extends Component {
               <Route path="Sec4" element={<Sec4 />} />
               <Route path="Tutorials" element={<Tutorials />} />
               <Route path="PWAinstall" element={<PWAinstall />} />
-              <Route path="Vuosikello" element={<Vuosikello getUsersTasks={this.getUsersTasks} tasks={this.state.tasks} />} />
+              <Route path="Vuosikello" element={<Vuosikello addNewActivity={this.addNewActivity} getUsersTasks={this.getUsersTasks} showModalActivity={this.state.showModalActivity} toggleModalActivity={this.toggleModalActivity} tasks={this.state.tasks} />} />
               <Route path="PWAinstallmobile" element={<PWAinstallmobile />} />
             </Routes>
           </BrowserRouter>
