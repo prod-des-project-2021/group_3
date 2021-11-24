@@ -1,23 +1,21 @@
 import React from 'react'
 import styles from './month.module.css';
-import Star from '@material-ui/icons/Star';
+import Task from './Task.js';
 
-export default function month(props) {
+export default function Month(props) {
 
   var output = <></>
   if (props.tasks) {
-    output= <> {props.tasks.filter(task => task.month == props.month).map(task => (
-      <div className={`${styles.task} ${styles[task.category]}`}>{task.task_name} <span className={styles.info}>{task.info}</span> 
-        <Star className={styles.starIcon} style={{color: task.stage}}/>
-      </div>
+    output= <> {props.tasks.filter(task => task.month === props.month).map(task => (
+     <Task task={task}/>
       ))}
     </>
   }
 
   return (
     <div className={styles.box}>
-      <div className={styles.title}>{props.name} +</div>
-      {output}
+      <div className={styles.title}>{props.name}</div>
+      <div className={styles.taskContainer}>{output}</div>
     </div>
   )
 }

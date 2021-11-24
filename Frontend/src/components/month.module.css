@@ -4,11 +4,19 @@
   height: 200px;
   border: 1px solid black;
   border-radius: 3px;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .title {
   text-align: center;
   text-decoration: underline;
+  position: sticky;
+  top:0;
+  background: floralwhite;
+  padding: 1px;
+  width: 100%;
+  z-index: 1;
 }
 
 .aktiviteetit{
@@ -44,7 +52,6 @@
 .task {
   position: relative;
 	color:#ffffff;
-	font-size:13px;
 	font-weight:bold;
 	padding:6px 12px;
   margin: 6px;
@@ -52,22 +59,16 @@
   border-radius: 3px;
 }
 
-.task .info {
-  visibility: hidden;
-  width: 120px;
-  background-color: rgb(34, 30, 30);
+.info {
+  width: fit-content;
+  background-color: rgb(58, 58, 58);
   color: #fff;
   text-align: center;
   border-radius: 6px;
-  padding: 10px 5px;
-  position: absolute;
-  z-index: 1;
-  top: -2px;
-  left: 105%;  
-}
+  padding: 10px 15px;
+  margin-left: 20px;
+  margin-right: 20px;
 
-.task:hover .info {
-  visibility: visible;
 }
 
 .starIcon{

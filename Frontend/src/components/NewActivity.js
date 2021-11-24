@@ -1,6 +1,8 @@
 import React from 'react'
 import styles from './newActivity.module.css';
 import buttonStyles from './sectioncomponents/linkbutton.module.css';
+import Close from '@material-ui/icons/Close';
+
 
 export default function NewActivity(props) {
 
@@ -20,15 +22,15 @@ export default function NewActivity(props) {
   else {
     return (
       <div className={styles.moduleContainer}>
-        <div onClick={props.toggleModalActivity} className={styles.xButton}>X</div>
+        <Close onClick={props.toggleModalActivity} className={styles.close}/>
         <div className={styles.title}>Luo uusi tehtävä</div>
         <div className={styles.formContainer}>
           <form className={styles.addActivity} onSubmit={post}>
             <label>Anna tehtävälle nimi</label>
-            <input type="text" name="taskName" maxLength="200" className={styles.textBox}/>
+            <input placeholder='Aktiviteetin nimi...' type="text" name="taskName" maxLength="200" className={styles.nameBox}/>
             <label>Lisäinfoa koskien tehtävää</label>
-            <input type="text" name="info" maxLength="250" className={styles.textBox}/>
-            <label for="months">Valitse kuukausi:</label>
+            <textarea placeholder='Lisätietoja...' type="text" name="info" maxLength="250" cols={50} rows={4} className={styles.infoBox}/>
+            <label for="months">Valitse kuukausi</label> <br></br>
             <select name="months" id="months">
               <option value="1">Tammikuu</option>
               <option value="2">Helmikuu</option>
@@ -43,7 +45,7 @@ export default function NewActivity(props) {
               <option value="11">Marraskuu</option>
               <option value="12">Joulukuu</option>
             </select> <br></br>
-            <label for="categorys">Valitse kategoria:</label>
+            <label for="categorys">Valitse kategoria</label> <br></br>
             <select name="categorys" id="categorys">
               <option value="aktiviteetit">Aktiviteetit</option>
               <option value="rahoitus">Rahoitus</option>
