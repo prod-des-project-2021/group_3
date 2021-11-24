@@ -31,12 +31,12 @@ app.post('/signup', (req, res) => {
 
   console.log('test')
   console.log(hashedPassword)
-  // client.query('INSERT INTO users(user_id, username, password) VALUES ($1, $2, $3)', 
-  // [uuidv4(), username, hashedPassword])
-  // .then(results => {
-  //   res.sendStatus(201);
-  // })
-  // .catch(error => res.sendStatus(500));
+  client.query('INSERT INTO users(user_id, username, password) VALUES ($1, $2, $3)', 
+  [uuidv4(), username, hashedPassword])
+  .then(results => {
+    res.sendStatus(201);
+  })
+  .catch(error => res.sendStatus(500));
 })
 
 //checking login details with existing ones in db
@@ -49,9 +49,8 @@ app.post('/logon', (req, res) => {
       bcrypt.compare(password, element.password).then(bcryptResult =>{
         if(bcryptResult == true){
           console.log("There was a match!!!!!");
-          console.log(element.id);
-          res.json(element.id);
-          res.status(202).send('Login successful')
+          console.log(element.user_id);
+          res.json(element.user_id);
         }
         else{
           console.log("There was not a match!!!!!");
