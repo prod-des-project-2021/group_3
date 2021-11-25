@@ -9,7 +9,6 @@ export default function Task(props) {
   const [open, setOpen] = useState(false);
 
   function modify (task) {
-    console.log(task);
     props.toggleModalActivity(task);
   }
 

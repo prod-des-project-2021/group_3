@@ -66,7 +66,6 @@ export default class App extends Component {
   }
 
   modifyActivity = (task, info, month, category, stage, id) => {
-    console.log(id);
     axios.put(urlAddress + '/updateActivity', 
     {
       task_name: task,
@@ -86,7 +85,6 @@ export default class App extends Component {
 
   toggleModalModify = (task) => {
     this.setState({activityToBeUpdated: {task} });
-    console.log(this.state.activityToBeUpdated);
     this.setState({showModalModify: !this.state.showModalModify});
   }
 

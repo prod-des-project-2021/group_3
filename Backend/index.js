@@ -40,6 +40,15 @@ app.put('/updateActivity', (req, res) => {
   .catch(error => res.sendStatus(500));
 })
 
+//delete spesific activity
+app.delete('/deleteActivity', (req, res) => {
+  client.query('DELETE FROM vuosikello WHERE task_id = $1', [req.body.task_id])
+  .then(results => {
+    res.status(201).send('Row deleted!')
+  })
+  .catch(error => res.sendStatus(500));
+})
+
 
 app.post('/us', (req, res) => {
   let username = 'feeeeeeeeelix'
