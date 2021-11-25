@@ -24,7 +24,9 @@ export default class App extends Component {
       pass:'',
       conf:'',
       tasks:[],
-      showModalActivity: false
+      showModalActivity: false,
+      showModalModify: false,
+      activityToBeUpdated: null
     };
   }
 
@@ -61,6 +63,31 @@ export default class App extends Component {
     .catch(error => {
       alert(error);
     })
+  }
+
+  modifyActivity = (task, info, month, category, stage, id) => {
+    console.log(id);
+    axios.put(urlAddress + '/updateActivity', 
+    {
+      task_name: task,
+      month: month,
+      category: category,
+      info: info, 
+      stage: stage,
+      task_id: id
+    }).then((response => {
+      this.componentDidMount();
+      this.setState({showModalModify: !this.state.showModalModify});
+    }))
+    .catch(error => {
+      alert(error);
+    })
+  }
+
+  toggleModalModify = (task) => {
+    this.setState({activityToBeUpdated: {task} });
+    console.log(this.state.activityToBeUpdated);
+    this.setState({showModalModify: !this.state.showModalModify});
   }
 
   toggleModalActivity = () => {
@@ -100,8 +127,8 @@ export default class App extends Component {
               <Route path="Sec2" element={<Sec2 />} />
               <Route path="Sec4" element={<Sec4 />} />
               <Route path="Tutorials" element={<Tutorials />} />
-              <Route path="PWAinstall" element={<PWAinstall />} />
-              <Route path="Vuosikello" element={<Vuosikello addNewActivity={this.addNewActivity} getUsersTasks={this.getUsersTasks} showModalActivity={this.state.showModalActivity} toggleModalActivity={this.toggleModalActivity} tasks={this.state.tasks} />} />
+              <Route path="PWAinstall" element={<PWAinstall />} /> 
+              <Route path="Vuosikello" element={<Vuosikello addNewActivity={this.addNewActivity} getUsersTasks={this.getUsersTasks} showModalActivity={this.state.showModalActivity} toggleModalActivity={this.toggleModalActivity} tasks={this.state.tasks} modifyActivity={this.modifyActivity} toggleModalModify={this.toggleModalModify} showModalModify ={this.state.showModalModify} activityToBeUpdated={this.state.activityToBeUpdated}/>} />
               <Route path="PWAinstallmobile" element={<PWAinstallmobile />} />
             </Routes>
           </BrowserRouter>
