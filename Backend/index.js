@@ -31,6 +31,16 @@ app.post('/yearclockActivities', (req, res) => {
   .catch(error => res.sendStatus(500));
 })
 
+//updating spesific activity
+app.put('/updateActivity', (req, res) => {
+  client.query('UPDATE vuosikello SET task_name = $1, month = $2, category = $3, info = $4, stage = $5 WHERE task_id = $6', [req.body.task_name, req.body.month, req.body.category, req.body.info, req.body.stage, req.body.task_id])
+  .then(results => {
+    res.sendStatus(200);
+  })
+  .catch(error => res.sendStatus(500));
+})
+
+
 app.post('/us', (req, res) => {
   let username = 'feeeeeeeeelix'
   let password = 'felixisthebest'

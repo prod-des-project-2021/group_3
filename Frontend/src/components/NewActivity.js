@@ -53,8 +53,8 @@ export default function NewActivity(props) {
               <option value="messut">Messut ja tapahtumat</option>
               <option value="markkinointi">Markkinointikampanja/-aktiviteetti</option>
             </select> <br></br>
-            <input type="submit" value="Submit" className={buttonStyles.button}/>
-            <input type="button" value="Cancel" onClick={props.toggleModalActivity} className={styles.cancel}/>
+            <input type="submit" value="Lisää" className={buttonStyles.button}/>
+            <input type="button" value="Peruuta" onClick={props.toggleModalActivity} className={styles.cancel}/>
           </form>
         </div>
       </div>
