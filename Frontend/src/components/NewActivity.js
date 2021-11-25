@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './newActivity.module.css';
 import buttonStyles from './sectioncomponents/linkbutton.module.css';
 import Close from '@material-ui/icons/Close';
+import Delete from '@material-ui/icons/DeleteForever';
 
 
 export default function NewActivity(props) {
@@ -69,7 +70,7 @@ export default function NewActivity(props) {
               <option value="messut">Messut ja tapahtumat</option>
               <option value="markkinointi">Markkinointikampanja/-aktiviteetti</option>
             </select> <br></br>
-            {props.task &&  
+            {props.task ?  
             <>
               <label htmlFor="stage">Valitse tehtävän tila</label> <br></br>
               <select name="stage" id="stage" defaultValue={props.task.task.stage}>
@@ -78,9 +79,11 @@ export default function NewActivity(props) {
                 <option value="green">Tehty</option>
                 <option value="black">Siirtyy ensi vuoteen</option>
               </select> <br></br>
-            </> }
+            </> :
+            <input type='hidden' name='stage' value='red'/>}
             <input type="submit" value={props.submit} className={buttonStyles.button}/>
             <input type="button" value="Peruuta" onClick={props.toggleModalActivity} className={styles.cancel}/>
+            {props.task && <Delete onClick={()=>props.deleteActivity(props.task.task.task_id)}className={styles.delete}/>}
           </form>
         </div>
       </div>

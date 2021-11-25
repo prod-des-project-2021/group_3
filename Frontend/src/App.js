@@ -83,6 +83,19 @@ export default class App extends Component {
     })
   }
 
+  deleteActivity = (id) => {
+    axios.delete(urlAddress + '/deleteActivity', 
+    {
+      data: {task_id: id}
+    }).then((response => {
+      this.componentDidMount();
+      this.setState({showModalModify: !this.state.showModalModify});
+    }))
+    .catch(error => {
+      alert(error);
+    })
+  }
+
   toggleModalModify = (task) => {
     this.setState({activityToBeUpdated: {task} });
     this.setState({showModalModify: !this.state.showModalModify});
@@ -126,7 +139,7 @@ export default class App extends Component {
               <Route path="Sec4" element={<Sec4 />} />
               <Route path="Tutorials" element={<Tutorials />} />
               <Route path="PWAinstall" element={<PWAinstall />} /> 
-              <Route path="Vuosikello" element={<Vuosikello addNewActivity={this.addNewActivity} getUsersTasks={this.getUsersTasks} showModalActivity={this.state.showModalActivity} toggleModalActivity={this.toggleModalActivity} tasks={this.state.tasks} modifyActivity={this.modifyActivity} toggleModalModify={this.toggleModalModify} showModalModify ={this.state.showModalModify} activityToBeUpdated={this.state.activityToBeUpdated}/>} />
+              <Route path="Vuosikello" element={<Vuosikello addNewActivity={this.addNewActivity} getUsersTasks={this.getUsersTasks} showModalActivity={this.state.showModalActivity} toggleModalActivity={this.toggleModalActivity} tasks={this.state.tasks} modifyActivity={this.modifyActivity} toggleModalModify={this.toggleModalModify} showModalModify ={this.state.showModalModify} activityToBeUpdated={this.state.activityToBeUpdated} deleteActivity={this.deleteActivity}/>} />
               <Route path="PWAinstallmobile" element={<PWAinstallmobile />} />
             </Routes>
           </BrowserRouter>

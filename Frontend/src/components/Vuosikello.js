@@ -47,7 +47,7 @@ export default function Vuosikello(props) {
             <Star className={styles.starIcon} style={{color:'black'}}/> Siirtyy ensi vuoteen
           </div>
           <NewActivity submit='Lisää' title='Luo uusi tehtävä' addNewActivity={props.addNewActivity} toggleModalActivity={props.toggleModalActivity} showModalActivity ={props.showModalActivity}/>
-          <NewActivity submit='Päivitä' task={props.activityToBeUpdated} title='Muokkaa aktiviteettia' addNewActivity={props.modifyActivity} toggleModalActivity={props.toggleModalModify} showModalActivity ={props.showModalModify}/>
+          <NewActivity deleteActivity={props.deleteActivity} submit='Päivitä' task={props.activityToBeUpdated} title='Muokkaa aktiviteettia' addNewActivity={props.modifyActivity} toggleModalActivity={props.toggleModalModify} showModalActivity ={props.showModalModify}/>
         </div>
       </div>
     </>
