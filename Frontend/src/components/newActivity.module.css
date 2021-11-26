@@ -1,0 +1,109 @@
+.moduleContainer {
+  max-width: 80%;
+  background: whitesmoke;
+  border: 1px solid #ccc;
+  margin-top: 150px;
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0vh;
+  z-index: 2;
+  padding: 20px;
+}
+
+.formContainer{
+  margin: 15px;
+}
+
+.formContainer * {
+  font-size: large;
+}
+
+.title {
+  padding-top: 20px;
+  font-size: x-large;
+  text-align: center;
+  font-weight: bold;
+}
+
+.close {
+  position: absolute;
+  right: 10px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+input[type=text], textarea  {
+  width: 90%;
+  display: flex;
+  border: 1px solid black;
+  border-radius: 5px;
+  flex-direction: column;
+  margin: 5px;
+  margin-bottom: 20px;
+  background: white;
+  font-family: inherit;
+}
+
+.nameBox {
+  height: 25px;
+}
+
+.infoBox {
+  height: 50px;
+}
+
+select {
+  margin: 5px;
+  height: 25px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.buttonContainer {
+  display: flex;
+  align-content: space-around;
+}
+
+input[type=submit] {
+  cursor: pointer;
+}
+
+.cancel {
+  width: fit-content;
+	box-shadow: 0px 10px 14px -7px #732727;
+	background:#882929;
+	border-radius:4px;
+	border:1px solid #522121;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-weight:bold;
+	padding:6px 12px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #8a3c3c;
+ 	margin-top: 10px;
+ 	margin-bottom: 10px;
+  	margin-left: 20px;
+	-webkit-user-select: none;
+ 	-khtml-user-select: none;
+ 	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+ 	user-select: none;
+}
+.cancel:hover {
+	background:linear-gradient(to bottom, #b35252 5%, #882929 100%);
+	background-color:#732727;
+}
+.cancel:active {
+	position:relative;
+	top:1px;
+}
+
+.delete {
+  float:right;
+  font-size: xx-large;
+}
