@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
 import './App.css';
+import React, { Component } from 'react'
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import axios from 'axios';
 
-import Menu from './components/Menu';
+import Header from './components/Menu';
 import Frontpage from './components/Frontpage';
 import Sec2 from './components/section2';
 import Sec3 from './components/section3';
@@ -105,31 +105,65 @@ export default class App extends Component {
     this.setState({showModalActivity: !this.state.showModalActivity});
   }
 
+  //Login/registration user input update
+
   updateUser = (event) =>{
     this.setState({ user: event.target.value });
-    console.log(this.state.user);
   }
 
+  //Login/registration password input update
   updatePass = (event) =>{
     this.setState({ pass: event.target.value });
-    console.log(this.state.pass);
   }
 
+  //Login/registration password confirmation input update
   updateConf = (event) =>{
     this.setState({ conf: event.target.value });
-    console.log(this.state.conf);
-
   }
 
+  //On login send data to API to verify User credentials
   onLogin = () => {
     let username = this.state.user;
     let password = this.state.pass;
+   
+    axios.post(urlAddress + '/logon', {
+      user: username,
+      pass: password
+    })
+    .then((response) => {
+      console.log(response.data)
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
+
+  //on Registration send data to API to submit values to DB
+  onRegister = () =>{
+    let username = this.state.user;
+    let password = this.state.pass;
+    let confirmation = this.state.conf;
+
+    if(password.toString().trim() === confirmation.toString() ){
+      axios.post( urlAddress + '/signup', {
+        user: username,
+        pass: password,
+      })
+      .then((response) => {
+        console.log(response.data)
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+    }
   }
 
   render() {
     return (
       <>
-        <Menu updateConf = {this.updateConf} updatePass = {this.updatePass} updateUser = {this.updateUser} pass = {this.state.pass} username= {this.state.user} conf_pass={this.state.conf}/>
+        <Header updateConf={this.updateConf} updatePass={this.updatePass} updateUser={this.updateUser}
+              onLogin={this.onLogin} onRegister={this.onRegister}
+              pass={this.state.pass} username={this.state.user} conf_pass={this.state.conf}/>
         <div className="container">
           <BrowserRouter>
             <Routes>

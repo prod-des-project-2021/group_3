@@ -3,18 +3,22 @@ const app = express();
 const port = 4000;
 const client = require('./db');
 const cors = require('cors');
+var bodyParser = require('body-parser')
 const { v4: uuidv4 } = require('uuid');
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
 
+
+app.use(bodyParser.json())
 app.use(cors());
 app.use(express.json());
-
 
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
-//getting tasks from spesific user
+//getting tasks from specific user
 app.get('/mytasks/:uid', (req, res) => {
   client.query('SELECT * FROM vuosikello WHERE user_id = $1', [req.params.uid]).then(results => {
     res.json(results.rows);
@@ -49,18 +53,44 @@ app.delete('/deleteActivity', (req, res) => {
   .catch(error => res.sendStatus(500));
 })
 
+//inserting registration details into db
+app.post('/signup', (req, res) => {
+  let username = req.body.user.toString().trim();
+  let password = req.body.pass.toString().trim();
 
-app.post('/us', (req, res) => {
-  let username = 'feeeeeeeeelix'
-  let password = 'felixisthebest'
+  const hashedPassword = bcrypt.hashSync(password, saltRounds);
 
+  console.log('test')
+  console.log(hashedPassword)
   client.query('INSERT INTO users(user_id, username, password) VALUES ($1, $2, $3)', 
-  ['1', username, password])
-.then(results => {
-res.sendStatus(201);
+  [uuidv4(), username, hashedPassword])
+  .then(results => {
+    res.sendStatus(201);
+  })
+  .catch(error => res.sendStatus(500));
 })
-.catch(error => res.sendStatus(500));
-});
+
+//checking login details with existing ones in db
+app.post('/logon', (req, res) => {
+  let username = req.body.user.toString().trim();
+  let password = req.body.pass.toString().trim();
+
+  client.query('SELECT * FROM users WHERE username = $1', [username]).then(results => {
+    results.rows.forEach(element => 
+      bcrypt.compare(password, element.password).then(bcryptResult =>{
+        if(bcryptResult == true){
+          console.log("There was a match!!!!!");
+          console.log(element.user_id);
+          res.json(element.user_id);
+        }
+        else{
+          console.log("There was not a match!!!!!");
+          res.status(406).send('Login credentials do not fit')
+        }
+      })
+      )
+  })
+})
 
 
 app.listen(port, () => {

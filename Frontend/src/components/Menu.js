@@ -8,6 +8,7 @@ export default function Menu(props) {
 
   const [content, display] = useState("");
 
+  //Removing the login object on screen when pressing x
   function hideLogin(){
     display("");
   }
@@ -17,7 +18,9 @@ export default function Menu(props) {
       <div className={styles.menu}> 
         <MenuIcon className={styles.icons}/>
         <div className = {styles.menuTitle}>Hyvinvoiva maaseutu</div>
-        <AccountCircleIcon onClick={()=> display(<LoginModal pass = {props.pass} user = {props.user} conf={props.conf} updateConf = {props.updateConf} updatePass = {props.updatePass} updateUser = {props.updateUser} hideLogin={() => hideLogin()} />)} className={styles.icons}/>
+        <AccountCircleIcon onClick={()=> display(<LoginModal pass={props.pass} user={props.user} conf={props.conf}
+                           updateConf={props.updateConf} updatePass={props.updatePass} updateUser={props.updateUser} 
+                           onLogin={props.onLogin} onRegister={props.onRegister} hideLogin={() => hideLogin()} />)} className={styles.icons}/>
       </div>
       {content}
     </>
