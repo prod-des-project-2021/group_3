@@ -29,4 +29,12 @@
 
 .addIcon {
   font-size: 50px;
+  position: relative;
+  float: right;
+  top: -80px;
+  text-align: end;
+  cursor: pointer;
+  width: 2px;
+  font-size: large;
+  font-weight: bold;
 }
