@@ -6,6 +6,7 @@ import Section1 from './section1';
 
 export default function Frontpage(props) {
 
+    //Scroll to top of page when loaded
     useEffect(() => {
         window.scrollTo(0, 0)
       }, [])
