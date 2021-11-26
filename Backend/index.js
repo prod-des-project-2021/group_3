@@ -15,6 +15,26 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
+loggingIn = (username, password) =>{
+
+  client.query('SELECT * FROM users WHERE username = $1', [username]).then(results => {
+    results.rows.forEach(element => 
+      bcrypt.compare(password, element.password).then(bcryptResult =>{
+        if(bcryptResult == true){
+          console.log("There was a match!!!!!");
+          console.log(element.user_id);
+          res.json(element.user_id);
+        }
+        else{
+          console.log("There was not a match!!!!!");
+          res.status(406).send('Login credentials do not fit')
+        }
+      })
+      )
+  })
+
+}
+
 //getting tasks from specific user
 app.get('/mytasks/:uid', (req, res) => {
   client.query('SELECT * FROM vuosikello WHERE user_id = $1', [req.params.uid]).then(results => {
