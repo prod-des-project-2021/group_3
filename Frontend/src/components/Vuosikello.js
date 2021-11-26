@@ -7,7 +7,7 @@ import Content from './sectioncomponents/Content'
 import Star from '@material-ui/icons/Star';
 import Backbutton from './sectioncomponents/Backbutton';
 
-const arr = [{task: 'markkinointikampanja', m:'tammikuu', category:'markkinointi', info: 'tähän lisäinfoa?', stage:'green'},{task: 'nettisivut', m:'tammikuu', category:'aktiviteetit', info: 'tee nettisivut', stage:'green'}]
+const arr = [{task: 'markkinointikampanja', m:'tammikuu', category:'markkinointi', info: 'tähän lisäinfoa?', stage:'green'},{task: 'nettisivut', m:'tammikuu', category:'aktiviteetit', info: 'tee nettisivut', stage:'green'},{task: 'nettisivut', m:'tammikuu', category:'aktiviteetit', info: 'tee nettisivut', stage:'green'},{task: 'nettisivut', m:'tammikuu', category:'aktiviteetit', info: 'tee nettisivut', stage:'green'},{task: 'nettisivut', m:'tammikuu', category:'aktiviteetit', info: 'tee nettisivut', stage:'green'}]
 const arr2 = [{task: 'paikallisten yrittäjien messut', m:'maaliskuu', category:'messut', info: 'messut 23.3. ota mukaan lehmäpuku, ota hyvä kuva blogia varten', stage:'red'},{task: 'blogikirjoitus', m:'maaliskuu', category:'markkinointi', info: 'tee blogipostaus messuista', stage:'green'}]
 const arr3 = [{task: 'tilikauden päätös', m:'joulukuu', category:'rahoitus', info: 'muista lisätä maaliskuun messukulut', stage:'green'}]
 const arr4 = [{task: 'tarjouspyyntöön osallistuminen', m:'toukokuu', category:'kilpailutukset', info: 'kouluruokailujen perunoiden kilpailutukset', stage:'hsl(36, 82%, 51%)'}]
