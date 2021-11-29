@@ -3,6 +3,7 @@ import styles from './menu.module.css';
 import MenuIcon from '@material-ui/icons/Menu';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import LoginModal from "./LoginModal";
+import SideMenu from "./SideMenu";
 
 export default function Menu(props) {
 
@@ -12,11 +13,13 @@ export default function Menu(props) {
   function hideLogin(){
     display("");
   }
-
+  function hideMenu(){
+    display("");
+  }
   return (
     <>
       <div className={styles.menu}> 
-        <MenuIcon className={styles.icons}/>
+        <MenuIcon onClick={() => display(<SideMenu hideMenu={() => hideMenu()}/>)} className={styles.icons} />
         <div className = {styles.menuTitle}>Hyvinvoiva maaseutu</div>
         <AccountCircleIcon onClick={()=> display(<LoginModal pass={props.pass} user={props.user} conf={props.conf}
                            updateConf={props.updateConf} updatePass={props.updatePass} updateUser={props.updateUser} 
