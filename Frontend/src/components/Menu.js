@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from './menu.module.css';
 import MenuIcon from '@material-ui/icons/Menu';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import Settings from '@material-ui/icons/Settings';
 import LoginModal from "./LoginModal";
 
 export default function Menu(props) {
@@ -18,9 +19,12 @@ export default function Menu(props) {
       <div className={styles.menu}> 
         <MenuIcon className={styles.icons}/>
         <div className = {styles.menuTitle}>Hyvinvoiva maaseutu</div>
-        <AccountCircleIcon onClick={()=> display(<LoginModal pass={props.pass} user={props.user} conf={props.conf}
+        <Settings className={ props.loggedIn ? styles.settings : styles.scale0 } />
+        <AccountCircleIcon className={ props.loggedIn ? styles.scale0 : styles.icons2 }
+                           onClick={()=> display(<LoginModal pass={props.pass} user={props.user} conf={props.conf}
                            updateConf={props.updateConf} updatePass={props.updatePass} updateUser={props.updateUser} 
-                           onLogin={props.onLogin} onRegister={props.onRegister} hideLogin={() => hideLogin()} />)} className={styles.icons}/>
+                           onLogin={props.onLogin} onRegister={props.onRegister} hideLogin={() => hideLogin()} />)} />
+        
       </div>
       {content}
     </>

@@ -23,6 +23,7 @@ export default class App extends Component {
       user:'',
       pass:'',
       conf:'',
+      loggedIn: false,
       tasks:[],
       showModalActivity: false,
       showModalModify: false,
@@ -132,6 +133,23 @@ export default class App extends Component {
     })
     .then((response) => {
       console.log(response.data)
+      this.setState({ loggedIn: true }) 
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
+
+  onDelete = () =>{
+    let username = this.state.user;
+    let password = this.state.pass;
+
+    axios.post(urlAddress + '/delaccount', {
+      user: username,
+      pass: password
+    })
+    .then((response) => {
+      console.log(response.data)
     })
     .catch(function (error) {
       console.log(error);
@@ -163,7 +181,7 @@ export default class App extends Component {
       <>
         <Header updateConf={this.updateConf} updatePass={this.updatePass} updateUser={this.updateUser}
               onLogin={this.onLogin} onRegister={this.onRegister}
-              pass={this.state.pass} username={this.state.user} conf_pass={this.state.conf}/>
+              pass={this.state.pass} username={this.state.user} conf_pass={this.state.conf} loggedIn={this.state.loggedIn}/>
         <div className="container">
           <BrowserRouter>
             <Routes>
