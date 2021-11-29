@@ -59,6 +59,33 @@ app.post('/logon', (req, res) => {
   })
 })
 
+// use credentials to log in then utilize them to retrieve the id and delete everything with that id
+app.post('/delaccount', (req, res) => {
+  let username = req.body.user.toString().trim();
+  let password = req.body.pass.toString().trim();
+  let id
+
+  const hashedPassword = bcrypt.hashSync(password, saltRounds);
+
+  client.query('SELECT * FROM users WHERE username = $1', [username]).then(results => {
+    results.rows.forEach(element => 
+      bcrypt.compare(password, element.password).then(bcryptResult =>{
+        if(bcryptResult == true){
+          id = element.user_id
+        }
+        else{
+          res.status(406).send('Login credentials do not fit')
+        }
+      })
+      )
+  })
+   //del here check id and stuff
+   client.query('DELETE FROM users WHERE user_id = $1', [id])
+   client.query('DELETE FROM vuosikello WHERE user_id = $1', [id]).then(results => {
+    res.json(results.rows);
+  })
+})
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
