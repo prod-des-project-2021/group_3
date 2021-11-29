@@ -5,6 +5,7 @@ import Title from './sectioncomponents/Title.js';
 import Content from './sectioncomponents/Content.js';
 import Intendedcontent from './sectioncomponents/Intendedcontent';
 import speechBubble from './pictures/sosiaalinenAjatusKupla.png';
+import stylishstyles from "./styles2.module.css"
 
 export default function section4_2() {
   return (
@@ -26,7 +27,9 @@ export default function section4_2() {
           </ul>
           Näissä ryhmissä keskustellaan elämästä maaseudulla ja siihen liittyvistä aiheista, kuten sukupolvenvaihdoksista, luopumisesta, jaksamisesta, tai yksinäisyydestä
         </>} buttonText='Keskustelemaan' link='https://tukinet.net/'/>
-        <img style={{'maxWidth':'100%'}} alt="" src={speechBubble}></img>
+        <div className={stylishstyles.container} >
+          <img className={stylishstyles.image} alt="" src={speechBubble}></img>
+        </div>
       </div>
     </div>
   )

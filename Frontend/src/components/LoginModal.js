@@ -10,12 +10,12 @@ export default function LoginModal(props) {
             <div className={styles.loginBox}>
                 <form>
                     <div onClick={() => props.hideLogin()} className={styles.hide}> x </div>
-                    <label>Username</label><br/>
+                    <label>Käyttäjätunnus</label><br/>
                     <input maxlength="12" onChange={props.updateUser} id={"username"} /><br/><br/>
-                    <label>Password</label><br/>
+                    <label>Salasana</label><br/>
                     <input type="password" maxlength="50" onChange={props.updatePass} id={"pass"} /><br/><br/>
-                    <div onClick={props.onLogin} className={styles.button}>Login</div> <br/>
-                    <div onClick={()=> display(register)} className={styles.register}>Switch to Register </div>
+                    <div onClick={props.onLogin} className={styles.button}>Kirjaudu sisään</div> <br/>
+                    <div onClick={()=> display(register)} className={styles.register}>Luo uusi tili </div>
                 </form>
             </div>
         </div>
@@ -26,14 +26,14 @@ export default function LoginModal(props) {
             <div className={styles.loginBox}>
                 <form>
                     <div onClick={() => props.hideLogin()} className={styles.hide}> x </div>
-                    <label>Username</label><br/>
+                    <label>Käyttäjätunnus</label><br/>
                     <input maxlength="12" onChange={props.updateUser} id={"username"}/><br/><br/>
-                    <label>Password</label><br/>
+                    <label>Salasana</label><br/>
                     <input type="password" maxlength="50" onChange={props.updatePass} id={"pass"} /><br/><br/>
-                    <label>Confirm Password</label><br/>
+                    <label>Salasanan vahvistus</label><br/>
                     <input type="password" maxlength="50" onChange={props.updateConf} id={"confirmation"} /><br/><br/>
-                    <div onClick={props.onRegister} className={styles.button}>Register</div> <br/>
-                    <div onClick={()=> display(login)} className={styles.register}>Switch to Login </div>
+                    <div onClick={props.onRegister} className={styles.button}>Rekisteröidy</div> <br/>
+                    <div onClick={()=> display(login)} className={styles.register}>Takaisin sisäänkirjautumiseen </div>
                 </form>
             </div>
         </div>

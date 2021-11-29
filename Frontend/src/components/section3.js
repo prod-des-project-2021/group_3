@@ -16,7 +16,7 @@ export default function section3() {
     <div>
       <Backbutton/>
       <div className={styles.container}>
-        <Title title='Hyvinvoinnin ennaltaehkäiseminen ja sen vahvistaminen'/>
+        <Title title='Omatoiminen hyvinvoinnin edistäminen'/>
         <Caption text ='Hyvinvointimme koostuu monesta eri tekijästä, joihin voimme itse vaikuttaa. Pienilläkin muutoksilla voi olla vaikutuksia hyvinvointiimme. Työn, toiminnan ja levon tasapaino, sopiva liikunnan määrä sekä terveellinen ja hyvä ruoka vaikuttavat niin aivoterveyteemme kuin myös mielenterveytemme sitä kautta kokonaisvaltaiseen hyvinvointiimme. '/>
         <Imgcontainer alt="kuva aivoista" imgsrc={aivot}/>
         <Content start='Aivoterveydestä' text ='puhutaan nykyään paljon ja kehotetaan pitämään huolta omista aivoista. Aivoterveydellä tarkoitetaan laaja-alaisesti aivojen hyvinvointia. Se on ihmisen toimintakykyisyyden perusta, joka vaatii kaikkein monimutkaisinta eri aivojen osien yhteistoimintaa.'/>

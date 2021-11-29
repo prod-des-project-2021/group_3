@@ -1,22 +1,3 @@
-<<<<<<< HEAD
-.box {
-  width: 33%;
-  min-width: 250px;
-  height: 200px;
-  border: 1px solid black;
-  border-radius: 3px;
-  overflow-x: hidden;
-  overflow-y: auto;
-  position: relative;
-}
-
-.title {
-  text-align: center;
-  text-decoration: underline;
-}
-
-=======
->>>>>>> ae8995b93a3b126fe696340a51874e5951f2486c
 .aktiviteetit{
   background:#ffde22;
 	background-color:hsl(36, 82%, 51%);
@@ -88,15 +69,9 @@
   color: #fff;
   text-align: center;
   border-radius: 6px;
-<<<<<<< HEAD
-  padding: 10px 5px;
-  position: fixed;
-  z-index: 1;
-=======
   padding: 10px 15px;
   margin-left: 20px;
   margin-right: 20px;
->>>>>>> ae8995b93a3b126fe696340a51874e5951f2486c
 }
 
 .editIcon {
