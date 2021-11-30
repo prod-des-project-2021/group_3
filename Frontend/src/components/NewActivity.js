@@ -83,7 +83,7 @@ export default function NewActivity(props) {
             <input type='hidden' name='stage' value='red'/>}
             <input type="submit" value={props.submit} className={buttonStyles.button}/>
             <input type="button" value="Peruuta" onClick={props.toggleModalActivity} className={styles.cancel}/>
-            {props.task && <Delete onClick={()=>props.deleteActivity(props.task.task.task_id)}className={styles.delete}/>}
+            {props.task && <Delete onClick={()=>props.deleteActivity(true)}className={styles.delete}/>}
           </form>
         </div>
       </div>

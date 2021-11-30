@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Month from './Month'
 import styles from './vuosikello.module.css'
 import anotherStyle from './sectionscontainer.module.css'
@@ -8,8 +8,11 @@ import Star from '@material-ui/icons/Star';
 import Backbutton from './sectioncomponents/Backbutton';
 import NewActivity from './NewActivity.js';
 import AddIcon from '@material-ui/icons/AddCircleOutline';
+import Warning from './Warning.js';
 
 export default function Vuosikello(props) {
+
+  const [showWarning, toggleWarning] = useState(false);
 
   return (
     <>
@@ -47,7 +50,8 @@ export default function Vuosikello(props) {
             <Star className={styles.starIcon} style={{color:'black'}}/> Siirtyy ensi vuoteen
           </div>
           <NewActivity submit='Lisää' title='Luo uusi tehtävä' addNewActivity={props.addNewActivity} toggleModalActivity={props.toggleModalActivity} showModalActivity ={props.showModalActivity}/>
-          <NewActivity deleteActivity={props.deleteActivity} submit='Päivitä' task={props.activityToBeUpdated} title='Muokkaa aktiviteettia' addNewActivity={props.modifyActivity} toggleModalActivity={props.toggleModalModify} showModalActivity ={props.showModalModify}/>
+          <NewActivity deleteActivity={toggleWarning} submit='Päivitä' task={props.activityToBeUpdated} title='Muokkaa aktiviteettia' addNewActivity={props.modifyActivity} toggleModalActivity={props.toggleModalModify} showModalActivity ={props.showModalModify}/>
+          <Warning id={props.activityToBeUpdated} deleteActivity={props.deleteActivity} showWarning={showWarning} toggleWarning={toggleWarning} warning='Haluatko varmasti poistaa tehtävän?'/>
         </div>
       </div>
     </>

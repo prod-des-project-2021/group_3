@@ -5,7 +5,7 @@ import Title from './sectioncomponents/Title.js';
 import Content from './sectioncomponents/Content';
 import Backbutton from './sectioncomponents/Backbutton';
 
-export default function Section4() {
+export default function References() {
 
   return (
     <div>
