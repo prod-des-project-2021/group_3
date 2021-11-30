@@ -9,16 +9,18 @@ import Backbutton from './sectioncomponents/Backbutton';
 import NewActivity from './NewActivity.js';
 import AddIcon from '@material-ui/icons/AddCircleOutline';
 import Warning from './Warning.js';
+import ChangeYear from './ChangeYear';
 
 export default function Vuosikello(props) {
 
   const [showWarning, toggleWarning] = useState(false);
+  const [showChangeYear, toggleChangeYear] = useState(false);
 
   return (
     <>
       <Backbutton/>
       <div className={anotherStyle.container}>
-        <div className={styles.year}>2021</div>
+        <div className={styles.year} onClick={()=>toggleChangeYear(true)}>{props.year}</div>
         <AddIcon onClick={()=> props.toggleModalActivity()} className={styles.addIcon}/>
         <div className={styles.months}>
           <Month name='Tammikuu' month={1} tasks={props.tasks} toggleModalModify={props.toggleModalModify} />
@@ -52,6 +54,7 @@ export default function Vuosikello(props) {
           <NewActivity submit='Lisää' title='Luo uusi tehtävä' addNewActivity={props.addNewActivity} toggleModalActivity={props.toggleModalActivity} showModalActivity ={props.showModalActivity}/>
           <NewActivity deleteActivity={toggleWarning} submit='Päivitä' task={props.activityToBeUpdated} title='Muokkaa aktiviteettia' addNewActivity={props.modifyActivity} toggleModalActivity={props.toggleModalModify} showModalActivity ={props.showModalModify}/>
           <Warning id={props.activityToBeUpdated} deleteActivity={props.deleteActivity} showWarning={showWarning} toggleWarning={toggleWarning} warning='Haluatko varmasti poistaa tehtävän?'/>
+          <ChangeYear changeYear={props.changeYear} showChangeYear={showChangeYear} toggleChangeYear={toggleChangeYear} year={props.year} />
         </div>
       </div>
     </>

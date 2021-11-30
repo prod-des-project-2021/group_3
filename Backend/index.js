@@ -73,18 +73,31 @@ app.delete('/deleteActivity', (req, res) => {
   .catch(error => res.sendStatus(500));
 })
 
+//change the title of yearclock
+app.put('/updateYear', (req, res) => {
+  client.query('UPDATE vuosikello SET task_name = $1 WHERE user_id = $2 AND month = $3', [req.body.title, req.body.user_id, 13])
+  .then(results => {
+    res.sendStatus(200);
+  })
+  .catch(error => res.sendStatus(500));
+})
+
 //inserting registration details into db
 app.post('/signup', (req, res) => {
   let username = req.body.user.toString().trim();
   let password = req.body.pass.toString().trim();
+  let userid = uuidv4();
+  let year = new Date().getFullYear();
 
   const hashedPassword = bcrypt.hashSync(password, saltRounds);
 
   console.log('test')
   console.log(hashedPassword)
   client.query('INSERT INTO users(user_id, username, password) VALUES ($1, $2, $3)', 
-  [uuidv4(), username, hashedPassword])
+  [userid, username, hashedPassword])
   .then(results => {
+    client.query('INSERT INTO vuosikello(task_id, user_id, task_name, month, category, info, stage) VALUES ($1, $2, $3, $4, $5, $6, $7)', 
+    [uuidv4(), userid, year, 13, '-', '-', '-']);
     res.sendStatus(201);
   })
   .catch(error => res.sendStatus(500));
