@@ -13,13 +13,10 @@ export default function Menu(props) {
   function hideLogin(){
     display("");
   }
-  function hideMenu(){
-    display("");
-  }
   return (
     <>
       <div className={styles.menu}> 
-        <MenuIcon onClick={() => display(<SideMenu hideMenu={() => hideMenu()}/>)} className={styles.icons} />
+        <MenuIcon onClick={() => display(<SideMenu hideMenu={() => hideLogin()}/>)} className={styles.icons} />
         <div className = {styles.menuTitle}>Hyvinvoiva maaseutu</div>
         <AccountCircleIcon onClick={()=> display(<LoginModal pass={props.pass} user={props.user} conf={props.conf}
                            updateConf={props.updateConf} updatePass={props.updatePass} updateUser={props.updateUser} 
