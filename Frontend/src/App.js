@@ -12,6 +12,7 @@ import Tutorials from './components/tutorials';
 import PWAinstall from './components/PWAinstall';
 import Vuosikello from './components/Vuosikello';
 import PWAinstallmobile from './components/PWAinstallmobile';
+import References from './components/References';
 
 const urlAddress = 'http://localhost:4000' //change this to heroku address when it goes there
 
@@ -27,7 +28,8 @@ export default class App extends Component {
       tasks:[],
       showModalActivity: false,
       showModalModify: false,
-      activityToBeUpdated: null
+      activityToBeUpdated: null,
+      year: ''
     };
   }
 
@@ -35,6 +37,10 @@ export default class App extends Component {
     axios.get(urlAddress + '/mytasks/1' )
     .then((response) => {
       this.setState({ tasks: response.data });
+      const found = response.data.find(element => element.month === 13);
+      if (found) {
+        this.setState({year: found.task_name});
+      }
     });
   }
 
@@ -43,6 +49,19 @@ export default class App extends Component {
     .then((response) => {
       this.setState({ tasks: response.data });
     });
+  }
+
+  changeYear = (title) => {
+    axios.put(urlAddress + '/updateYear', 
+    {
+      title: title,
+      user_id: '1' 
+    }).then((response => {
+      this.componentDidMount();
+    }))
+    .catch(error => {
+      alert(error);
+    })
   }
 
   addNewActivity = (task, info, month, category) => {
@@ -180,11 +199,11 @@ export default class App extends Component {
   render() {
     return (
       <>
-          <BrowserRouter>
+        <BrowserRouter>
           <Header updateConf={this.updateConf} updatePass={this.updatePass} updateUser={this.updateUser}
                 onLogin={this.onLogin} onRegister={this.onRegister}
                 pass={this.state.pass} username={this.state.user} conf_pass={this.state.conf}/>
-        <div className="container">
+          <div className="container">
             <Routes>
               <Route path="/" element={<Frontpage />} />
               <Route path="Sec2" element={<Sec2 />} />
@@ -192,11 +211,12 @@ export default class App extends Component {
               <Route path="Sec4" element={<Sec4 />} />
               <Route path="Tutorials" element={<Tutorials />} />
               <Route path="PWAinstall" element={<PWAinstall />} /> 
-              <Route path="Vuosikello" element={<Vuosikello addNewActivity={this.addNewActivity} getUsersTasks={this.getUsersTasks} showModalActivity={this.state.showModalActivity} toggleModalActivity={this.toggleModalActivity} tasks={this.state.tasks} modifyActivity={this.modifyActivity} toggleModalModify={this.toggleModalModify} showModalModify ={this.state.showModalModify} activityToBeUpdated={this.state.activityToBeUpdated} deleteActivity={this.deleteActivity}/>} />
+              <Route path="Vuosikello" element={<Vuosikello changeYear={this.changeYear} year={this.state.year} addNewActivity={this.addNewActivity} getUsersTasks={this.getUsersTasks} showModalActivity={this.state.showModalActivity} toggleModalActivity={this.toggleModalActivity} tasks={this.state.tasks} modifyActivity={this.modifyActivity} toggleModalModify={this.toggleModalModify} showModalModify ={this.state.showModalModify} activityToBeUpdated={this.state.activityToBeUpdated} deleteActivity={this.deleteActivity}/>} />
+              <Route path="Lahteet" element={<References />} />
               <Route path="PWAinstallmobile" element={<PWAinstallmobile />} />
             </Routes>
-        </div>
-          </BrowserRouter>
+          </div>
+        </BrowserRouter>
       </>
     )
   }

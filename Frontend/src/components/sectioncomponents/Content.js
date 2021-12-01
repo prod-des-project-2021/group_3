@@ -1,15 +1,14 @@
 import React from 'react'
 
-import styles from './content.module.css'
+import styles from './content.module.css';
 
 export default function Content(props) {
-  var content = props.text
-  if (props.start) {
-    content = <><b>{props.start}</b> {props.text}</>
-  }
+
   return (
     <div className={styles.content}>
-      {content}
+      {props.start && <b>{props.start}</b>}
+      {props.text}
+      {props.link && <a href={props.link} target='_blank' rel='noreferrer' className={styles.link} >{props.link}</a>}
     </div>
   )
 }

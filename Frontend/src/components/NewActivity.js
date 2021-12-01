@@ -19,6 +19,11 @@ export default function NewActivity(props) {
     )
   }
 
+  function onCancel() {
+    props.toggleModalActivity(false);
+    props.deleteActivity(false);
+  }
+
   let name=''
   let info=''
   let month=''
@@ -39,7 +44,7 @@ export default function NewActivity(props) {
   else {
     return (
       <div className={styles.moduleContainer}>
-        <Close onClick={props.toggleModalActivity} className={styles.close}/>
+        <Close onClick={onCancel} className={styles.close}/>
         <div className={styles.title}>{props.title}</div>
         <div className={styles.formContainer}>
           <form className={styles.addActivity} onSubmit={post}>
@@ -81,9 +86,9 @@ export default function NewActivity(props) {
               </select> <br></br>
             </> :
             <input type='hidden' name='stage' value='red'/>}
+            {props.task && <Delete onClick={()=>props.deleteActivity(true)}className={styles.delete}/>}
             <input type="submit" value={props.submit} className={buttonStyles.button}/>
-            <input type="button" value="Peruuta" onClick={props.toggleModalActivity} className={styles.cancel}/>
-            {props.task && <Delete onClick={()=>props.deleteActivity(props.task.task.task_id)}className={styles.delete}/>}
+            <input type="button" value="Peruuta" onClick={onCancel} className={styles.cancel}/>
           </form>
         </div>
       </div>

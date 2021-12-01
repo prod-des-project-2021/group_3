@@ -7,6 +7,7 @@ import Imgcontainer from './sectioncomponents/Imgcontainer.js';
 import Content from './sectioncomponents/Content.js';
 import Caption from './sectioncomponents/Caption.js';
 import hankeimg from './pictures/hanke.jpg';
+import { Link } from 'react-router-dom';
 
 export default function section1() {
   return (
@@ -27,6 +28,7 @@ export default function section1() {
             <li>parantamaan yrittäjien työkykyä ja työhyvinvointia</li>
             <li>etsimään uusia ansaintamahdollisuuksia maaseudun yrityksille</li>
           </ul></>} />
+        <Link to='/Lahteet' style={{textDecoration:'underline', color:'inherit'}}> Tästä lähdeluetteloon </Link>
         <Imgcontainer alt="Hankkeen osapuolet" imgsrc={hankeimg}/>
       </div>
     </div>
