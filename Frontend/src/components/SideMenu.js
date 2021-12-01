@@ -23,6 +23,7 @@ export default function SideMenu (props) {
                     <Link className={styles.links} onClick={() => reverseAnimation()} to="/Sec3">Omatoiminen hyvnvoinnin edistäminen</Link>
                     <Link className={styles.links} onClick={() => reverseAnimation()} to="/Sec4">Hyvinvoinnin osa-alueet</Link>
                     <Link className={styles.links} onClick={() => reverseAnimation()} to="/Tutorials">Ohjeet</Link>
+                    <Link className={styles.links} onClick={() => reverseAnimation()} to='/Lahteet'>Lähteet</Link>
                 </div>
             </div>
         </>
