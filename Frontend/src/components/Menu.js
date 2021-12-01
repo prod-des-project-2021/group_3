@@ -5,6 +5,7 @@ import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import Settings from '@material-ui/icons/Settings';
 import LoginModal from "./LoginModal";
 import DeleteAccount from "./DeleteAccount";
+import SideMenu from "./SideMenu";
 
 export default function Menu(props) {
 
@@ -24,7 +25,7 @@ export default function Menu(props) {
   return (
     <>
       <div className={styles.menu}> 
-        <MenuIcon className={styles.icons}/>
+        <MenuIcon onClick={() => display(<SideMenu hideMenu={() => hideMenu()}/>)} className={styles.icons} />
         <div className = {styles.menuTitle}>Hyvinvoiva maaseutu</div>
         
         <Settings className={ props.loggedIn ? styles.settings : styles.scale0 } 

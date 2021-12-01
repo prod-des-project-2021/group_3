@@ -1,6 +1,6 @@
 {
-  "short_name": "",
-  "name": "Hyvinvoiva maaseutu",
+  "short_name": "hymyt",
+  "name": "Hyvinvoivat maaseudun yritykset",
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#5b8a3c88",

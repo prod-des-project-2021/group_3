@@ -16,8 +16,7 @@ export default function Tutorials(props) {
              <div className={anotherStyles.container}>
                 <Title title='Ohjeet'/>
                 <Caption text='Tältä sivulta löydät ohjeita'/>
-                <Link className={styles.button} to="/PWAinstall">Kuinka asennan sivun tietokoneelleni</Link>
-                <Link className={styles.button} to="/PWAinstall">Kuinka asennan sivun tietokoneelleni</Link>
+                <Link className={styles.button} to="/PWAinstall">Kuinka asennan sivun tietokoneelleni</Link> <br/>
                 <Link className={styles.button} to="/PWAinstallmobile">Kuinka asennan sivun puhelimelleni</Link>
             </div>
         </div>

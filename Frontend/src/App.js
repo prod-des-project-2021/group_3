@@ -185,18 +185,22 @@ export default class App extends Component {
               pass={this.state.pass} username={this.state.user} conf_pass={this.state.conf} loggedIn={this.state.loggedIn}/>
         <div className="container">
           <BrowserRouter>
+          <Header updateConf={this.updateConf} updatePass={this.updatePass} updateUser={this.updateUser}
+                onLogin={this.onLogin} onRegister={this.onRegister}
+                pass={this.state.pass} username={this.state.user} conf_pass={this.state.conf}/>
+        <div className="container">
             <Routes>
               <Route path="/" element={<Frontpage />} />
-              <Route path="Sec3" element={<Sec3 />} />
               <Route path="Sec2" element={<Sec2 />} />
+              <Route path="Sec3" element={<Sec3 />} />
               <Route path="Sec4" element={<Sec4 />} />
               <Route path="Tutorials" element={<Tutorials />} />
               <Route path="PWAinstall" element={<PWAinstall />} /> 
               <Route path="Vuosikello" element={<Vuosikello addNewActivity={this.addNewActivity} getUsersTasks={this.getUsersTasks} showModalActivity={this.state.showModalActivity} toggleModalActivity={this.toggleModalActivity} tasks={this.state.tasks} modifyActivity={this.modifyActivity} toggleModalModify={this.toggleModalModify} showModalModify ={this.state.showModalModify} activityToBeUpdated={this.state.activityToBeUpdated} deleteActivity={this.deleteActivity}/>} />
               <Route path="PWAinstallmobile" element={<PWAinstallmobile />} />
             </Routes>
-          </BrowserRouter>
         </div>
+          </BrowserRouter>
       </>
     )
   }
