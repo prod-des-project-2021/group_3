@@ -1,6 +1,6 @@
 .menu {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   height:10vh;
   min-height: 23px;
@@ -18,7 +18,7 @@
 @media only screen and (min-width: 992px) {
   .menu {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     height:15vh;
     min-height: 23px;
@@ -30,6 +30,9 @@
 .icons{
   margin-left: 2vw;
   margin-right: 2vw;
+  position: absolute;
+  top: 15px;
+  left: 5px;
 }
 
 @media only screen and (min-width: 992px) {
@@ -37,8 +40,31 @@
     font-size: 36px!important;
     margin-left: 2vw;
     margin-right: 2vw;
+    position: absolute;
+    top: 25px;
+    left: 10px;
   }
 }
+
+.icons2{
+  margin-left: 2vw;
+  margin-right: 2vw;
+  position: absolute;
+  top: 15px;
+  right: 5px;
+}
+
+@media only screen and (min-width: 992px) {
+  .icons2{
+    font-size: 36px!important;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    position: absolute;
+    top: 25px;
+    right: 10px;
+  }
+}
+
 
 .hideBackground{
   position: fixed;
@@ -56,4 +82,27 @@
   text-align: center;
   position: relative;
   z-index: 3;
+}
+
+.scale0{
+  scale: 0;
+}
+
+.settings{
+  margin-left: 2vw;
+  margin-right: 2vw;
+  position: absolute;
+  top: 15px;
+  right: 5px;
+}
+
+@media only screen and (min-width: 992px) {
+  .settings{
+    font-size: 36px!important;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    position: absolute;
+    top: 25px;
+    right: 10px;
+  }
 }
