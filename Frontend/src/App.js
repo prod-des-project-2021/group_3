@@ -200,9 +200,9 @@ export default class App extends Component {
     return (
       <>
         <BrowserRouter>
-          <Header updateConf={this.updateConf} updatePass={this.updatePass} updateUser={this.updateUser}
-                onLogin={this.onLogin} onRegister={this.onRegister}
-                pass={this.state.pass} username={this.state.user} conf_pass={this.state.conf}/>
+        <Header updateConf={this.updateConf} updatePass={this.updatePass} updateUser={this.updateUser}
+                onLogin={this.onLogin} onRegister={this.onRegister} onDelete={this.onDelete}
+                pass={this.state.pass} username={this.state.user} conf_pass={this.state.conf} loggedIn={this.state.loggedIn}/>
           <div className="container">
             <Routes>
               <Route path="/" element={<Frontpage />} />
