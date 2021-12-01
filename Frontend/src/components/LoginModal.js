@@ -11,9 +11,9 @@ export default function LoginModal(props) {
                 <form>
                     <div onClick={() => props.hideLogin()} className={styles.hide}> x </div>
                     <label>Käyttäjätunnus</label><br/>
-                    <input maxlength="12" onChange={props.updateUser} id={"username"} /><br/><br/>
+                    <input maxLength="12" onChange={props.updateUser} id={"username"} /><br/><br/>
                     <label>Salasana</label><br/>
-                    <input type="password" maxlength="50" onChange={props.updatePass} id={"pass"} /><br/><br/>
+                    <input type="password" maxLength="50" onChange={props.updatePass} id={"pass"} /><br/><br/>
                     <div onClick={props.onLogin} className={styles.button}>Kirjaudu sisään</div> <br/>
                     <div onClick={()=> display(register)} className={styles.register}>Luo uusi tili </div>
                 </form>
@@ -27,11 +27,11 @@ export default function LoginModal(props) {
                 <form>
                     <div onClick={() => props.hideLogin()} className={styles.hide}> x </div>
                     <label>Käyttäjätunnus</label><br/>
-                    <input maxlength="12" onChange={props.updateUser} id={"username"}/><br/><br/>
+                    <input maxLength="12" onChange={props.updateUser} id={"username"}/><br/><br/>
                     <label>Salasana</label><br/>
-                    <input type="password" maxlength="50" onChange={props.updatePass} id={"pass"} /><br/><br/>
+                    <input type="password" maxLength="50" onChange={props.updatePass} id={"pass"} /><br/><br/>
                     <label>Salasanan vahvistus</label><br/>
-                    <input type="password" maxlength="50" onChange={props.updateConf} id={"confirmation"} /><br/><br/>
+                    <input type="password" maxLength="50" onChange={props.updateConf} id={"confirmation"} /><br/><br/>
                     <div onClick={props.onRegister} className={styles.button}>Rekisteröidy</div> <br/>
                     <div onClick={()=> display(login)} className={styles.register}>Takaisin sisäänkirjautumiseen </div>
                 </form>
