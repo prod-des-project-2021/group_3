@@ -21,6 +21,19 @@
     animation-name: animenu;
     animation-duration: 0.3s;
 }
+.reverseBox{
+    background-color: honeydew;
+    border-radius: 0px 9px 9px 0px;
+    width: min-content;
+    text-align: center;
+    position: fixed;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    animation-name: reverseanimenu;
+    animation-duration: 0.3s;
+}
 
 .links{
     color: black;
@@ -41,4 +54,8 @@
 @keyframes animenu {
     from {left: -301px;}
     to {left: 0px;}
+}
+@keyframes reverseanimenu {
+    from {left: 0px;}
+    to {left: -301px}
 }
