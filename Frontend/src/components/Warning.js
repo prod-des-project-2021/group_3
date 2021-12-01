@@ -18,7 +18,7 @@ export default function NewActivity(props) {
       <div className={styles.moduleContainer} style={{marginTop:'200px'}}>
         <Close onClick={()=>props.toggleWarning(false)} className={styles.close}/>
         <div className={styles.title}>{props.warning}</div>
-        <div>
+        <div className={styles.buttonContainer}>
           <button className={buttonStyles.button} onClick={onDelete}> Kyllä </button>
           <button onClick={()=>props.toggleWarning(false)} className={styles.cancel}> Ei </button>
         </div>
