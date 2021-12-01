@@ -24,6 +24,7 @@ export default class App extends Component {
       user:'',
       pass:'',
       conf:'',
+      loggedIn: false,
       tasks:[],
       showModalActivity: false,
       showModalModify: false,
@@ -146,6 +147,24 @@ export default class App extends Component {
     let password = this.state.pass;
    
     axios.post(urlAddress + '/logon', {
+      user: username,
+      pass: password
+    })
+    .then((response) => {
+      console.log(response.data)
+      this.setState({ loggedIn: true }) 
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
+
+  //on Delete send data to API to validate credentials, then deleting those
+  onDelete = () =>{
+    let username = this.state.user;
+    let password = this.state.pass;
+
+    axios.post(urlAddress + '/delaccount', {
       user: username,
       pass: password
     })
