@@ -1,0 +1,61 @@
+.modalBackground{
+    position: fixed;
+    z-index: 4;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(59, 59, 59, 0.418);
+}
+
+.menubox{
+    background-color: honeydew;
+    border-radius: 0px 9px 9px 0px;
+    width: min-content;
+    text-align: center;
+    position: fixed;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    animation-name: animenu;
+    animation-duration: 0.3s;
+}
+.reverseBox{
+    background-color: honeydew;
+    border-radius: 0px 9px 9px 0px;
+    width: min-content;
+    text-align: center;
+    position: fixed;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    animation-name: reverseanimenu;
+    animation-duration: 0.3s;
+}
+
+.links{
+    color: black;
+    border: 1px solid black;
+    padding: 12px;
+}
+
+.hide{
+   padding: 11px;
+   background-color: #5b8a3c88;
+   text-align: left;
+}
+@media only screen and (min-width: 992px) {
+    .hide{
+        padding: 30px;
+    }
+}
+@keyframes animenu {
+    from {left: -301px;}
+    to {left: 0px;}
+}
+@keyframes reverseanimenu {
+    from {left: 0px;}
+    to {left: -301px}
+}

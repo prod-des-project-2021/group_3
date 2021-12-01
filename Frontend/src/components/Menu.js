@@ -25,7 +25,7 @@ export default function Menu(props) {
   return (
     <>
       <div className={styles.menu}> 
-        <MenuIcon onClick={() => display(<SideMenu hideMenu={() => hideMenu()}/>)} className={styles.icons} />
+        <MenuIcon onClick={() => display(<SideMenu hideMenu={() => hideLogin()} display={display}/>)} className={styles.icons} />
         <div className = {styles.menuTitle}>Hyvinvoiva maaseutu</div>
         
         <Settings className={ props.loggedIn ? styles.settings : styles.scale0 } 
