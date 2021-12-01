@@ -180,10 +180,6 @@ export default class App extends Component {
   render() {
     return (
       <>
-        <Header updateConf={this.updateConf} updatePass={this.updatePass} updateUser={this.updateUser}
-              onLogin={this.onLogin} onRegister={this.onRegister} onDelete={this.onDelete}
-              pass={this.state.pass} username={this.state.user} conf_pass={this.state.conf} loggedIn={this.state.loggedIn}/>
-        <div className="container">
           <BrowserRouter>
           <Header updateConf={this.updateConf} updatePass={this.updatePass} updateUser={this.updateUser}
                 onLogin={this.onLogin} onRegister={this.onRegister}
