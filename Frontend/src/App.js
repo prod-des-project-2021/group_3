@@ -140,6 +140,7 @@ export default class App extends Component {
     });
   }
 
+  //on Delete send data to API to validate credentials, then deleting those
   onDelete = () =>{
     let username = this.state.user;
     let password = this.state.pass;
@@ -180,7 +181,7 @@ export default class App extends Component {
     return (
       <>
         <Header updateConf={this.updateConf} updatePass={this.updatePass} updateUser={this.updateUser}
-              onLogin={this.onLogin} onRegister={this.onRegister}
+              onLogin={this.onLogin} onRegister={this.onRegister} onDelete={this.onDelete}
               pass={this.state.pass} username={this.state.user} conf_pass={this.state.conf} loggedIn={this.state.loggedIn}/>
         <div className="container">
           <BrowserRouter>

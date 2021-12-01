@@ -1,6 +1,6 @@
 .background{
     position: fixed;
-    z-index: 1;
+    z-index: 3;
     left: 0;
     top: 0;
     width: 100%;
@@ -10,14 +10,14 @@
 
 .deletebox{
     background-color: floralwhite;
-    z-index: 2;
-    width: min-content;
+    z-index: 4;
+    width: max-content;
     height: min-content;
-    padding: 3px;
+    padding: 5px;
     border-radius: 3px;
     float: right;
     position: absolute;
-    top: 30px;
+    top: 55px;
     right: 2px;
 }
 
@@ -25,3 +25,18 @@
     color: crimson;
     cursor: pointer;
 }
+
+@media only screen and (min-width: 992px) {
+    .deletebox{
+        background-color: floralwhite;
+        z-index: 4;
+        width: max-content;
+        height: min-content;
+        padding: 5px;
+        border-radius: 3px;
+        float: right;
+        position: absolute;
+        top: 95px;
+        right: 2px;
+    }
+  }

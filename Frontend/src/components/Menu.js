@@ -9,15 +9,16 @@ import DeleteAccount from "./DeleteAccount";
 export default function Menu(props) {
 
   const [content, display] = useState("");
-  const [DeleteBox, remove] = useState("");
+  const [DeleteBox, del] = useState("");
 
   //Removing the login object on screen when pressing x
   function hideLogin(){
     display("");
   }
 
+   //Removing the delete account object on screen when pressing anything else
   function hideDelete(){
-    remove("");
+    del("");
   }
 
   return (
@@ -27,7 +28,7 @@ export default function Menu(props) {
         <div className = {styles.menuTitle}>Hyvinvoiva maaseutu</div>
         
         <Settings className={ props.loggedIn ? styles.settings : styles.scale0 } 
-                  onClick={()=> display(<DeleteAccount hideDelete={() => hideDelete()} />)} />
+                  onClick={()=> del(<DeleteAccount hideDelete={() => hideDelete()} onDelete={props.onDelete} />)} />
 
         <AccountCircleIcon className={ props.loggedIn ? styles.scale0 : styles.icons2 }
                            onClick={()=> display(<LoginModal pass={props.pass} user={props.user} conf={props.conf}

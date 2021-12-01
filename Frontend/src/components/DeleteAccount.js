@@ -8,7 +8,7 @@ export default function DeleteAccount(props) {
         <div>
             <div className={styles.background} onClick={props.hideDelete}> </div>
             <div className={styles.deletebox}> 
-                <div className={styles.delete}> Delete Account </div>
+                <div onClick={props.onDelete} className={styles.delete}> Delete Account </div>
             </div>
         </div>
     )

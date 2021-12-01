@@ -72,6 +72,11 @@ app.post('/delaccount', (req, res) => {
       bcrypt.compare(password, element.password).then(bcryptResult =>{
         if(bcryptResult == true){
           id = element.user_id
+          //del here check id and stuff
+          client.query('DELETE FROM users WHERE user_id = $1', [id])
+          client.query('DELETE FROM vuosikello WHERE user_id = $1', [id]).then(results => {
+           res.json(results.rows);
+          })
         }
         else{
           res.status(406).send('Login credentials do not fit')
@@ -79,11 +84,7 @@ app.post('/delaccount', (req, res) => {
       })
       )
   })
-   //del here check id and stuff
-   client.query('DELETE FROM users WHERE user_id = $1', [id])
-   client.query('DELETE FROM vuosikello WHERE user_id = $1', [id]).then(results => {
-    res.json(results.rows);
-  })
+
 })
 
 app.listen(port, () => {
