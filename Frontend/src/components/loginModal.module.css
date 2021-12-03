@@ -9,9 +9,6 @@
 }
 
 .loginBox{
-    background-color: honeydew;
-    border-radius: 9px;
-    padding: 20px;
     margin: 15vw auto;
     width: min-content;
     text-align: center;
@@ -45,14 +42,10 @@
 }
 
 .hide{
-    position: relative;
-    float: right;
-    top: -10px;
-    text-align: end;
-    cursor: pointer;
-    width: 2px;
-    font-size: large;
-    font-weight: bold;
+  position: relative;
+  right: -180px;
+  top: -18px;
+  cursor: pointer;
 }
 
 input  {

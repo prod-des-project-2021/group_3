@@ -6,11 +6,14 @@ import Settings from '@material-ui/icons/Settings';
 import LoginModal from "./LoginModal";
 import DeleteAccount from "./DeleteAccount";
 import SideMenu from "./SideMenu";
+import Warning from './Warning.js';
 
 export default function Menu(props) {
 
   const [content, display] = useState("");
   const [DeleteBox, del] = useState("");
+  const [showWarning, toggleWarning] = useState(false);
+
 
   //Removing the login object on screen when pressing x
   function hideLogin(){
@@ -29,12 +32,13 @@ export default function Menu(props) {
         <div className = {styles.menuTitle}>Hyvinvoiva maaseutu</div>
         
         <Settings className={ props.loggedIn ? styles.settings : styles.scale0 } 
-                  onClick={()=> del(<DeleteAccount hideDelete={() => hideDelete()} onDelete={props.onDelete} />)} />
+                  onClick={()=> del(<DeleteAccount toggleWarning={toggleWarning} hideDelete={() => hideDelete()} onDelete={props.onDelete} />)} />
 
         <AccountCircleIcon className={ props.loggedIn ? styles.scale0 : styles.icons2 }
                            onClick={()=> display(<LoginModal pass={props.pass} user={props.user} conf={props.conf}
                            updateConf={props.updateConf} updatePass={props.updatePass} updateUser={props.updateUser} 
                            onLogin={props.onLogin} onRegister={props.onRegister} hideLogin={() => hideLogin()} />)} />
+        <Warning deleteActivity={props.onDelete} showWarning={showWarning} toggleWarning={toggleWarning} warning='Haluatko varmasti poistaa tilisi ja vuosikellon pysyvästi?'/>
         
       </div>
       {content}
