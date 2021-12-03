@@ -7,7 +7,7 @@ export default function NewActivity(props) {
 
   function onDelete() {
     props.toggleWarning(false);
-    props.deleteActivity(props.id.task.task_id);
+    props.deleteActivity(props.id ? props.id.task.task_id: null);
   }
 
   if(!props.showWarning) {

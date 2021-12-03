@@ -85,7 +85,7 @@
 }
 
 .scale0{
-  scale: 0;
+  transform: scale(0);
 }
 
 .settings{

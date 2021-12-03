@@ -21,7 +21,9 @@ export default function NewActivity(props) {
 
   function onCancel() {
     props.toggleModalActivity(false);
-    props.deleteActivity(false);
+    if (props.deleteActivity) {
+      props.deleteActivity(false);
+    }
   }
 
   let name=''

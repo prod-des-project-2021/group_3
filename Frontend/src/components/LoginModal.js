@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from './loginModal.module.css';
+import Close from '@material-ui/icons/Close';
 
 export default function LoginModal(props) {
     let login;
@@ -9,7 +10,7 @@ export default function LoginModal(props) {
         <div className={styles.modalBackground}>
             <div className={styles.loginBox}>
                 <form>
-                    <div onClick={() => props.hideLogin()} className={styles.hide}> x </div>
+                    <Close onClick={() => props.hideLogin()} className={styles.hide}/>
                     <label>Käyttäjätunnus</label><br/>
                     <input maxLength="12" onChange={props.updateUser} id={"username"} /><br/><br/>
                     <label>Salasana</label><br/>
@@ -25,7 +26,7 @@ export default function LoginModal(props) {
         <div className={styles.modalBackground}>
             <div className={styles.loginBox}>
                 <form>
-                    <div onClick={() => props.hideLogin()} className={styles.hide}> x </div>
+                    <Close onClick={() => props.hideLogin()} className={styles.hide}/>
                     <label>Käyttäjätunnus</label><br/>
                     <input maxLength="12" onChange={props.updateUser} id={"username"}/><br/><br/>
                     <label>Salasana</label><br/>
