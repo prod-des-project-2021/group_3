@@ -5,7 +5,7 @@ import Title from './sectioncomponents/Title.js';
 import Imgcontainer from './sectioncomponents/Imgcontainer.js';
 import Content from './sectioncomponents/Content.js';
 import Caption from './sectioncomponents/Caption.js';
-import aivot from './pictures/aivot.png';
+import aivot from './pictures/aivot.jpg';
 import Linkbutton from './sectioncomponents/linkbutton';
 import Subtitle from './sectioncomponents/Subtitle';
 import Intendedcontent from './sectioncomponents/Intendedcontent';
@@ -38,8 +38,8 @@ export default function section3() {
         <Subtitle text='Työturvallisuus ja työhyvinvointi  '/>
         <Content text='Maatilan toimintoihin liittyy aina riskejä ja niiden tunnistaminen ja ennaltaehkäiseminen on erityisen tärkeätä. Luonnonvarakeskuksen (Luke) sivuilla voi perehtyä erilaisiin maatilan riskienhallinnan välineisiin.  ' />
         <Linkbutton buttonText='Sivuille tästä' link='https://portal.mtt.fi/portal/page/portal/mtt/hankkeet/maatilanriskienhallinta'/>
-        <Subtitle text='Maatalousyrittäjien tuen ja jaksamisen työkaluja'/>
-        <Content text='Erilaiset haasteelliset elämäntilanteet ja niiden mukana tuomat muutokset haastavat maatalousyrittäjää monella tavalla. Avun hakemisessa voi olla itseen liittyvää epävarmuutta tai rohkeuden puutetta. Yksin ei kuitenkaan kannata tai tarvitse jaksaa.'/>
+        <Title sub='sub' title='Maatalousyrittäjien tuen ja jaksamisen työkaluja'/>
+        <Caption text='Erilaiset haasteelliset elämäntilanteet ja niiden mukana tuomat muutokset haastavat maatalousyrittäjää monella tavalla. Avun hakemisessa voi olla itseen liittyvää epävarmuutta tai rohkeuden puutetta. Yksin ei kuitenkaan kannata tai tarvitse jaksaa.'/>
         <Content text='Seuraavassa on kuvattu erilaisia keinoja jaksamisen ja elämäntilanteen selvittelyn tueksi.'/>
         <Content start='Melan Välitä viljelijästä' text='-projektin kautta saat maatalousyrittäjänä maksutonta ja luottamuksellista apua silloin, kun henkiset voimavarasi tai taloudelliset resurssisi joutuvat koetukselle.'/>
         <Linkbutton buttonText='Lisätietoa tästä' link='https://www.mela.fi/maatalousyrittajat/valita-viljelijasta/'/>
