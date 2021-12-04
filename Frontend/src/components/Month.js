@@ -7,7 +7,7 @@ export default function Month(props) {
   var output = <></>
   if (props.tasks) {
     output= <> {props.tasks.filter(task => task.month === props.month).map(task => (
-     <Task task={task} key={task.task_id} toggleModalActivity={props.toggleModalModify}/>
+     <Task task={task} key={task.task_id} loggedIn={props.loggedIn} toggleModalActivity={props.toggleModalModify}/>
       ))}
     </>
   }

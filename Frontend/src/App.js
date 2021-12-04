@@ -25,6 +25,7 @@ export default class App extends Component {
       pass:'',
       conf:'',
       loggedIn: false,
+      userId: '1',
       tasks:[],
       showModalActivity: false,
       showModalModify: false,
@@ -34,7 +35,7 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    axios.get(urlAddress + '/mytasks/1' )
+    axios.get(urlAddress + '/mytasks/' + this.state.userId )
     .then((response) => {
       this.setState({ tasks: response.data });
       const found = response.data.find(element => element.month === 13);
@@ -44,18 +45,19 @@ export default class App extends Component {
     });
   }
 
-  getUsersTasks = (UID) => {
-    axios.get(urlAddress + '/mytasks/1' )
+  getUsersTasks = () => {
+    axios.get(urlAddress + '/mytasks/' + this.state.userId )
     .then((response) => {
       this.setState({ tasks: response.data });
     });
   }
 
+  //change the year/title for vuosikello
   changeYear = (title) => {
     axios.put(urlAddress + '/updateYear', 
     {
       title: title,
-      user_id: '1' 
+      user_id: this.state.userId 
     }).then((response => {
       this.componentDidMount();
     }))
@@ -64,9 +66,9 @@ export default class App extends Component {
     })
   }
 
+  //adding activity to the vuosikello
   addNewActivity = (task, info, month, category) => {
-    //Here the userId should be received from state
-    let userID = 1
+    let userID = this.state.userId;
     axios.post(urlAddress + '/yearclockActivities', 
     {
       user_id: userID,
@@ -85,6 +87,7 @@ export default class App extends Component {
     })
   }
 
+  //modifying one activity in vuosikello
   modifyActivity = (task, info, month, category, stage, id) => {
     axios.put(urlAddress + '/updateActivity', 
     {
@@ -103,6 +106,7 @@ export default class App extends Component {
     })
   }
 
+  //deleting spesific task from vuosikello
   deleteActivity = (id) => {
     axios.delete(urlAddress + '/deleteActivity', 
     {
@@ -116,11 +120,13 @@ export default class App extends Component {
     })
   }
 
+  //toggles the visibility of modal for modifying activity
   toggleModalModify = (task) => {
     this.setState({activityToBeUpdated: {task} });
     this.setState({showModalModify: !this.state.showModalModify});
   }
 
+  //toggles the visibility of modal for adding activity
   toggleModalActivity = () => {
     this.setState({showModalActivity: !this.state.showModalActivity});
   }
@@ -151,8 +157,9 @@ export default class App extends Component {
       pass: password
     })
     .then((response) => {
-      console.log(response.data)
-      this.setState({ loggedIn: true }) 
+      console.log(response.data);
+      this.setState({ loggedIn: true, userId: response.data});
+      this.componentDidMount();
     })
     .catch(function (error) {
       console.log(error);
@@ -211,7 +218,7 @@ export default class App extends Component {
               <Route path="Sec4" element={<Sec4 />} />
               <Route path="Tutorials" element={<Tutorials />} />
               <Route path="PWAinstall" element={<PWAinstall />} /> 
-              <Route path="Vuosikello" element={<Vuosikello changeYear={this.changeYear} year={this.state.year} addNewActivity={this.addNewActivity} getUsersTasks={this.getUsersTasks} showModalActivity={this.state.showModalActivity} toggleModalActivity={this.toggleModalActivity} tasks={this.state.tasks} modifyActivity={this.modifyActivity} toggleModalModify={this.toggleModalModify} showModalModify ={this.state.showModalModify} activityToBeUpdated={this.state.activityToBeUpdated} deleteActivity={this.deleteActivity}/>} />
+              <Route path="Vuosikello" element={<Vuosikello loggedIn={this.state.loggedIn} changeYear={this.changeYear} year={this.state.year} addNewActivity={this.addNewActivity} getUsersTasks={this.getUsersTasks} showModalActivity={this.state.showModalActivity} toggleModalActivity={this.toggleModalActivity} tasks={this.state.tasks} modifyActivity={this.modifyActivity} toggleModalModify={this.toggleModalModify} showModalModify ={this.state.showModalModify} activityToBeUpdated={this.state.activityToBeUpdated} deleteActivity={this.deleteActivity}/>} />
               <Route path="Lahteet" element={<References />} />
               <Route path="PWAinstallmobile" element={<PWAinstallmobile />} />
             </Routes>

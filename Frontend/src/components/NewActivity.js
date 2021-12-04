@@ -1,6 +1,5 @@
 import React from 'react'
 import styles from './newActivity.module.css';
-import buttonStyles from './sectioncomponents/linkbutton.module.css';
 import Close from '@material-ui/icons/Close';
 import Delete from '@material-ui/icons/DeleteForever';
 
@@ -89,7 +88,7 @@ export default function NewActivity(props) {
             </> :
             <input type='hidden' name='stage' value='red'/>}
             {props.task && <Delete onClick={()=>props.deleteActivity(true)}className={styles.delete}/>}
-            <input type="submit" value={props.submit} className={buttonStyles.button}/>
+            <input type="submit" value={props.submit} className={styles.button}/>
             <input type="button" value="Peruuta" onClick={onCancel} className={styles.cancel}/>
           </form>
         </div>

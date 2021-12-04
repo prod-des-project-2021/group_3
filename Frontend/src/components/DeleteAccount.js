@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import styles from './delete.module.css';
 
 // open new modal when delete account is pressed, api isn't working so need to wait for that for testing
