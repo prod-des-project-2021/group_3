@@ -14,12 +14,6 @@ export default function Menu(props) {
   const [DeleteBox, del] = useState("");
   const [showWarning, toggleWarning] = useState(false);
 
-
-  //Removing the login object on screen when pressing x
-  function hideLogin(){
-    display("");
-  }
-
    //Removing the delete account object on screen when pressing anything else
   function hideDelete(){
     del("");
@@ -37,7 +31,7 @@ export default function Menu(props) {
         <AccountCircleIcon className={ props.loggedIn ? styles.scale0 : styles.icons2 }
                            onClick={()=> display(<LoginModal pass={props.pass} user={props.user} conf={props.conf}
                            updateConf={props.updateConf} updatePass={props.updatePass} updateUser={props.updateUser} 
-                           onLogin={props.onLogin} onRegister={props.onRegister} hideLogin={() => hideLogin()} />)} />
+                           onLogin={props.onLogin} onRegister={props.onRegister}/>)} />
         <Warning deleteActivity={props.onDelete} showWarning={showWarning} toggleWarning={toggleWarning} warning='Haluatko varmasti poistaa tilisi ja vuosikellon pysyvästi?'/>
         
       </div>
