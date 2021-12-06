@@ -81,14 +81,13 @@ input[type=submit] {
 	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
-	font-family:Arial;
 	font-weight:bold;
 	padding:6px 12px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #8a3c3c;
  	margin-top: 10px;
  	margin-bottom: 10px;
-  	margin-left: 20px;
+  margin-left: 20px;
 	-webkit-user-select: none;
  	-khtml-user-select: none;
  	-moz-user-select: none;
@@ -108,6 +107,37 @@ input[type=submit] {
 .delete {
   float:right;
   font-size: 52px!important;
+}
+
+.button {
+	box-shadow: 0px 10px 14px -7px #3e7327;
+	background:#468829;
+	border-radius:4px;
+	border:1px solid #315221;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-weight:bold;
+	padding:6px 12px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #5b8a3c;
+ 	margin-top: 10px;
+ 	margin-bottom: 10px;
+  margin-left: 20px;
+	-webkit-user-select: none;
+ 	-khtml-user-select: none;
+ 	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+ 	user-select: none;
+}
+.button:hover {
+	background:linear-gradient(to bottom, #72b352 5%, #468829 100%);
+	background-color:#3e7327;
+}
+.button:active {
+	position:relative;
+	top:1px;
 }
 
 

@@ -86,17 +86,21 @@ app.post('/logon', (req, res) => {
   let password = req.body.pass.toString().trim();
 
   client.query('SELECT * FROM users WHERE username = $1', [username]).then(results => {
-    results.rows.forEach(element => 
-      bcrypt.compare(password, element.password).then(bcryptResult =>{
-        if(bcryptResult == true){
-          console.log(element.user_id);
-          res.json(element.user_id);
-        }
-        else{
-          res.status(406).send('Login credentials do not fit')
-        }
-      })
+    if (results.rowCount != 0) {
+      results.rows.forEach(element => 
+        bcrypt.compare(password, element.password).then(bcryptResult =>{
+          if(bcryptResult == true){
+            console.log(element.user_id);
+            res.json(element.user_id);
+          }
+          else{
+            res.status(406).send('Login credentials do not fit')
+          }
+        })
       )
+    } else {
+      res.status(406).send('Login credentials do not fit')
+    }
   })
 })
 

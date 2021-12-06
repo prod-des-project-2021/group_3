@@ -36,7 +36,22 @@
   top: -80px;
   text-align: end;
   cursor: pointer;
-  width: 2px;
-  font-size: large;
-  font-weight: bold;
+}
+
+.info {
+  width: fit-content;
+  background-color: rgb(58, 58, 58);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 10px 15px;
+  margin: auto;
+  margin-bottom: 5px;
+}
+
+.infoNotLogged{
+  font-size: larger;
+  margin: 10px;
+  padding: 5px;
+  border-bottom: double green;
 }

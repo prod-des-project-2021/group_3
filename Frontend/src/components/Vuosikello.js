@@ -15,26 +15,38 @@ export default function Vuosikello(props) {
 
   const [showWarning, toggleWarning] = useState(false);
   const [showChangeYear, toggleChangeYear] = useState(false);
+  const [yearOpen, toggleYearOpen] = useState(false);
+  const [addOpen, toggleAddOpen] = useState(false);
+
 
   return (
     <>
       <Backbutton/>
       <div className={anotherStyle.container}>
-        <div className={styles.year} onClick={()=>toggleChangeYear(true)}>{props.year}</div>
-        <AddIcon onClick={()=> props.toggleModalActivity()} className={styles.addIcon}/>
+        {!props.loggedIn && 
+            <div className={styles.infoNotLogged}>Hei, tämä on esimerkki Vuosikellosta ja sen käytöstä. Kirjaudu sisään, jotta pääset muokkkaamaan vuosikelloa ja saat siitä kaiken hyödyn irti</div>
+        }
+        <div className={styles.year} onClick={props.loggedIn ? ()=>toggleChangeYear(true) : ()=> toggleYearOpen(!yearOpen)}>{props.year}</div>
+        {yearOpen && 
+          <div className={styles.info}>Kun olet kirjautunut sisään, tästä voit vaihtaa Vuosikellosi otsikkoa</div>
+        }
+        <AddIcon onClick={props.loggedIn ? ()=> props.toggleModalActivity() : () =>toggleAddOpen(!addOpen)} className={styles.addIcon}/>
+        {addOpen && 
+          <div className={styles.info}>Kun olet kirjautunut sisään, tästä voit lisätä uusia tehtäviä tai aktiviteetteja Vuosikelloosi</div>
+        }
         <div className={styles.months}>
-          <Month name='Tammikuu' month={1} tasks={props.tasks} toggleModalModify={props.toggleModalModify} />
-          <Month name='Helmikuu' month={2} tasks={props.tasks} toggleModalModify={props.toggleModalModify}/>
-          <Month name='Maaliskuu' month={3} tasks={props.tasks} toggleModalModify={props.toggleModalModify}/>
-          <Month name='Huhtikuu' month={4} tasks={props.tasks} toggleModalModify={props.toggleModalModify}/>
-          <Month name='Toukokuu' month={5} tasks={props.tasks} toggleModalModify={props.toggleModalModify}/>
-          <Month name='Kesäkuu' month={6} tasks={props.tasks} toggleModalModify={props.toggleModalModify}/>
-          <Month name='Heinäkuu'month={7} tasks={props.tasks} toggleModalModify={props.toggleModalModify}/>
-          <Month name='Elokuu' month={8} tasks={props.tasks} toggleModalModify={props.toggleModalModify}/>
-          <Month name='Syyskuu' month={9} tasks={props.tasks} toggleModalModify={props.toggleModalModify}/>
-          <Month name='Lokakuu'month={10} tasks={props.tasks} toggleModalModify={props.toggleModalModify}/>
-          <Month name='Marraskuu'month={11} tasks={props.tasks} toggleModalModify={props.toggleModalModify}/>
-          <Month name='Joulukuu' month={12} tasks={props.tasks} toggleModalModify={props.toggleModalModify}/>
+          <Month name='Tammikuu' month={1} loggedIn={props.loggedIn} tasks={props.tasks} toggleModalModify={props.toggleModalModify} />
+          <Month name='Helmikuu' month={2} loggedIn={props.loggedIn} tasks={props.tasks} toggleModalModify={props.toggleModalModify}/>
+          <Month name='Maaliskuu' month={3} loggedIn={props.loggedIn} tasks={props.tasks} toggleModalModify={props.toggleModalModify}/>
+          <Month name='Huhtikuu' month={4} loggedIn={props.loggedIn} tasks={props.tasks} toggleModalModify={props.toggleModalModify}/>
+          <Month name='Toukokuu' month={5} loggedIn={props.loggedIn} tasks={props.tasks} toggleModalModify={props.toggleModalModify}/>
+          <Month name='Kesäkuu' month={6} loggedIn={props.loggedIn} tasks={props.tasks} toggleModalModify={props.toggleModalModify}/>
+          <Month name='Heinäkuu'month={7} loggedIn={props.loggedIn} tasks={props.tasks} toggleModalModify={props.toggleModalModify}/>
+          <Month name='Elokuu' month={8} loggedIn={props.loggedIn} tasks={props.tasks} toggleModalModify={props.toggleModalModify}/>
+          <Month name='Syyskuu' month={9} loggedIn={props.loggedIn} tasks={props.tasks} toggleModalModify={props.toggleModalModify}/>
+          <Month name='Lokakuu'month={10} loggedIn={props.loggedIn} tasks={props.tasks} toggleModalModify={props.toggleModalModify}/>
+          <Month name='Marraskuu'month={11} loggedIn={props.loggedIn} tasks={props.tasks} toggleModalModify={props.toggleModalModify}/>
+          <Month name='Joulukuu' month={12} loggedIn={props.loggedIn} tasks={props.tasks} toggleModalModify={props.toggleModalModify}/>
         </div>
         <div className={styles.infoContainer}>
           <div className={styles.actContainer}>
