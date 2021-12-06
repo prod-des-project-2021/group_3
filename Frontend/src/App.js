@@ -186,6 +186,8 @@ export default class App extends Component {
     })
     .then((response) => {
       console.log(response.data)
+      alert("Account deleted")
+      this.setState({ loggedIn: false }) 
     })
     .catch(function (error) {
       console.log(error);
@@ -211,6 +213,7 @@ export default class App extends Component {
         this.setState({logFail: true});
         console.log('not jippii');
         console.log(error);
+        alert("username already exists!")
       });
     }
     this.setState({logFail: true});
