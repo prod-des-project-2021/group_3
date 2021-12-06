@@ -3,10 +3,10 @@ import styles from './month.module.css';
 import Star from '@material-ui/icons/Star';
 import Edit from '@material-ui/icons/Edit';
 
-
 export default function Task(props) {
 
   const [open, setOpen] = useState(false);
+  const [editOpen, setEditOpen] = useState(false);
 
   function modify (task) {
     props.toggleModalActivity(task);
@@ -20,9 +20,13 @@ export default function Task(props) {
         {open &&  
           <>
             <div className={styles.info}>
-              <Edit className={styles.editIcon} onClick={()=>modify(props.task)} />{props.task.info}
+              <Edit className={styles.editIcon} onClick={props.loggedIn ? ()=>modify(props.task) : ()=>setEditOpen(!editOpen)} />{props.task.info}
             </div>
-          </> }
+            {editOpen && 
+                <div className={styles.info}>Kun olet kirjautunut sisään, tästä voit muokata vuosikellon aktiviteettia, sen info tekstiä ja vaihtaa sen tilaa </div>
+            }
+          </> 
+        }
     </>
   )
 }

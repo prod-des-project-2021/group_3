@@ -25,16 +25,19 @@ export default class App extends Component {
       pass:'',
       conf:'',
       loggedIn: false,
+      userId: '1',
       tasks:[],
       showModalActivity: false,
       showModalModify: false,
       activityToBeUpdated: null,
-      year: ''
+      year: '',
+      regFail: false,
+      logFail: false
     };
   }
 
   componentDidMount() {
-    axios.get(urlAddress + '/mytasks/1' )
+    axios.get(urlAddress + '/mytasks/' + this.state.userId )
     .then((response) => {
       this.setState({ tasks: response.data });
       const found = response.data.find(element => element.month === 13);
@@ -44,18 +47,19 @@ export default class App extends Component {
     });
   }
 
-  getUsersTasks = (UID) => {
-    axios.get(urlAddress + '/mytasks/1' )
+  getUsersTasks = () => {
+    axios.get(urlAddress + '/mytasks/' + this.state.userId )
     .then((response) => {
       this.setState({ tasks: response.data });
     });
   }
 
+  //change the year/title for vuosikello
   changeYear = (title) => {
     axios.put(urlAddress + '/updateYear', 
     {
       title: title,
-      user_id: '1' 
+      user_id: this.state.userId 
     }).then((response => {
       this.componentDidMount();
     }))
@@ -64,9 +68,9 @@ export default class App extends Component {
     })
   }
 
+  //adding activity to the vuosikello
   addNewActivity = (task, info, month, category) => {
-    //Here the userId should be received from state
-    let userID = 1
+    let userID = this.state.userId;
     axios.post(urlAddress + '/yearclockActivities', 
     {
       user_id: userID,
@@ -85,6 +89,7 @@ export default class App extends Component {
     })
   }
 
+  //modifying one activity in vuosikello
   modifyActivity = (task, info, month, category, stage, id) => {
     axios.put(urlAddress + '/updateActivity', 
     {
@@ -103,6 +108,7 @@ export default class App extends Component {
     })
   }
 
+  //deleting spesific task from vuosikello
   deleteActivity = (id) => {
     axios.delete(urlAddress + '/deleteActivity', 
     {
@@ -116,11 +122,13 @@ export default class App extends Component {
     })
   }
 
+  //toggles the visibility of modal for modifying activity
   toggleModalModify = (task) => {
     this.setState({activityToBeUpdated: {task} });
     this.setState({showModalModify: !this.state.showModalModify});
   }
 
+  //toggles the visibility of modal for adding activity
   toggleModalActivity = () => {
     this.setState({showModalActivity: !this.state.showModalActivity});
   }
@@ -151,13 +159,20 @@ export default class App extends Component {
       pass: password
     })
     .then((response) => {
-      console.log(response.data)
-      this.setState({ loggedIn: true }) 
+      if(response.data) {
+        console.log('ollaan sisässä');
+        console.log(response.data);
+        this.setState({ loggedIn: true, userId: response.data});
+        this.componentDidMount();
+      }
+      else {
+        console.log('username or password incorrect');
+        this.setState({logFail: true});
+      }
+    }).catch( error => {
+        console.log('username or password incorrect');
+        this.setState({logFail: true});
     })
-    .catch(function (error) {
-      console.log(error);
-      alert("username or password incorrect!")
-    });
   }
 
   //on Delete send data to API to validate credentials, then deleting those
@@ -191,22 +206,30 @@ export default class App extends Component {
         pass: password,
       })
       .then((response) => {
-        console.log(response.data)
+        console.log(response.data);
+        this.setState({logFail: false});
       })
-      .catch(function (error) {
+      .catch(error => {
+        this.setState({logFail: true});
+        console.log('not jippii');
         console.log(error);
         alert("username already exists!")
       });
     }
+    this.setState({logFail: true});
+  }
+
+  logFailToFalse = () => {
+    this.setState({logFail: false});
   }
 
   render() {
     return (
       <>
         <BrowserRouter>
-        <Header updateConf={this.updateConf} updatePass={this.updatePass} updateUser={this.updateUser}
+        <Header logFailToFalse={this.logFailToFalse} logFail={this.state.logFail} updateConf={this.updateConf} updatePass={this.updatePass} updateUser={this.updateUser}
                 onLogin={this.onLogin} onRegister={this.onRegister} onDelete={this.onDelete}
-                pass={this.state.pass} username={this.state.user} conf_pass={this.state.conf} loggedIn={this.state.loggedIn}/>
+                pass={this.state.pass} user={this.state.user} conf_pass={this.state.conf} loggedIn={this.state.loggedIn}/>
           <div className="container">
             <Routes>
               <Route path="/" element={<Frontpage />} />
@@ -215,7 +238,7 @@ export default class App extends Component {
               <Route path="Sec4" element={<Sec4 />} />
               <Route path="Tutorials" element={<Tutorials />} />
               <Route path="PWAinstall" element={<PWAinstall />} /> 
-              <Route path="Vuosikello" element={<Vuosikello changeYear={this.changeYear} year={this.state.year} addNewActivity={this.addNewActivity} getUsersTasks={this.getUsersTasks} showModalActivity={this.state.showModalActivity} toggleModalActivity={this.toggleModalActivity} tasks={this.state.tasks} modifyActivity={this.modifyActivity} toggleModalModify={this.toggleModalModify} showModalModify ={this.state.showModalModify} activityToBeUpdated={this.state.activityToBeUpdated} deleteActivity={this.deleteActivity}/>} />
+              <Route path="Vuosikello" element={<Vuosikello loggedIn={this.state.loggedIn} changeYear={this.changeYear} year={this.state.year} addNewActivity={this.addNewActivity} getUsersTasks={this.getUsersTasks} showModalActivity={this.state.showModalActivity} toggleModalActivity={this.toggleModalActivity} tasks={this.state.tasks} modifyActivity={this.modifyActivity} toggleModalModify={this.toggleModalModify} showModalModify ={this.state.showModalModify} activityToBeUpdated={this.state.activityToBeUpdated} deleteActivity={this.deleteActivity}/>} />
               <Route path="Lahteet" element={<References />} />
               <Route path="PWAinstallmobile" element={<PWAinstallmobile />} />
             </Routes>

@@ -81,3 +81,9 @@ input  {
   -o-user-select: none;
   user-select: none;
 }
+
+.logFail {
+  color: crimson;
+  font-size: larger;
+  margin-top: 25px;
+}
