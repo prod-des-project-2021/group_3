@@ -30,7 +30,9 @@ export default class App extends Component {
       showModalActivity: false,
       showModalModify: false,
       activityToBeUpdated: null,
-      year: ''
+      year: '',
+      regFail: false,
+      logFail: false
     };
   }
 
@@ -157,13 +159,20 @@ export default class App extends Component {
       pass: password
     })
     .then((response) => {
-      console.log(response.data);
-      this.setState({ loggedIn: true, userId: response.data});
-      this.componentDidMount();
+      if(response.data) {
+        console.log('ollaan sisässä');
+        console.log(response.data);
+        this.setState({ loggedIn: true, userId: response.data});
+        this.componentDidMount();
+      }
+      else {
+        console.log('username or password incorrect');
+        this.setState({logFail: true});
+      }
+    }).catch( error => {
+        console.log('username or password incorrect');
+        this.setState({logFail: true});
     })
-    .catch(function (error) {
-      console.log(error);
-    });
   }
 
   //on Delete send data to API to validate credentials, then deleting those
@@ -195,21 +204,29 @@ export default class App extends Component {
         pass: password,
       })
       .then((response) => {
-        console.log(response.data)
+        console.log(response.data);
+        this.setState({logFail: false});
       })
-      .catch(function (error) {
+      .catch(error => {
+        this.setState({logFail: true});
+        console.log('not jippii');
         console.log(error);
       });
     }
+    this.setState({logFail: true});
+  }
+
+  logFailToFalse = () => {
+    this.setState({logFail: false});
   }
 
   render() {
     return (
       <>
         <BrowserRouter>
-        <Header updateConf={this.updateConf} updatePass={this.updatePass} updateUser={this.updateUser}
+        <Header logFailToFalse={this.logFailToFalse} logFail={this.state.logFail} updateConf={this.updateConf} updatePass={this.updatePass} updateUser={this.updateUser}
                 onLogin={this.onLogin} onRegister={this.onRegister} onDelete={this.onDelete}
-                pass={this.state.pass} username={this.state.user} conf_pass={this.state.conf} loggedIn={this.state.loggedIn}/>
+                pass={this.state.pass} user={this.state.user} conf_pass={this.state.conf} loggedIn={this.state.loggedIn}/>
           <div className="container">
             <Routes>
               <Route path="/" element={<Frontpage />} />
