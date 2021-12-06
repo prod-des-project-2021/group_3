@@ -15,15 +15,9 @@ export default function Menu(props) {
   const [showWarning, toggleWarning] = useState(false);
   const [login, toggleLogin] = useState(false);
 
-
   function close(){
     toggleLogin(false);
     props.logFailToFalse();
-  }
-
-  //Removing the login object on screen when pressing x
-  function hideLogin(){
-    display("");
   }
 
    //Removing the delete account object on screen when pressing anything else
