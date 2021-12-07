@@ -2,6 +2,11 @@
   "short_name": "hymyt",
   "name": "Hyvinvoivat maaseudun yritykset",
   "start_url": ".",
+  "icons" :{
+    "src":"favicon.ico",
+    "sizes":"48x48 32x32 16x16",
+    "type":"image/x-icon"
+  },
   "display": "standalone",
   "theme_color": "#5b8a3c88",
   "background_color": "#fffaf0"
