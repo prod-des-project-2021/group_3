@@ -13,10 +13,9 @@ export default function Menu(props) {
   const [content, display] = useState("");
   const [DeleteBox, del] = useState("");
   const [showWarning, toggleWarning] = useState(false);
-  const [login, toggleLogin] = useState(false);
 
   function close(){
-    toggleLogin(false);
+    props.toggleLogin(false);
     props.logFailToFalse();
   }
 
@@ -35,10 +34,10 @@ export default function Menu(props) {
                   onClick={()=> del(<DeleteAccount toggleWarning={toggleWarning} hideDelete={() => hideDelete()} onDelete={props.onDelete} />)} />
 
         <AccountCircleIcon className={ props.loggedIn ? styles.scale0 : styles.icons2 }
-                           onClick={()=> toggleLogin(true)}/>                    
-        {login && <LoginModal logFailToFalse={()=>props.logFailToFalse()} logFail={props.logFail} pass={props.pass} user={props.user} conf_pass={props.conf_pass}
+                           onClick={()=> props.toggleLogin(true)}/>                    
+        {props.showLogin && <LoginModal showLogin={props.showLogin} logFailToFalse={()=>props.logFailToFalse()} logFail={props.logFail} pass={props.pass} user={props.user} conf_pass={props.conf_pass}
           updateConf={props.updateConf} updatePass={props.updatePass} updateUser={props.updateUser} 
-          onLogin={props.onLogin} onRegister={props.onRegister} close={close} toggleLogin={() => toggleLogin} />}
+          onLogin={props.onLogin} onRegister={props.onRegister} close={close} toggleLogin={() => props.toggleLogin()} />}
         <Warning deleteActivity={props.onDelete} showWarning={showWarning} toggleWarning={toggleWarning} warning='Haluatko varmasti poistaa tilisi ja vuosikellon pysyvästi?'/>
         
       </div>

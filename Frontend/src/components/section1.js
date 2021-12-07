@@ -13,7 +13,7 @@ export default function section1() {
   return (
     <div>
       <div className={styles.container}>
-        <Title title='Hyvinvoivat maaseudun yritykset'/>
+        <Title title='Hyvinvoivat maaseudun yritykset - HYMYT'/>
         <Caption text ='Tervetuloa näille maatalousyrittäjien hyvinvointia käsitteleville sivuille.'/>
         <Imgcontainer alt='maisema' imgsrc={image1}/>
         <Content text ='Sivut on tuotettu osana HYMYT – hyvinvoivat maaseudun yritykset hanketta. Tähän on koottua hyvinvointiin liittyvää materiaalia ja erilaisia tehtäviä ja vinkkejä sovelluksista, joiden avulla voi halutessaan arvioida ja seurata omaan hyvinvointiin liittyviä tekijöitä.'/>

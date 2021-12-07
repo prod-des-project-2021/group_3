@@ -30,7 +30,7 @@ export default function LoginModal(props) {
         setWarnPass('Salasanan tulee olla vähintään 6 merkkiä pitkä');
       }      
     } else {
-    setWarnPass('Salasana ja vahvistus ovat ERI!!!!!');
+    setWarnPass('Salasanan ja salasanan vahvistuksen tulevat olla samat');
     }
   }
 
