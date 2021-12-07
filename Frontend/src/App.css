@@ -18,3 +18,7 @@ a{
   padding-left: 1vw;
   padding-right: 1vw;
 }
+
+area{
+  cursor: pointer;
+}
