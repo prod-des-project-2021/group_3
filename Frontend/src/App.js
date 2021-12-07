@@ -14,7 +14,8 @@ import Vuosikello from './components/Vuosikello';
 import PWAinstallmobile from './components/PWAinstallmobile';
 import References from './components/References';
 
-const urlAddress = 'http://localhost:4000' //change this to heroku address when it goes there
+// const urlAddress = 'http://localhost:4000' //change this to heroku address when it goes there
+const urlAddress = 'https://hymyt.herokuapp.com' //heroku api adress
 
 export default class App extends Component {
   constructor (props)
