@@ -29,6 +29,7 @@ export default class App extends Component {
       tasks:[],
       showModalActivity: false,
       showModalModify: false,
+      showLogin: false,
       activityToBeUpdated: null,
       year: '',
       regFail: false,
@@ -122,6 +123,11 @@ export default class App extends Component {
     })
   }
 
+   //toggles the visibility of modal for login
+   toggleLogin = (state) => {
+    this.setState({showLogin: state });
+  }
+
   //toggles the visibility of modal for modifying activity
   toggleModalModify = (task) => {
     this.setState({activityToBeUpdated: {task} });
@@ -160,7 +166,7 @@ export default class App extends Component {
     })
     .then((response) => {
       if(response.data) {
-        console.log('ollaan sisässä');
+        this.toggleLogin(false);
         console.log(response.data);
         this.setState({ loggedIn: true, userId: response.data});
         this.componentDidMount();
@@ -227,7 +233,7 @@ export default class App extends Component {
     return (
       <>
         <BrowserRouter>
-        <Header logFailToFalse={this.logFailToFalse} logFail={this.state.logFail} updateConf={this.updateConf} updatePass={this.updatePass} updateUser={this.updateUser}
+        <Header toggleLogin={this.toggleLogin} showLogin={this.state.showLogin} logFailToFalse={this.logFailToFalse} logFail={this.state.logFail} updateConf={this.updateConf} updatePass={this.updatePass} updateUser={this.updateUser}
                 onLogin={this.onLogin} onRegister={this.onRegister} onDelete={this.onDelete}
                 pass={this.state.pass} user={this.state.user} conf_pass={this.state.conf} loggedIn={this.state.loggedIn}/>
           <div className="container">
