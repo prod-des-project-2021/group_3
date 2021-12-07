@@ -50,7 +50,7 @@
 }
 
 .starIcon{
-  margin-left: 5px;
+  margin-left: 0px;
 }
 
 .task {
@@ -61,6 +61,14 @@
   margin: 6px;
   width: fit-content;
   border-radius: 3px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.taskContainer {
+  display: flex;
+  align-items: center;
+  width: 100%;
 }
 
 .info {

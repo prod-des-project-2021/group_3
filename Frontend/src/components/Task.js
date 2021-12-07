@@ -14,9 +14,11 @@ export default function Task(props) {
 
   return (
     <>
+    <div className={styles.taskContainer}>
       <div onClick={()=>setOpen(!open)} key={props.task.task_id} className={`${styles.task} ${styles[props.task.category]}`}>{props.task.task_name} 
-        <Star className={styles.starIcon} style={{color: props.task.stage}}/>
       </div>
+        <Star className={styles.starIcon} style={{color: props.task.stage}}/>
+        </div>
         {open &&  
           <>
             <div className={styles.info}>

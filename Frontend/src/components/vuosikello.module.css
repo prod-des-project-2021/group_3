@@ -14,15 +14,23 @@
 
 .infoContainer {
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .actContainer{
   margin-top: 20px;
+  margin-right: 20px;
 }
 
 .starContainer {
   margin-top: 20px;
+}
+
+.infoTitle {
+  margin-bottom: 10px;
+  text-decoration: underline;
+  font-weight: bold;
 }
 
 .starIcon {

@@ -50,7 +50,8 @@ export default function Vuosikello(props) {
         </div>
         <div className={styles.infoContainer}>
           <div className={styles.actContainer}>
-            <Content text='Aktiviteettien kategoriat:'/>
+            <div className={styles.infoTitle}>Aktiviteettien kategoriat:</div>
+            {/* <Content text='Aktiviteettien kategoriat:'/> */}
             <div className={`${actStyles.task} ${actStyles.aktiviteetit}`}>Yleiset aktiviteetit</div>
             <div className={`${actStyles.task} ${actStyles.rahoitus}`}>Rahoitus deadline</div>
             <div className={`${actStyles.task} ${actStyles.kilpailutukset}`}>Kilpailutukset</div>
@@ -58,10 +59,11 @@ export default function Vuosikello(props) {
             <div className={`${actStyles.task} ${actStyles.markkinointi}`}>Markkinointipampanjat ja -aktiviteetit</div>
           </div>
           <div className={styles.starContainer}>
-            <Star className={styles.starIcon} style={{color:'green', backgroundColor:'black', padding:'2px', borderRadius:'20px' }}/> Tehty
-            <Star className={styles.starIcon} style={{color:'hsl(36, 82%, 51%)'}}/> Menossa
-            <Star className={styles.starIcon} style={{color:'red'}}/> Ei aloitettu
-            <Star className={styles.starIcon} style={{color:'black'}}/> Siirtyy ensi vuoteen
+            <div className={styles.infoTitle}>Aktiviteettien tilanne:</div>
+            <div><Star className={styles.starIcon} style={{color:'green'}}/> Tehty</div>
+            <div><Star className={styles.starIcon} style={{color:'hsl(36, 82%, 51%)'}}/> Käynnissä</div>
+            <div><Star className={styles.starIcon} style={{color:'red'}}/> Ei aloitettu</div>
+            <div><Star className={styles.starIcon} style={{color:'black'}}/> Siirtyy ensi vuoteen</div>
           </div>
           <NewActivity submit='Lisää' title='Luo uusi tehtävä' addNewActivity={props.addNewActivity} toggleModalActivity={props.toggleModalActivity} showModalActivity ={props.showModalActivity}/>
           <NewActivity deleteActivity={toggleWarning} submit='Päivitä' task={props.activityToBeUpdated} title='Muokkaa aktiviteettia' addNewActivity={props.modifyActivity} toggleModalActivity={props.toggleModalModify} showModalActivity ={props.showModalModify}/>
