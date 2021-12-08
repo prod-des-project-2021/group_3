@@ -14,19 +14,20 @@ export default function Task(props) {
 
   return (
     <>
-      <div onClick={()=>setOpen(!open)} key={props.task.task_id} className={`${styles.task} ${styles[props.task.category]}`}>{props.task.task_name} 
+      <div className={styles.taskContainer}>
+        <div onClick={()=>setOpen(!open)} key={props.task.task_id} className={`${styles.task} ${styles[props.task.category]}`}>{props.task.task_name} </div>
         <Star className={styles.starIcon} style={{color: props.task.stage}}/>
       </div>
-        {open &&  
-          <>
-            <div className={styles.info}>
-              <Edit className={styles.editIcon} onClick={props.loggedIn ? ()=>modify(props.task) : ()=>setEditOpen(!editOpen)} />{props.task.info}
-            </div>
-            {editOpen && 
-                <div className={styles.info}>Kun olet kirjautunut sisään, tästä voit muokata vuosikellon aktiviteettia, sen info tekstiä ja vaihtaa sen tilaa </div>
-            }
-          </> 
-        }
+      {open &&  
+        <>
+          <div className={styles.info}>
+            <Edit className={styles.editIcon} onClick={props.loggedIn ? ()=>modify(props.task) : ()=>setEditOpen(!editOpen)} />{props.task.info}
+          </div>
+          {editOpen && 
+            <div className={styles.info}>Kun olet kirjautunut sisään, tästä voit muokata vuosikellon aktiviteettia, sen info tekstiä ja vaihtaa sen tilaa </div>
+          }
+        </> 
+      }
     </>
   )
 }

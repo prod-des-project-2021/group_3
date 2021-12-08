@@ -14,8 +14,10 @@ import Vuosikello from './components/Vuosikello';
 import PWAinstallmobile from './components/PWAinstallmobile';
 import References from './components/References';
 
-// const urlAddress = 'http://localhost:4000' //change this to heroku address when it goes there
-const urlAddress = 'https://hymyt.herokuapp.com' //heroku api adress
+import mansikki from './components/pictures/lehma.png';
+
+const urlAddress = 'http://localhost:4000' //change this to heroku address when it goes there
+// const urlAddress = 'https://hymyt.herokuapp.com' //heroku api adress
 
 export default class App extends Component {
   constructor (props)
@@ -34,7 +36,11 @@ export default class App extends Component {
       activityToBeUpdated: null,
       year: '',
       regFail: false,
-      logFail: false
+      logFail: false,
+      tips: null,
+      showMansikki: false,
+      mansikkiTip: 'Terve, olen Mansikki!',
+      mansikkiClass: false
     };
   }
 
@@ -47,6 +53,17 @@ export default class App extends Component {
         this.setState({year: found.task_name});
       }
     });
+    if (this.state.tips == null) {
+      axios.get(urlAddress + '/tips')
+      .then((response) => {
+        this.setState({ tips: response.data });
+      });
+    } else if (Math.random() <= 0.3){
+      let tip = this.state.tips[Math.floor(Math.random() * this.state.tips.length)].tip;
+      if (tip) {
+        this.setState({showMansikki: true, mansikkiTip: tip });
+      }
+    }
   }
 
   getUsersTasks = () => {
@@ -230,13 +247,24 @@ export default class App extends Component {
     this.setState({logFail: false});
   }
 
+  reverseMansikki = () => {
+    this.setState({mansikkiClass: true});
+    setTimeout(() => this.setState({showMansikki: false, mansikkiClass: false}), 300);
+  }
+
   render() {
     return (
       <>
         <BrowserRouter>
-        <Header toggleLogin={this.toggleLogin} showLogin={this.state.showLogin} logFailToFalse={this.logFailToFalse} logFail={this.state.logFail} updateConf={this.updateConf} updatePass={this.updatePass} updateUser={this.updateUser}
+          <Header toggleLogin={this.toggleLogin} showLogin={this.state.showLogin} logFailToFalse={this.logFailToFalse} logFail={this.state.logFail} updateConf={this.updateConf} updatePass={this.updatePass} updateUser={this.updateUser}
                 onLogin={this.onLogin} onRegister={this.onRegister} onDelete={this.onDelete}
                 pass={this.state.pass} user={this.state.user} conf_pass={this.state.conf} loggedIn={this.state.loggedIn}/>
+          {this.state.showMansikki ?
+            <div onClick={()=> this.reverseMansikki()} className={this.state.mansikkiClass ? 'reverseMansikkiContainer' : 'mansikkiContainer' }>
+              <div className='speechBubble'><p>{this.state.mansikkiTip}</p></div>
+              <img alt='Auttava Mansikki lehmä' className='mansikki'src={mansikki}/>
+            </div> 
+          : null}
           <div className="container">
             <Routes>
               <Route path="/" element={<Frontpage />} />

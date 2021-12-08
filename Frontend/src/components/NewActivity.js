@@ -81,7 +81,7 @@ export default function NewActivity(props) {
               <label htmlFor="stage">Valitse tehtävän tila</label> <br></br>
               <select name="stage" id="stage" defaultValue={props.task.task.stage}>
                 <option value="red">Ei aloitettu</option>
-                <option value="yellow">Käynnissä</option>
+                <option value="hsl(36, 82%, 51%)">Käynnissä</option>
                 <option value="green">Tehty</option>
                 <option value="black">Siirtyy ensi vuoteen</option>
               </select> <br></br>
