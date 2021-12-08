@@ -61,8 +61,7 @@
   margin: 6px;
   width: fit-content;
   border-radius: 3px;
-  word-wrap: break-word;
-  word-break: break-all;
+  word-break: break-word;
 }
 
 .taskContainer {

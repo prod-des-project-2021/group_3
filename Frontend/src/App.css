@@ -22,3 +22,71 @@ a{
 area{
   cursor: pointer;
 }
+
+.mansikkiContainer {
+  position: fixed;
+  right: 0;
+  z-index: 4;
+  max-width: 70%;
+  max-height: 50px;
+  animation-name: aniMansikki;
+  animation-duration: 0.5s;
+}
+
+.reverseMansikkiContainer {
+  position: fixed;
+  right: 0;
+  z-index: 4;
+  max-width: 70%;
+  animation-name: reverseaniMansikki;
+  animation-duration: 0.5s;
+}
+
+.speechBubble {
+  position: relative;
+  background: #468829;
+  color: #FFFFFF;
+  font-family: Arial;
+  font-size: 20px;
+  line-height: 120px;
+  text-align: center;
+  width: 250px;
+  height: 120px;
+  border-radius: 10px;
+  padding: 0px;
+}
+
+.speechBubble p {
+  line-height: 1.5;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.speechBubble:after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 0;
+  z-index: 1;
+  border-style: solid;
+  border-width: 0 25px 32px 0;
+  border-color: transparent #468829 transparent transparent;
+  bottom: -32px;
+  left: 30%;
+  margin-left: -12.5px;
+}
+
+.mansikki {
+  max-width: 100%;
+  max-height: 70vh;
+  float: right;
+}
+
+@keyframes aniMansikki {
+  from {right: -400px;}
+  to {right: 0px;}
+}
+@keyframes reverseaniMansikki {
+  from {right: 0px;}
+  to {right: -400px}
+}

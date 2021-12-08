@@ -22,6 +22,14 @@ app.get('/mytasks/:uid', (req, res) => {
   })
 })
 
+//getting tips
+app.get('/tips', (req, res) => {
+  client.query('SELECT * FROM tips').then(results => {
+    res.json(results.rows);
+  })
+  .catch(error => res.sendStatus(500));
+})
+
 //posting new activity
 app.post('/yearclockActivities', (req, res) => {
   client.query('INSERT INTO vuosikello(task_id, user_id, task_name, month, category, info, stage) VALUES ($1, $2, $3, $4, $5, $6, $7)', 

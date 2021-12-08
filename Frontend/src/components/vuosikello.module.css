@@ -15,7 +15,6 @@
 .infoContainer {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
 }
 
 .actContainer{
@@ -62,4 +61,12 @@
   margin: 10px;
   padding: 5px;
   border-bottom: double green;
+}
+
+.modalContainer {
+  position: sticky;
+  z-index: 5;
+  top:0;
+  display: flex;
+  justify-content: center;
 }

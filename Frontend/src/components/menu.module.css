@@ -1,6 +1,6 @@
 .menu {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   height:10vh;
   min-height: 23px;
@@ -18,7 +18,7 @@
 @media only screen and (min-width: 992px) {
   .menu {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     height:15vh;
     min-height: 23px;
@@ -26,45 +26,6 @@
     background-color: #5b8a3c88;
   }
 }
-
-.icons{
-  margin-left: 2vw;
-  margin-right: 2vw;
-  position: absolute;
-  top: 15px;
-  left: 5px;
-}
-
-@media only screen and (min-width: 992px) {
-  .icons{
-    font-size: 36px!important;
-    margin-left: 2vw;
-    margin-right: 2vw;
-    position: absolute;
-    top: 25px;
-    left: 10px;
-  }
-}
-
-.icons2{
-  margin-left: 2vw;
-  margin-right: 2vw;
-  position: absolute;
-  top: 15px;
-  right: 5px;
-}
-
-@media only screen and (min-width: 992px) {
-  .icons2{
-    font-size: 36px!important;
-    margin-left: 2vw;
-    margin-right: 2vw;
-    position: absolute;
-    top: 25px;
-    right: 10px;
-  }
-}
-
 
 .hideBackground{
   position: fixed;
@@ -84,25 +45,12 @@
   z-index: 3;
 }
 
-.scale0{
-  transform: scale(0);
+.rightIcon {
+  margin-right: 3vw;
+  font-size: 5vh;
 }
 
-.settings{
-  margin-left: 2vw;
-  margin-right: 2vw;
-  position: absolute;
-  top: 15px;
-  right: 5px;
-}
-
-@media only screen and (min-width: 992px) {
-  .settings{
-    font-size: 36px!important;
-    margin-left: 2vw;
-    margin-right: 2vw;
-    position: absolute;
-    top: 25px;
-    right: 10px;
-  }
+.leftIcon {
+  margin-left: 3vw;
+  font-size: 5vh;
 }
