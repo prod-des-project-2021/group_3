@@ -54,12 +54,19 @@ area{
   height: 120px;
   border-radius: 10px;
   padding: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .speechBubble p {
-  line-height: 1.5;
+  line-height: 1;
   display: inline-block;
   vertical-align: middle;
+  margin: 0;
+}
+.mansikkiClick{
+  font-size: small;
 }
 
 .speechBubble:after {
@@ -83,10 +90,10 @@ area{
 }
 
 @keyframes aniMansikki {
-  from {right: -400px;}
+  from {right: -499px;}
   to {right: 0px;}
 }
 @keyframes reverseaniMansikki {
   from {right: 0px;}
-  to {right: -400px}
+  to {right: -499px}
 }

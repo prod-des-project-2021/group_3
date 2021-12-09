@@ -11,7 +11,7 @@
 .menubox{
     background-color: honeydew;
     border-radius: 0px 9px 9px 0px;
-    width: min-content;
+    max-width: 330px;
     text-align: center;
     position: fixed;
     height: inherit;
@@ -20,6 +20,8 @@
     width: auto;
     animation-name: animenu;
     animation-duration: 0.3s;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 .reverseBox{
     background-color: honeydew;
@@ -58,4 +60,9 @@
 @keyframes reverseanimenu {
     from {left: 0px;}
     to {left: -301px}
+}
+.infortexxt{
+    word-break: break-word;
+    padding: 5px;
+    margin-top: 10px;
 }

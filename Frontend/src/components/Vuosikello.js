@@ -28,9 +28,8 @@ export default function Vuosikello(props) {
       </div>
       <Backbutton/>
       <div className={anotherStyle.container}>
-        {!props.loggedIn && 
-          <div className={styles.infoNotLogged}>Hei, tämä on esimerkki Vuosikellosta ja sen käytöstä. Kirjaudu sisään, jotta pääset muokkkaamaan vuosikelloa ja saat siitä kaiken hyödyn irti</div>
-        }
+          <div className={styles.infoNotLogged}> {!props.loggedIn ? 'Hei, tämä on esimerkki Vuosikellosta ja sen käytöstä. Kirjaudu sisään, jotta pääset muokkkaamaan vuosikelloa ja saat siitä kaiken hyödyn irti'
+        : 'Älä tallenna vuosikelloon arkaluontoisia tietoja, kuten salasanaasi tai henkilötunnuksia.'}</div>
         <div className={styles.year} onClick={props.loggedIn ? ()=>toggleChangeYear(true) : ()=> toggleYearOpen(!yearOpen)}>{props.year}</div>
         {yearOpen && 
           <div className={styles.info}>Kun olet kirjautunut sisään, tästä voit vaihtaa Vuosikellosi otsikkoa</div>

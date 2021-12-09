@@ -50,6 +50,8 @@ export default function LoginModal(props) {
                 <input type="password" maxLength="50" onChange={props.updateConf} id={"confirmation"} /><br/><br/>
                 <div disabled onClick={register} className={styles.button}>Rekisteröidy</div> <br/>
                 <div onClick={()=> switchLogReg(false)} className={styles.register}>Takaisin sisäänkirjautumiseen </div>
+                <br/> <br/>
+                <div>Emme kerää mitään muita tietoja, kuin käyttäjänimi, salasana sekä vuosikelloon itse tekemäsi muutokset. Huomaathan, että tästä syystä emme voi palauttaa unohdettua salasanaa. Voit poistaa tallennetut tiedot, poistamalla tilisi.</div>
                 <div className={styles.logFail}>{warnUser}</div>
                 <div className={styles.logFail}>{warnPass}</div>
                 {props.logFail ? <div className={styles.logFail}>Käyttäjänimi varattu</div> : null}
