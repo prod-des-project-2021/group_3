@@ -16,10 +16,36 @@ app.get('/', (req, res) => {
 })
 
 //getting tasks from specific user
-app.get('/mytasks/:uid', (req, res) => {
-  client.query('SELECT * FROM vuosikello WHERE user_id = $1', [req.params.uid]).then(results => {
-    res.json(results.rows);
-  })
+app.post('/mytasks/:uid', (req, res) => {
+  console.log(req.body)
+  if(req.params.uid == '1') {
+    client.query('SELECT * FROM vuosikello WHERE user_id = $1', ['1']).then(results => {
+      res.json(results.rows);
+    })
+  }
+  else{
+    let username = req.body.user.toString().toLowerCase().trim();
+    let password = req.body.pass.toString().trim();
+    
+    client.query('SELECT * FROM users WHERE username = $1', [username]).then(results => {
+      if (results.rowCount != 0) {
+        results.rows.forEach(element => 
+          bcrypt.compare(password, element.password).then(bcryptResult =>{
+            if(bcryptResult == true){
+              client.query('SELECT * FROM vuosikello WHERE user_id = $1', [element.user_id]).then(results => {
+                res.json(results.rows);
+              })
+            }
+            else{
+              res.status(406).send('Login credentials do not fit')
+            }
+          })
+        )
+      } else {
+        res.status(406).send('Login credentials do not fit')
+      }
+    })
+  }
 })
 
 //getting tips
@@ -32,44 +58,114 @@ app.get('/tips', (req, res) => {
 
 //posting new activity
 app.post('/yearclockActivities', (req, res) => {
-  client.query('INSERT INTO vuosikello(task_id, user_id, task_name, month, category, info, stage) VALUES ($1, $2, $3, $4, $5, $6, $7)', 
-                                    [uuidv4(), req.body.user_id, req.body.task_name, req.body.month, req.body.category, req.body.info, req.body.stage])
-  .then(results => {
-    res.sendStatus(201);
+  let username = req.body.user.toString().toLowerCase().trim();
+  let password = req.body.pass.toString().trim();
+
+  client.query('SELECT * FROM users WHERE username = $1', [username]).then(results => {
+    if (results.rowCount != 0) {
+      results.rows.forEach(element => 
+        bcrypt.compare(password, element.password).then(bcryptResult =>{
+          if(bcryptResult == true){
+            client.query('INSERT INTO vuosikello(task_id, user_id, task_name, month, category, info, stage) VALUES ($1, $2, $3, $4, $5, $6, $7)', 
+                                              [uuidv4(), element.user_id, req.body.task_name, req.body.month, req.body.category, req.body.info, req.body.stage])
+            .then(results => {
+              res.sendStatus(201);
+            })
+            .catch(error => res.sendStatus(500));
+          }
+          else{
+            res.status(406).send('Login credentials do not fit')
+          }
+        })
+      )
+    } else {
+      res.status(406).send('Login credentials do not fit')
+    }
   })
-  .catch(error => res.sendStatus(500));
+
 })
 
 //updating spesific activity
 app.put('/updateActivity', (req, res) => {
-  client.query('UPDATE vuosikello SET task_name = $1, month = $2, category = $3, info = $4, stage = $5 WHERE task_id = $6', [req.body.task_name, req.body.month, req.body.category, req.body.info, req.body.stage, req.body.task_id])
-  .then(results => {
-    res.sendStatus(200);
+  let username = req.body.user.toString().toLowerCase().trim();
+  let password = req.body.pass.toString().trim();
+  client.query('SELECT * FROM users WHERE username = $1', [username]).then(results => {
+    if (results.rowCount != 0) {
+      results.rows.forEach(element => 
+        bcrypt.compare(password, element.password).then(bcryptResult =>{
+          if(bcryptResult == true){
+            client.query('UPDATE vuosikello SET task_name = $1, month = $2, category = $3, info = $4, stage = $5 WHERE task_id = $6', [req.body.task_name, req.body.month, req.body.category, req.body.info, req.body.stage, req.body.task_id])
+            .then(results => {
+              res.sendStatus(200);
+            })
+            .catch(error => res.sendStatus(500));
+          }
+          else{
+            res.status(406).send('Login credentials do not fit')
+          }
+        })
+      )
+    } else {
+      res.status(406).send('Login credentials do not fit')
+    }
   })
-  .catch(error => res.sendStatus(500));
 })
 
 //delete spesific activity
 app.delete('/deleteActivity', (req, res) => {
-  client.query('DELETE FROM vuosikello WHERE task_id = $1', [req.body.task_id])
-  .then(results => {
-    res.status(201).send('Row deleted!')
+  let username = req.body.user.toString().toLowerCase().trim();
+  let password = req.body.pass.toString().trim();
+  client.query('SELECT * FROM users WHERE username = $1', [username]).then(results => {
+    if (results.rowCount != 0) {
+      results.rows.forEach(element => 
+        bcrypt.compare(password, element.password).then(bcryptResult =>{
+          if(bcryptResult == true){
+            client.query('DELETE FROM vuosikello WHERE task_id = $1', [req.body.task_id])
+            .then(results => {
+              res.status(201).send('Row deleted!')
+            })
+            .catch(error => res.sendStatus(500));
+          }
+          else{
+            res.status(406).send('Login credentials do not fit')
+          }
+        })
+      )
+    } else {
+      res.status(406).send('Login credentials do not fit')
+    }
   })
-  .catch(error => res.sendStatus(500));
 })
 
 //change the title of yearclock
 app.put('/updateYear', (req, res) => {
-  client.query('UPDATE vuosikello SET task_name = $1 WHERE user_id = $2 AND month = $3', [req.body.title, req.body.user_id, 13])
-  .then(results => {
-    res.sendStatus(200);
+  let username = req.body.user.toString().toLowerCase().trim();
+  let password = req.body.pass.toString().trim();
+  client.query('SELECT * FROM users WHERE username = $1', [username]).then(results => {
+    if (results.rowCount != 0) {
+      results.rows.forEach(element => 
+        bcrypt.compare(password, element.password).then(bcryptResult =>{
+          if(bcryptResult == true){
+            client.query('UPDATE vuosikello SET task_name = $1 WHERE user_id = $2 AND month = $3', [req.body.title, req.body.user_id, 13])
+            .then(results => {
+              res.sendStatus(200);
+            })
+            .catch(error => res.sendStatus(500));
+          }
+          else{
+            res.status(406).send('Login credentials do not fit')
+          }
+        })
+      )
+    } else {
+      res.status(406).send('Login credentials do not fit')
+    }
   })
-  .catch(error => res.sendStatus(500));
 })
 
 //inserting registration details into db
 app.post('/signup', (req, res) => {
-  let username = req.body.user.toString().trim();
+  let username = req.body.user.toString().toLowerCase().trim();
   let password = req.body.pass.toString().trim();
   let userid = uuidv4();
   let year = new Date().getFullYear();
@@ -90,7 +186,7 @@ app.post('/signup', (req, res) => {
 
 //checking login details with existing ones in db
 app.post('/logon', (req, res) => {
-  let username = req.body.user.toString().trim();
+  let username = req.body.user.toString().toLowerCase().trim();
   let password = req.body.pass.toString().trim();
 
   client.query('SELECT * FROM users WHERE username = $1', [username]).then(results => {

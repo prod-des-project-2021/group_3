@@ -45,8 +45,13 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    axios.get(urlAddress + '/mytasks/' + this.state.userId )
-    .then((response) => {
+    let username = this.state.user.toLowerCase();
+    let password = this.state.pass;
+    axios.post(urlAddress + '/mytasks/' + this.state.userId,
+    {
+      user : username,
+      pass: password 
+    }).then((response) => {
       this.setState({ tasks: response.data });
       const found = response.data.find(element => element.month === 13);
       if (found) {
@@ -66,17 +71,33 @@ export default class App extends Component {
     }
   }
 
-  getUsersTasks = () => {
-    axios.get(urlAddress + '/mytasks/' + this.state.userId )
-    .then((response) => {
+  getUsersTasks = (id) => {
+    if (id) {
+      axios.post(urlAddress + '/mytasks/1',
+    ).then((response) => {
       this.setState({ tasks: response.data });
-    });
+      });
+    } else {
+      let username = this.state.user.toLowerCase();
+      let password = this.state.pass;
+      axios.post(urlAddress + '/mytasks/' + this.state.userId,
+      {
+        user : username,
+        pass: password 
+      }).then((response) => {
+        this.setState({ tasks: response.data });
+      });
+    }
   }
 
   //change the year/title for vuosikello
   changeYear = (title) => {
+    let username = this.state.user.toLowerCase();
+    let password = this.state.pass;
     axios.put(urlAddress + '/updateYear', 
     {
+      user : username,
+      pass: password,
       title: title,
       user_id: this.state.userId 
     }).then((response => {
@@ -89,9 +110,13 @@ export default class App extends Component {
 
   //adding activity to the vuosikello
   addNewActivity = (task, info, month, category) => {
+    let username = this.state.user.toLowerCase();
+    let password = this.state.pass;
     let userID = this.state.userId;
     axios.post(urlAddress + '/yearclockActivities', 
     {
+      user : username,
+      pass: password,
       user_id: userID,
       task_name: task,
       month: month,
@@ -110,8 +135,12 @@ export default class App extends Component {
 
   //modifying one activity in vuosikello
   modifyActivity = (task, info, month, category, stage, id) => {
+    let username = this.state.user.toLowerCase();
+    let password = this.state.pass;
     axios.put(urlAddress + '/updateActivity', 
     {
+      user: username,
+      pass: password,
       task_name: task,
       month: month,
       category: category,
@@ -127,11 +156,25 @@ export default class App extends Component {
     })
   }
 
+  //logout
+  logout = () => {
+    this.setState({user: '', pass: '', conf: '', loggedIn: false, userId: '1', year: 'Vuosikello'})
+    this.getUsersTasks('1');
+    // window.location.reload(true)
+  }
+
   //deleting spesific task from vuosikello
   deleteActivity = (id) => {
+    let username = this.state.user.toLowerCase();
+    let password = this.state.pass;
     axios.delete(urlAddress + '/deleteActivity', 
     {
-      data: {task_id: id}
+      data: 
+      {
+        user:username,
+        pass:password,
+        task_id: id
+      }
     }).then((response => {
       this.componentDidMount();
       this.setState({showModalModify: !this.state.showModalModify});
@@ -175,7 +218,7 @@ export default class App extends Component {
 
   //On login send data to API to verify User credentials
   onLogin = () => {
-    let username = this.state.user;
+    let username = this.state.user.toLowerCase();
     let password = this.state.pass;
    
     axios.post(urlAddress + '/logon', {
@@ -220,7 +263,7 @@ export default class App extends Component {
 
   //on Registration send data to API to submit values to DB
   onRegister = () =>{
-    let username = this.state.user;
+    let username = this.state.user.toLowerCase();
     let password = this.state.pass;
     let confirmation = this.state.conf;
 
@@ -249,7 +292,7 @@ export default class App extends Component {
 
   reverseMansikki = () => {
     this.setState({mansikkiClass: true});
-    setTimeout(() => this.setState({showMansikki: false, mansikkiClass: false}), 300);
+    setTimeout(() => this.setState({showMansikki: false, mansikkiClass: false}), 500);
   }
 
   render() {
@@ -258,10 +301,10 @@ export default class App extends Component {
         <BrowserRouter>
           <Header toggleLogin={this.toggleLogin} showLogin={this.state.showLogin} logFailToFalse={this.logFailToFalse} logFail={this.state.logFail} updateConf={this.updateConf} updatePass={this.updatePass} updateUser={this.updateUser}
                 onLogin={this.onLogin} onRegister={this.onRegister} onDelete={this.onDelete}
-                pass={this.state.pass} user={this.state.user} conf_pass={this.state.conf} loggedIn={this.state.loggedIn}/>
+                pass={this.state.pass} user={this.state.user} conf_pass={this.state.conf} loggedIn={this.state.loggedIn} logout={this.logout}/>
           {this.state.showMansikki ?
             <div onClick={()=> this.reverseMansikki()} className={this.state.mansikkiClass ? 'reverseMansikkiContainer' : 'mansikkiContainer' }>
-              <div className='speechBubble'><p>{this.state.mansikkiTip}</p></div>
+              <div className='speechBubble'><p>{this.state.mansikkiTip}</p><br /><p className='mansikkiClick'>(Paina minua, jotta menen pois)</p></div>
               <img alt='Auttava Mansikki lehmä' className='mansikki'src={mansikki}/>
             </div> 
           : null}

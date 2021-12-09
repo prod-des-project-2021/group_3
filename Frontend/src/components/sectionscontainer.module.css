@@ -16,3 +16,12 @@
 .image{
   width: 50%;
 }
+
+.cowVideo{
+  width: 80%;
+  height: 80%;
+}
+.cowVideoContainer{
+  margin: 3vw;
+  text-align: center;
+}

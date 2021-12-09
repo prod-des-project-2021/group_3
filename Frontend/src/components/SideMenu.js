@@ -25,6 +25,7 @@ export default function SideMenu (props) {
                     <Link className={styles.links} onClick={() => reverseAnimation()} to="/Tutorials">Ohjeet</Link>
                     <Link className={styles.links} onClick={() => reverseAnimation()} to='/Lahteet'>Lähteet</Link>
                     <Link className={styles.links} onClick={() => reverseAnimation()} to='/Vuosikello'>Vuosikello</Link>
+                    <div className={styles.infortexxt}>Emme kerää mitään muita tietoja, kuin käyttäjänimi, salasana sekä vuosikelloon itse tekemäsi muutokset. Voit poistaa tallennetut tiedot, poistamalla tilisi.</div>
                 </div>
             </div>
         </>

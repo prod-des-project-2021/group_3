@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './newActivity.module.css';
+import styles from './warning.module.css';
 import buttonStyles from './sectioncomponents/linkbutton.module.css';
 import Close from '@material-ui/icons/Close';
 
