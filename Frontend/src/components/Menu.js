@@ -32,16 +32,19 @@ export default function Menu(props) {
         
         {props.loggedIn ? <Settings className={styles.rightIcon} 
                   onClick={()=> del(<DeleteAccount toggleWarning={toggleWarning} hideDelete={() => hideDelete()} onDelete={props.onDelete} logout={props.logout}/>)} />
- :
+        :
         <AccountCircleIcon className={styles.rightIcon }
                            onClick={()=> props.toggleLogin(true)}/>     }                
         {props.showLogin && <LoginModal showLogin={props.showLogin} logFailToFalse={()=>props.logFailToFalse()} logFail={props.logFail} pass={props.pass} user={props.user} conf_pass={props.conf_pass}
           updateConf={props.updateConf} updatePass={props.updatePass} updateUser={props.updateUser} 
           onLogin={props.onLogin} onRegister={props.onRegister} close={close} toggleLogin={() => props.toggleLogin()} />}
       </div>
-      <div className={styles.hideBackground}>
+      {showWarning ?
+      <div  className={styles.hideBackground}>
         <Warning deleteActivity={props.onDelete} showWarning={showWarning} toggleWarning={toggleWarning} warning='Haluatko varmasti poistaa tilisi ja vuosikellon pysyvästi?'/>
       </div>
+      :
+      null }
       {content}
       {DeleteBox}
     </>
