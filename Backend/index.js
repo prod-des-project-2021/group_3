@@ -17,7 +17,6 @@ app.get('/', (req, res) => {
 
 //getting tasks from specific user
 app.post('/mytasks/:uid', (req, res) => {
-  console.log(req.body)
   if(req.params.uid == '1') {
     client.query('SELECT * FROM vuosikello WHERE user_id = $1', ['1']).then(results => {
       res.json(results.rows);
@@ -172,8 +171,6 @@ app.post('/signup', (req, res) => {
 
   const hashedPassword = bcrypt.hashSync(password, saltRounds);
 
-  console.log('test')
-  console.log(hashedPassword)
   client.query('INSERT INTO users(user_id, username, password) VALUES ($1, $2, $3)', 
   [userid, username, hashedPassword])
   .then(results => {
@@ -194,7 +191,6 @@ app.post('/logon', (req, res) => {
       results.rows.forEach(element => 
         bcrypt.compare(password, element.password).then(bcryptResult =>{
           if(bcryptResult == true){
-            console.log(element.user_id);
             res.json(element.user_id);
           }
           else{
