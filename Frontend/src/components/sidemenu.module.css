@@ -26,7 +26,7 @@
 .reverseBox{
     background-color: honeydew;
     border-radius: 0px 9px 9px 0px;
-    width: min-content;
+    max-width: 330px;
     text-align: center;
     position: fixed;
     height: inherit;

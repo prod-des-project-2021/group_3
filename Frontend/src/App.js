@@ -255,6 +255,7 @@ export default class App extends Component {
       console.log(response.data)
       alert("Account deleted")
       this.setState({ loggedIn: false }) 
+      this.logout();
     })
     .catch(function (error) {
       console.log(error);
