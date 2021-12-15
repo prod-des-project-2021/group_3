@@ -244,7 +244,7 @@ export default class App extends Component {
 
   //on Delete send data to API to validate credentials, then deleting those
   onDelete = () =>{
-    let username = this.state.user;
+    let username = this.state.user.toLowerCase();
     let password = this.state.pass;
 
     axios.post(urlAddress + '/delaccount', {

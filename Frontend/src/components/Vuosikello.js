@@ -23,7 +23,7 @@ export default function Vuosikello(props) {
       <div className={styles.modalContainer}>
         <NewActivity submit='Lisää' title='Luo uusi tehtävä' addNewActivity={props.addNewActivity} toggleModalActivity={props.toggleModalActivity} showModalActivity ={props.showModalActivity}/>
         <NewActivity deleteActivity={toggleWarning} submit='Päivitä' task={props.activityToBeUpdated} title='Muokkaa aktiviteettia' addNewActivity={props.modifyActivity} toggleModalActivity={props.toggleModalModify} showModalActivity ={props.showModalModify}/>
-        <Warning id={props.activityToBeUpdated} deleteActivity={props.deleteActivity} showWarning={showWarning} toggleWarning={toggleWarning} warning='Haluatko varmasti poistaa tehtävän?'/>
+        <Warning class='moduleContainer2' id={props.activityToBeUpdated} deleteActivity={props.deleteActivity} showWarning={showWarning} toggleWarning={toggleWarning} warning='Haluatko varmasti poistaa tehtävän?'/>
         <ChangeYear changeYear={props.changeYear} showChangeYear={showChangeYear} toggleChangeYear={toggleChangeYear} year={props.year} />
       </div>
       <Backbutton/>
