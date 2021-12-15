@@ -16,8 +16,8 @@ import References from './components/References';
 
 import mansikki from './components/pictures/lehma.png';
 
-const urlAddress = 'http://localhost:4000' //change this to heroku address when it goes there
-// const urlAddress = 'https://hymyt.herokuapp.com' //heroku api adress
+// const urlAddress = 'http://localhost:4000' //change this to heroku address when it goes there
+const urlAddress = 'https://hymyt.herokuapp.com' //heroku api adress
 
 export default class App extends Component {
   constructor (props)
@@ -244,7 +244,7 @@ export default class App extends Component {
 
   //on Delete send data to API to validate credentials, then deleting those
   onDelete = () =>{
-    let username = this.state.user;
+    let username = this.state.user.toLowerCase();
     let password = this.state.pass;
 
     axios.post(urlAddress + '/delaccount', {

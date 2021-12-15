@@ -41,7 +41,7 @@ export default function Menu(props) {
       </div>
       {showWarning ?
       <div  className={styles.hideBackground}>
-        <Warning deleteActivity={props.onDelete} showWarning={showWarning} toggleWarning={toggleWarning} warning='Haluatko varmasti poistaa tilisi ja vuosikellon pysyvästi?'/>
+        <Warning class='moduleContainer' deleteActivity={props.onDelete} showWarning={showWarning} toggleWarning={toggleWarning} warning='Haluatko varmasti poistaa tilisi ja vuosikellon pysyvästi?'/>
       </div>
       :
       null }
