@@ -15,7 +15,7 @@ export default function Frontpage(props) {
         <>
             <div className={styles.sections}>
                 <Link className={styles.sec} to="/Sec2">Työkyky hyvinvoinnin perustana</Link>
-                <Link className={styles.sec} to="/Sec3">Omatoiminen hyvnvoinnin edistäminen</Link>
+                <Link className={styles.sec} to="/Sec3">Omatoiminen hyvinvoinnin edistäminen</Link>
                 <Link className={styles.sec} to="/Sec4">Hyvinvoinnin osa-alueet</Link>
                 <Link className={styles.sec} to="/Tutorials">Ohjeet</Link>
                 <Link className={styles.sec} to='/Vuosikello'>Vuosikello</Link>

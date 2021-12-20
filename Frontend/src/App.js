@@ -16,8 +16,8 @@ import References from './components/References';
 
 import mansikki from './components/pictures/lehma.png';
 
-// const urlAddress = 'http://localhost:4000' //change this to heroku address when it goes there
-const urlAddress = 'https://hymyt.herokuapp.com' //heroku api adress
+const urlAddress = 'http://localhost:4000' //change this to heroku address when it goes there
+// const urlAddress = 'https://hymyt.herokuapp.com' //heroku api adress
 
 export default class App extends Component {
   constructor (props)
@@ -228,16 +228,13 @@ export default class App extends Component {
     .then((response) => {
       if(response.data) {
         this.toggleLogin(false);
-        console.log(response.data);
         this.setState({ loggedIn: true, userId: response.data});
         this.componentDidMount();
       }
       else {
-        console.log('username or password incorrect');
         this.setState({logFail: true});
       }
     }).catch( error => {
-        console.log('username or password incorrect');
         this.setState({logFail: true});
     })
   }
@@ -252,8 +249,7 @@ export default class App extends Component {
       pass: password
     })
     .then((response) => {
-      console.log(response.data)
-      alert("Account deleted")
+      alert("Käyttäjätili poistettu")
       this.setState({ loggedIn: false }) 
       this.logout();
     })
@@ -274,14 +270,12 @@ export default class App extends Component {
         pass: password,
       })
       .then((response) => {
-        console.log(response.data);
         this.setState({logFail: false});
       })
       .catch(error => {
         this.setState({logFail: true});
-        console.log('not jippii');
         console.log(error);
-        alert("username already exists!")
+        alert("Käyttäjänimi varattu!")
       });
     }
     this.setState({logFail: true});
