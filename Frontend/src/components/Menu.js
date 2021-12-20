@@ -27,20 +27,24 @@ export default function Menu(props) {
   return (
     <>
       <div className={styles.menu}> 
-        <MenuIcon onClick={() => display(<SideMenu display={display}/>)} className={styles.icons} />
+        <MenuIcon onClick={() => display(<SideMenu display={display}/>)} className={styles.leftIcon} />
         <div className = {styles.menuTitle}>Hyvinvoiva maaseutu</div>
         
-        <Settings className={ props.loggedIn ? styles.settings : styles.scale0 } 
-                  onClick={()=> del(<DeleteAccount toggleWarning={toggleWarning} hideDelete={() => hideDelete()} onDelete={props.onDelete} />)} />
-
-        <AccountCircleIcon className={ props.loggedIn ? styles.scale0 : styles.icons2 }
-                           onClick={()=> props.toggleLogin(true)}/>                    
+        {props.loggedIn ? <Settings className={styles.rightIcon} 
+                  onClick={()=> del(<DeleteAccount toggleWarning={toggleWarning} hideDelete={() => hideDelete()} onDelete={props.onDelete} logout={props.logout}/>)} />
+        :
+        <AccountCircleIcon className={styles.rightIcon }
+                           onClick={()=> props.toggleLogin(true)}/>     }                
         {props.showLogin && <LoginModal showLogin={props.showLogin} logFailToFalse={()=>props.logFailToFalse()} logFail={props.logFail} pass={props.pass} user={props.user} conf_pass={props.conf_pass}
           updateConf={props.updateConf} updatePass={props.updatePass} updateUser={props.updateUser} 
           onLogin={props.onLogin} onRegister={props.onRegister} close={close} toggleLogin={() => props.toggleLogin()} />}
-        <Warning deleteActivity={props.onDelete} showWarning={showWarning} toggleWarning={toggleWarning} warning='Haluatko varmasti poistaa tilisi ja vuosikellon pysyvästi?'/>
-        
       </div>
+      {showWarning ?
+      <div  className={styles.hideBackground}>
+        <Warning class='moduleContainer' deleteActivity={props.onDelete} showWarning={showWarning} toggleWarning={toggleWarning} warning='Haluatko varmasti poistaa tilisi ja vuosikellon pysyvästi?'/>
+      </div>
+      :
+      null }
       {content}
       {DeleteBox}
     </>

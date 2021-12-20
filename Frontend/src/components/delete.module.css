@@ -19,11 +19,23 @@
     position: absolute;
     top: 55px;
     right: 2px;
+    padding: 5px;
 }
 
 .delete{
-    color: crimson;
+    color: #ffffff;
     cursor: pointer;
+    margin: 25px 0 10px 0;
+    box-shadow: 0px 10px 14px -7px #732727;
+	background:#882929;
+	border-radius:4px;
+	border:1px solid #522121;
+    text-shadow:0px 1px 0px #8a3c3c;
+    padding: 7px;  
+}
+.delete:hover {
+	background:linear-gradient(to bottom, #b35252 5%, #882929 100%);
+	background-color:#732727;
 }
 
 @media only screen and (min-width: 992px) {
@@ -40,3 +52,19 @@
         right: 2px;
     }
   }
+
+.logout{
+    color: #ffffff;
+    cursor: pointer;
+    margin: 10px 0 25px 0;
+    box-shadow: 0px 10px 14px -7px #3e7327;
+    background:#468829;
+    border-radius:4px;
+    border:1px solid #315221;
+    padding: 7px;
+    text-shadow:0px 1px 0px #5b8a3c;
+}
+.logout:hover {
+    background:linear-gradient(to bottom, #72b352 5%, #468829 100%);
+    background-color:#3e7327;
+}

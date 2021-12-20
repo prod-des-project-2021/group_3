@@ -1,6 +1,5 @@
 import React from 'react'
 import styles from './newActivity.module.css';
-import buttonStyles from './sectioncomponents/linkbutton.module.css';
 import Close from '@material-ui/icons/Close';
 
 export default function NewActivity(props) {
@@ -25,7 +24,7 @@ export default function NewActivity(props) {
           <form className={styles.addActivity} onSubmit={post}>
             <label>Anna uusi otsikko</label>
             <input type="text" name="yearclockTitle" maxLength="50" className={styles.nameBox} defaultValue={props.year}/>
-            <input type="submit" value='Päivitä' className={buttonStyles.button}/>
+            <input type="submit" value='Päivitä' className={styles.button}/>
             <input type="button" value="Peruuta" onClick={()=>props.toggleChangeYear(false)} className={styles.cancel}/>
           </form>
         </div>

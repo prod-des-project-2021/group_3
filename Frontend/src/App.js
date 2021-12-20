@@ -14,7 +14,10 @@ import Vuosikello from './components/Vuosikello';
 import PWAinstallmobile from './components/PWAinstallmobile';
 import References from './components/References';
 
+import mansikki from './components/pictures/lehma.png';
+
 const urlAddress = 'http://localhost:4000' //change this to heroku address when it goes there
+// const urlAddress = 'https://hymyt.herokuapp.com' //heroku api adress
 
 export default class App extends Component {
   constructor (props)
@@ -33,32 +36,68 @@ export default class App extends Component {
       activityToBeUpdated: null,
       year: '',
       regFail: false,
-      logFail: false
+      logFail: false,
+      tips: null,
+      showMansikki: false,
+      mansikkiTip: 'Terve, olen Mansikki!',
+      mansikkiClass: false
     };
   }
 
   componentDidMount() {
-    axios.get(urlAddress + '/mytasks/' + this.state.userId )
-    .then((response) => {
+    let username = this.state.user.toLowerCase();
+    let password = this.state.pass;
+    axios.post(urlAddress + '/mytasks/' + this.state.userId,
+    {
+      user : username,
+      pass: password 
+    }).then((response) => {
       this.setState({ tasks: response.data });
       const found = response.data.find(element => element.month === 13);
       if (found) {
         this.setState({year: found.task_name});
       }
     });
+    if (this.state.tips == null) {
+      axios.get(urlAddress + '/tips')
+      .then((response) => {
+        this.setState({ tips: response.data });
+      });
+    } else if (Math.random() <= 0.3){
+      let tip = this.state.tips[Math.floor(Math.random() * this.state.tips.length)].tip;
+      if (tip) {
+        this.setState({showMansikki: true, mansikkiTip: tip });
+      }
+    }
   }
 
-  getUsersTasks = () => {
-    axios.get(urlAddress + '/mytasks/' + this.state.userId )
-    .then((response) => {
+  getUsersTasks = (id) => {
+    if (id) {
+      axios.post(urlAddress + '/mytasks/1',
+    ).then((response) => {
       this.setState({ tasks: response.data });
-    });
+      });
+    } else {
+      let username = this.state.user.toLowerCase();
+      let password = this.state.pass;
+      axios.post(urlAddress + '/mytasks/' + this.state.userId,
+      {
+        user : username,
+        pass: password 
+      }).then((response) => {
+        this.setState({ tasks: response.data });
+      });
+    }
   }
 
   //change the year/title for vuosikello
   changeYear = (title) => {
+    let username = this.state.user.toLowerCase();
+    let password = this.state.pass;
     axios.put(urlAddress + '/updateYear', 
     {
+      user : username,
+      pass: password,
       title: title,
       user_id: this.state.userId 
     }).then((response => {
@@ -71,9 +110,13 @@ export default class App extends Component {
 
   //adding activity to the vuosikello
   addNewActivity = (task, info, month, category) => {
+    let username = this.state.user.toLowerCase();
+    let password = this.state.pass;
     let userID = this.state.userId;
     axios.post(urlAddress + '/yearclockActivities', 
     {
+      user : username,
+      pass: password,
       user_id: userID,
       task_name: task,
       month: month,
@@ -92,8 +135,12 @@ export default class App extends Component {
 
   //modifying one activity in vuosikello
   modifyActivity = (task, info, month, category, stage, id) => {
+    let username = this.state.user.toLowerCase();
+    let password = this.state.pass;
     axios.put(urlAddress + '/updateActivity', 
     {
+      user: username,
+      pass: password,
       task_name: task,
       month: month,
       category: category,
@@ -109,11 +156,25 @@ export default class App extends Component {
     })
   }
 
+  //logout
+  logout = () => {
+    this.setState({user: '', pass: '', conf: '', loggedIn: false, userId: '1', year: 'Vuosikello'})
+    this.getUsersTasks('1');
+    // window.location.reload(true)
+  }
+
   //deleting spesific task from vuosikello
   deleteActivity = (id) => {
+    let username = this.state.user.toLowerCase();
+    let password = this.state.pass;
     axios.delete(urlAddress + '/deleteActivity', 
     {
-      data: {task_id: id}
+      data: 
+      {
+        user:username,
+        pass:password,
+        task_id: id
+      }
     }).then((response => {
       this.componentDidMount();
       this.setState({showModalModify: !this.state.showModalModify});
@@ -157,7 +218,7 @@ export default class App extends Component {
 
   //On login send data to API to verify User credentials
   onLogin = () => {
-    let username = this.state.user;
+    let username = this.state.user.toLowerCase();
     let password = this.state.pass;
    
     axios.post(urlAddress + '/logon', {
@@ -167,23 +228,20 @@ export default class App extends Component {
     .then((response) => {
       if(response.data) {
         this.toggleLogin(false);
-        console.log(response.data);
         this.setState({ loggedIn: true, userId: response.data});
         this.componentDidMount();
       }
       else {
-        console.log('username or password incorrect');
         this.setState({logFail: true});
       }
     }).catch( error => {
-        console.log('username or password incorrect');
         this.setState({logFail: true});
     })
   }
 
   //on Delete send data to API to validate credentials, then deleting those
   onDelete = () =>{
-    let username = this.state.user;
+    let username = this.state.user.toLowerCase();
     let password = this.state.pass;
 
     axios.post(urlAddress + '/delaccount', {
@@ -191,9 +249,9 @@ export default class App extends Component {
       pass: password
     })
     .then((response) => {
-      console.log(response.data)
-      alert("Account deleted")
+      alert("Käyttäjätili poistettu")
       this.setState({ loggedIn: false }) 
+      this.logout();
     })
     .catch(function (error) {
       console.log(error);
@@ -202,7 +260,7 @@ export default class App extends Component {
 
   //on Registration send data to API to submit values to DB
   onRegister = () =>{
-    let username = this.state.user;
+    let username = this.state.user.toLowerCase();
     let password = this.state.pass;
     let confirmation = this.state.conf;
 
@@ -212,14 +270,12 @@ export default class App extends Component {
         pass: password,
       })
       .then((response) => {
-        console.log(response.data);
         this.setState({logFail: false});
       })
       .catch(error => {
         this.setState({logFail: true});
-        console.log('not jippii');
         console.log(error);
-        alert("username already exists!")
+        alert("Käyttäjänimi varattu!")
       });
     }
     this.setState({logFail: true});
@@ -229,13 +285,24 @@ export default class App extends Component {
     this.setState({logFail: false});
   }
 
+  reverseMansikki = () => {
+    this.setState({mansikkiClass: true});
+    setTimeout(() => this.setState({showMansikki: false, mansikkiClass: false}), 500);
+  }
+
   render() {
     return (
       <>
         <BrowserRouter>
-        <Header toggleLogin={this.toggleLogin} showLogin={this.state.showLogin} logFailToFalse={this.logFailToFalse} logFail={this.state.logFail} updateConf={this.updateConf} updatePass={this.updatePass} updateUser={this.updateUser}
+          <Header toggleLogin={this.toggleLogin} showLogin={this.state.showLogin} logFailToFalse={this.logFailToFalse} logFail={this.state.logFail} updateConf={this.updateConf} updatePass={this.updatePass} updateUser={this.updateUser}
                 onLogin={this.onLogin} onRegister={this.onRegister} onDelete={this.onDelete}
-                pass={this.state.pass} user={this.state.user} conf_pass={this.state.conf} loggedIn={this.state.loggedIn}/>
+                pass={this.state.pass} user={this.state.user} conf_pass={this.state.conf} loggedIn={this.state.loggedIn} logout={this.logout}/>
+          {this.state.showMansikki ?
+            <div onClick={()=> this.reverseMansikki()} className={this.state.mansikkiClass ? 'reverseMansikkiContainer' : 'mansikkiContainer' }>
+              <div className='speechBubble'><p>{this.state.mansikkiTip}</p><br /><p className='mansikkiClick'>(Paina minua, jotta menen pois)</p></div>
+              <img alt='Auttava Mansikki lehmä' className='mansikki'src={mansikki}/>
+            </div> 
+          : null}
           <div className="container">
             <Routes>
               <Route path="/" element={<Frontpage />} />

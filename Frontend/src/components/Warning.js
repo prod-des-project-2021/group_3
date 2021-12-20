@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './newActivity.module.css';
+import styles from './warning.module.css';
 import buttonStyles from './sectioncomponents/linkbutton.module.css';
 import Close from '@material-ui/icons/Close';
 
@@ -15,7 +15,7 @@ export default function NewActivity(props) {
   }
   else {
     return (
-      <div className={styles.moduleContainer} style={{marginTop:'200px'}}>
+      <div className={styles[props.class]} style={{marginTop:'200px'}}>
         <Close onClick={()=>props.toggleWarning(false)} className={styles.close}/>
         <div className={styles.title}>{props.warning}</div>
         <div className={styles.buttonContainer}>

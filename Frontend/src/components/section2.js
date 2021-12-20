@@ -16,7 +16,6 @@ export default function section2() {
       <Backbutton/>
       <div className={styles.container}>
         <Title title='Työkyky hyvinvoinnin perustana'/>
-        <Caption text ='TEKSTI TÄHÄN'/>
         <Content text ='Maatalousyrittäjä työskentelee usein monien paineiden alla. Työn tekemiseen vaikuttavat monet heistä riippumattomat syyt, jotka vaikuttavat hyvinvoinnin kaikkiin osa-alueisiin. Oman työkyvyn arvioiminen ja sen ennaltaehkäisy ovat tärkeätä. Yrittäjä voi kokea työn määrän ja vaatimusten lisääntyessä riittämättömyyden tunteita, kun jatkuvasti pyritään suurempaan tilakokoon ja tehokkaampaan tuotantoon kannattavuuden parantamiseksi. Alaa vaivaa epävarmuus markkinoiden ja maatalouspolitiikan alati muuttuessa. (Tuure 2011.) Mielekäs ja sopivan haastava työ vahvistaa työkykyä, mutta jos se on pakollista puurtamista eikä vastaa omiin tarpeisiin tai tavoitteisiin, se heikentää työkykyä ja hyvinvointia.'/>
         <Content text='Professori Juhani Ilmarinen (2004) on kehittänyt työkyky -mallin, jota kuvataan nelikerroksisena talona. Terveys ja toimintakyky ovat sen ensimmäinen kerros. Fyysinen toimintakyky, psyykkinen ja sosiaalinen toimintakyky ja terveys muodostavat yhdessä työkyvyn perustan. Osaaminen on sen toisessa kerroksessa ja sen perustana ovat peruskoulutus sekä ammatilliset tiedot ja taidot. Omien tietojen ja taitojen jatkuva päivittäminen on tärkeää, sillä uusia työkykyvaatimuksia ja osaamisen alueita syntyy jatkuvasti kaikilla toimialoilla.'/>
         <Imgcontainer alt="työkykytalo" imgsrc={tyokykytalo}/>

@@ -1,25 +1,30 @@
 .modalBackground{
-    position: fixed;
-    z-index: 2;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(59, 59, 59, 0.418);
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(59, 59, 59, 0.418);
 }
 
 .loginBox{
-    margin: 15vw auto;
-    width: min-content;
-    text-align: center;
-    max-width: 80%;
-    background: whitesmoke;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 30px;
-    box-shadow: 0px 0px 19px 4px rgba(0,0,0,0.7);
-    -webkit-box-shadow: 0px 0px 19px 4px rgba(0,0,0,0.7);
-    -moz-box-shadow: 0px 0px 19px 4px rgba(0,0,0,0.7);
+  position: sticky;
+  z-index: 5;
+  margin: 10px auto;
+  width: 238px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 75vh;
+  text-align: center;
+  max-width: 80%;
+  background: whitesmoke;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 30px;
+  box-shadow: 0px 0px 19px 4px rgba(0,0,0,0.7);
+  -webkit-box-shadow: 0px 0px 19px 4px rgba(0,0,0,0.7);
+  -moz-box-shadow: 0px 0px 19px 4px rgba(0,0,0,0.7);
 }
 
 .loginBox * {
@@ -27,18 +32,18 @@
 }
 
 .register{
-    color: blue;
-    cursor: pointer;
-    width: min-content;
-    margin: auto;
-    display: inline;
+  color: blue;
+  cursor: pointer;
+  width: max-content;
+  margin: auto;
+  display: inline;
 	-webkit-user-select: none;
  	-khtml-user-select: none;
  	-moz-user-select: none;
 	-ms-user-select: none;
 	-o-user-select: none;
  	user-select: none;
-    text-align: center;
+  text-align: center;
 }
 
 .hide{
