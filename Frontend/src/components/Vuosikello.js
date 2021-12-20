@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import Month from './Month'
 import styles from './vuosikello.module.css'
 import anotherStyle from './sectionscontainer.module.css'
@@ -16,6 +16,10 @@ export default function Vuosikello(props) {
   const [showChangeYear, toggleChangeYear] = useState(false);
   const [yearOpen, toggleYearOpen] = useState(false);
   const [addOpen, toggleAddOpen] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
 
   return (
