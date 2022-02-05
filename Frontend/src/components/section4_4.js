@@ -4,6 +4,7 @@ import styles from './sectionscontainer.module.css'
 import Title from './sectioncomponents/Title.js';
 import Content from './sectioncomponents/Content.js';
 import Linkbutton from './sectioncomponents/linkbutton';
+import pdf from '../OAMK_Toimintamalli hyvinvoivan maatilan kehittämiseksi_vedos2.pdf'
 
 export default function section4_2() {
   return (
@@ -19,7 +20,7 @@ export default function section4_2() {
         <Linkbutton buttonText='Lisätietoa' link='https://www.luke.fi/tietoa-luonnonvaroista/maatalous-ja-maaseutu/maatalouden-kannattavuus/'/>
         <Linkbutton buttonText='Taloustohtori' link='https://portal.mtt.fi/portal/page/portal/taloustohtori'/>
         <Content text='talouden tasapaino '/>
-        <Linkbutton buttonText='LINKKI UUPUU!!!! Matin ja Pekan oppaaseen' link=''/>
+        <Linkbutton buttonText='Toimintamalli hyvinvoivan maatilan kehittämiseksi' link={pdf}/>
       </div>
     </div>
   )
