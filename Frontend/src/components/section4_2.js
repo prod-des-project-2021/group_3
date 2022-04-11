@@ -38,18 +38,10 @@ export default function section4_2() {
           </ul></>}/>
         <Subtitle text='Mielenterveystalon sivuilta löydät tietoa, omahoito-ohjelmia, oppaita, oirenavigaattoreita sekä palveluhakuja. '/>
         <Intendedcontent buttonText='Mielenterveystalo' link='https://www.mielenterveystalo.fi' text='Ei kirjautumista, ei tallenteita'/>
-        <Content start='Headsted:' text='ilmainen verkko-ohjelma, joka on suunnattu masentuneisuuteen ja alakuloon, jännittämiseen, unettomuuteen ja stressiin '/>
-        <Linkbutton buttonText='Lisätietoja' link='https://headsted.fi '/>
         <Content start='Suomen Mielenterveysseura:' text='mm. mielenterveyttä vahvistavia harjoituksia, kriisistä selviytymistä tukeva omahoito-ohjelmat Selma (aikuisille) ja Toivo (nuorille) ja verkkokriisikeskus Tukinet '/>
         <Linkbutton buttonText='Lisätietoja' link='http://www.mielenterveysseura.fi/fi'/>
         <Content start='Lohtu:' text='Surunauha ry:n kehittämä Lohtu-mobiilisovellus. Sovelluksen avulla voi pitää yhteyttä muihin itsemurhan tehneiden läheisiin'/>
         <Linkbutton buttonText='Lisätietoja' link='https://surunauha.net/lohtusovellus/ '/>
-        <Content start='Hyvän stressin työkalupakki:' text='antaa keinoja hyvänlaatuisen stressin luomiseen ja ylläpitoon erityisesti yrittäjäluonteista työtä tekevälle '/>
-        <Linkbutton buttonText='Lisätietoja' link=' https://hyvastressi.fi/ '/>
-        <Content start='Heimo:' text='suomalainen anonyymi verkkoympäristö, jossa vertaiset auttavat toisiaan '/>
-        <Linkbutton buttonText='Lisätietoja' link='https://www.heimo.co/'/>
-        <Content start='MERU HEALTH:' text='digiklinikka masennus- ja ahdistusoireiden hoitoon, mobiilisovellus '/>
-        <Linkbutton buttonText='Lisätietoja' link='https://www.meruhealth.com/suomeksi/ '/>
         <Content text='Näiltä sivuilta löydät mielenterveyden itsearviointityökaluja. Ne on tarkoitettu helpottamaan oman psyykkisen voinnin arviointia ja seurantaa. Kyselyiden tulokset ovat aina suuntaa antavia, eikä minkään yksittäisen kyselyn perusteella voida asettaa jonkin mielenterveyshäiriön diagnoosia.'/>
         <Linkbutton buttonText='Lisätietoja' link='https://www.mielenterveystalo.fi/aikuiset/itsearviointi/Pages/default.aspx'/>
       </div>

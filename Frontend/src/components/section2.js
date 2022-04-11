@@ -24,12 +24,8 @@ export default function section2() {
         <Content text='Työkyvyssä on kysymys ihmisen voimavarojen ja työn välisestä yhteensopivuudesta ja tasapainosta. Työkykytalo toimii ja pysyy pystyssä, kun kaikki kerrokset tukevat toisiaan. Iän myötä tapahtuu merkittäviä muutoksia alemmissa, yksilön voimavaroja kuvaavissa kerroksissa. Neljäs kerros, työ, muuttuu nopeasti eikä aina ota riittävästi huomioon ihmisen edellytyksiä vastata muutoksiin. Usein liian raskaaksi kasvanut neljäs kerros painaa alakerroksia huonoin seurauksin' />
         <Content text='Työkykytaloa ympäröi perheen, sukulaisten ja ystävien verkostot. Yhteiskunnan rakenteet ja säännöt vaikuttavat myös yksilön työkykyyn. Vastuu yksilön työkyvystä jakaantuukin sekä yksilön, yrityksen että yhteiskunnan kesken.'/>
         <Content text='Täältä voit tutustua Yrittäjän työkyky -vinkkikirjaan'/>
-        <Linkbutton buttonText='Vinkkikirja' link='https://www.ttl.fi/yrittajan-tyokyky-opas-antaa-kaytannollisia-ohjeita-yrittajille-itsesta-huolehtimiseen/'/>
+        <Linkbutton buttonText='Vinkkikirja' link='https://hyvinvoivaamis.fi/sites/default/files/attachments/good_practices/ttl_vinkkikirja_netti.pdf'/>
         <Subtitle text='Yrittäjän työkyky'/>
-        <Content text='Täältä voit tilata itsellesi vinkkikirjan, jossa on ideoita siihen, miten voit edistää työkykyäsi ja jaksamista yrittäjänä.'/>
-        <Linkbutton buttonText='Tilattava vinkkikirja' link='https://www.ttl.fi/oppimateriaalit/tilaa-opas/yrittajan-tyokyky/'/>
-        <Content text='Testaa, millainen työhyvinvoinnin kylväjä olet!'/>
-        <Linkbutton buttonText='Testiin' link='https://www.ttl.fi/testaa-millainen-tyohyvinvoinnin-kylvaja-olet/'/>
         <Subtitle text='Työhyvinvoinnin itsearviointi'/>
         <Content text='Omien arvojen, motivaation, asenteiden ja työtyytyväisyyden arvioiminen on ajoittain paikallaan. Maatalousyrittäjien työhön kohdistuu ajoittaista arvostelemista liittyen esim. ilmastonmuutoskeskusteluun. Tällöin oman työn arvostaminen ja sille merkityksen antaminen vaatii paneutumista ja omien arvojen puntarointia. Myös oman ammattitaidon avoin ja rehellinen pohdinta siitä, miten se vaikuttaa omaan terveyteen ja hyvinvointiin on työhyvinvoinnin kannalta tärkeätä (Yliselä 2009). '/>
         <Linkbutton buttonText='Arvot puntarissa' link='https://arvoja.wordpress.com/'/>
@@ -45,8 +41,6 @@ export default function section2() {
             <li>perhe ja lähiyhteisö</li>
           </ul> Nämä yksilötutkan kysymykset pohjautuvat yllä mainittuun Työkykytalo-malliin. Testin tekeminen vaatii rekisteröitymisen.</>}/>
         <Linkbutton buttonText='Yksilötutka testiin' link='https://ttk.fi/tyoturvallisuus_ja_tyosuojelu/tyokalut_ja_kehittaminen/yksilotutka'/>
-        <Content text='Syty2000 (Työn ja terveyden oma-arviointilomake) Tämä työn ja terveyden oma-arviointi on suunniteltu yhdessä yrittäjien kanssa ja sen täyttämiseen kuluu vain muutama minuutti.'/>
-        <Linkbutton buttonText='Syty2000' link='https://www.ttl.fi/wp-content/uploads/2016/08/SYTY2000_Uudistettu_oma_arviointi_2015.pdf'/>
         <Content text='Aika ajoin on hyvä miettiä omia työpajoja ja työkäytänteitä – voiko jotain tehdä toisin? Tai sitä, että onko tämä sitä mitä haluan tehdä? Pitäisikö jotain muuttaa? Kykyviisari on maksuton kysely, joka kartoittaa vastaajan työ- ja toimintakykyä ja selvittää vastaajan keskeisiä vahvuuksia ja mahdollisia kehittämisenkohteita. Kykyviisarissa on kokeiluversio ja kirjautumista edellyttävä versio. Kokeiluversio on kertakäyttöinen eikä siihen voi palata palauttamisen jälkeen. Kokeiluversion vastaukset eivät tallennu, eikä niitä voida yhdistää vastaajaan.'/>
         <Linkbutton buttonText='Kykyviisari' link='https://sivusto.kykyviisari.fi/'/>
       </div>
